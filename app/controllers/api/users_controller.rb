@@ -22,6 +22,6 @@ end
 # $.ajax({ 
   # method:"POST", 
   # url:"api/users", 
-  # data: {user :{username:"mark", password:"123123", email:"a@a.com"}}})
+  # data: {user :{password:"123123", email:"a@a.com"}}})
 
 # this will invoke 'create' method of users_controller

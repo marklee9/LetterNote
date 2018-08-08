@@ -3,6 +3,7 @@
 # Table name: users
 #
 #  id              :bigint(8)        not null, primary key
+#  username        :string           not null
 #  email           :string           not null
 #  password_digest :string           not null
 #  session_token   :string           not null
@@ -18,8 +19,12 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
   attr_reader :password
 
-  def self.find_by_credentials(email, password)
-    user = User.find_by(email: email)
+  def self.find_by_credentials(input, password)
+    if email.include?('@')
+      user = User.find_by(email: input)
+    else 
+      user = User.find_by(username: input)
+    end
     return nil unless user
     user.is_password?(password) ? user : nil
   end

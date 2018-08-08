@@ -22,6 +22,6 @@ end
 # $.ajax({ 
   # method:"POST", 
   # url:"api/session", 
-  # data:{user :{username:"mark", password:"123123"}}})
+  # data:{user :{email:"a@a.com", password:"123123"}}})
 
 # this will invoke 'create' method of sessions_controller
