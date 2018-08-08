@@ -1,7 +1,8 @@
 class Api::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
-
+    # sets username
+    @user["username"] = user_params["email"].split("@")[0]
     if @user.save
       login(@user)
       render :show
@@ -12,6 +13,7 @@ class Api::UsersController < ApplicationController
 
 private
   def user_params
+    # user only gives email but will use word before @ to set it as username.
     params.require(:user).permit(:email, :password)
   end
 end

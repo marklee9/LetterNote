@@ -19,6 +19,7 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
   attr_reader :password
 
+  # user can log in with either username or email.
   def self.find_by_credentials(input, password)
     if email.include?('@')
       user = User.find_by(email: input)
