@@ -18,23 +18,23 @@ class SignupForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.signup(this.state)
+    this.props.processForm(this.state)
       .then((() => this.props.history.push('/notebooks')));
   }
 
   render () {   
     return (
       <div className="session-form">
-				<form action="">
+				<form>
           <ol>
             <li>
               <label id="email">
-                <input type="text" placeholder="Email address or username" />
+                <input for="email" type="text" placeholder="Email address or username" />
               </label>
             </li>
             <li>
-              <label id="email">
-                <input type="password" placeholder="Password" />
+              <label id="password">
+                <input for="password"type="password" placeholder="Password" />
               </label>
             </li>
             <li>
