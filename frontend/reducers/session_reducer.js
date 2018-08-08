@@ -1,21 +1,18 @@
 import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER } from '../actions/sessions_actions';
 
-const defaultState = {
-  currentUserId: null
-};
+const defaultState = Object.freeze({ currentUserId: null });
 
-const SessionReducer = (oldState = {}, action) => {
-
+const SessionReducer = (oldState = defaultState, action) => {
   // Object.freeze will make object immutable.
   Object.freeze(oldState);
 
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-      return { currentUserId: action.user.id };
+      return Object.assign({}, { currentUserId: action.user.id });
     case LOGOUT_CURRENT_USER:
       return defaultState;
     default:
-      return defaultState;
+      return oldState;
   }
 };
 
