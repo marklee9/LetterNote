@@ -23,7 +23,8 @@ class SignupForm extends React.Component {
   }
 
   render () {   
-    return <div className="session-form">
+    return (
+      <div className="session-form">
 				<form action="">
           <ol>
             <li>
@@ -45,7 +46,8 @@ class SignupForm extends React.Component {
             </li>
           </ol>
 				</form>
-			</div>;
+      </div>
+    );
   }
 }
 
