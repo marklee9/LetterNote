@@ -1,7 +1,6 @@
 class Api::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
-    # sets username
     @user["username"] = user_params["email"].split("@")[0]
     if @user.save
       login(@user)
@@ -21,9 +20,9 @@ end
 
 # Can test on Chrome with ajax request.
 
-# $.ajax({ 
-  # method:"POST", 
-  # url:"api/users", 
-  # data: {user :{password:"123123", email:"a@a.com"}}})
+# $.ajax({
+#   method:"POST", 
+#   url:"api/users", 
+#   data: {user :{password:"123123", email:"a@a.com"}}})
 
 # this will invoke 'create' method of users_controller

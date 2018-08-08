@@ -9,9 +9,11 @@ class SignupForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   handleInput(type) {
+    console.log(this.state);
     return (e) => {
       this.setState({[type]: e.target.value});
     };
@@ -19,42 +21,49 @@ class SignupForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.processForm(this.state)
-      .then((() => this.props.history.push('/notebooks')));
+    const user = Object.assign({}, this.state);
+    this.props
+      .processForm(user)
+      .then((() => this.props.history.push('/notes')));
+  }
+
+  handleDemo(e) {
+    e.preventDefault();
+    this.props
+			.login({ email: "demo_user", password: "demo123123" })
+			.then(() => this.props.history.push("/notes"));
   }
 
   render () {   
-    return (
-      <div className="session-form">
+    return <div className="session-form">
 				<form>
-          <ol>
+					<ol>
+						<li>
+							<button onClick={this.handleDemo}>Sign in as Demo User</button>
+						</li>
+						<li>
+							<label id="email">
+								<input for="email" type="text" onChange={this.handleInput("email")} value={this.state.email} placeholder="Email address or username" />
+							</label>
+						</li>
+						<li>
+							<label id="password">
+								<input for="password" type="password" onChange={this.handleInput("password")} value={this.state.password} placeholder="Password" />
+							</label>
+						</li>
             <li>
-              <label id="email">
-                <input for="email" type="text" 
-                  onChange={this.handleInput("email")}
-                  value={this.state.email}
-                  placeholder="Email address or username" />
-              </label>
+              {this.props.errors.map((error, i) => <p key={i}>{error}</p>)}
             </li>
-            <li>
-              <label id="password">
-                <input for="password"type="password"
-                  onChange={this.handleInput("password")}
-                  value={this.state.password}
-                  placeholder="Password" />
-              </label>
-            </li>
-            <li>
-              <input for="remember-me" type="checkbox" />
-              <label id="remember-me">Remember me for 30 days</label>
-            </li>
-            <li>
-              <button onClick={this.handleSubmit}>Continue</button>
-            </li>
-          </ol>
+						<li>
+							<input for="remember-me" type="checkbox" />
+							<label id="remember-me">Remember me for 30 days</label>
+						</li>
+						<li>
+							<button onClick={this.handleSubmit}>Continue</button>
+						</li>
+					</ol>
 				</form>
-      </div>
-    );
+			</div>;
   }
 }
 

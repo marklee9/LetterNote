@@ -21,7 +21,7 @@ class User < ApplicationRecord
 
   # user can log in with either username or email.
   def self.find_by_credentials(input, password)
-    if email.include?('@')
+    if input.include?('@')
       user = User.find_by(email: input)
     else 
       user = User.find_by(username: input)

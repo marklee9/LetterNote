@@ -4,8 +4,8 @@ export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 
-export const signup = () => dispatch => (
-  SessionApiUtil.signup()
+export const signup = (user1) => dispatch => (
+  SessionApiUtil.signup(user1)
     .then(
       (user) => dispatch({
         type: RECEIVE_CURRENT_USER,
