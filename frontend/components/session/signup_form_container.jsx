@@ -7,7 +7,7 @@ import SignupForm from './signup_form';
 const msp = ({ errors }) => ({
   errors: errors.session,
   formType: "Sign up",
-  navLink: <Link to="/login">log in instead</Link>
+  navLink: <Link to="/login">Sign in</Link>
 });
 
 const mdp = dispatch => ({

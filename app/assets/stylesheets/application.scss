@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+//  reset file
+@import './reset';
+ 
+//signup, login page
+@import './user_auth/auth';

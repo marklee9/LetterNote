@@ -33,8 +33,17 @@ class SignupForm extends React.Component {
 			.then(() => this.props.history.push("/notes"));
   }
 
+  renderMessage() {
+    if (this.props.formType === "Login") {
+      return (<h6>Don't have an account?</h6>);
+    }
+    return (<h6>Already have an account?</h6>);
+  }
+
   render () {   
     return <div className="session-form">
+      <img className='logo-image' src="../../../app/assets/stylesheets/Evernote-logo.png"/>
+      <h1 className='text-after-logo'>{this.props.formType}</h1>
 				<form>
 					<ol>
 						<li>
@@ -60,6 +69,8 @@ class SignupForm extends React.Component {
 						</li>
 					</ol>
 				</form>
+        {this.renderMessage()}
+        {this.props.navLink}
 			</div>;
   }
 }
