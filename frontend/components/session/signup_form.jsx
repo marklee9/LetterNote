@@ -1,5 +1,4 @@
 import React from 'react';
-import { timingSafeEqual } from 'crypto';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -51,9 +50,7 @@ class SignupForm extends React.Component {
 								<input for="password" type="password" onChange={this.handleInput("password")} value={this.state.password} placeholder="Password" />
 							</label>
 						</li>
-            <li>
-              {this.props.errors.map((error, i) => <p key={i}>{error}</p>)}
-            </li>
+            {this.props.errors.map((error, i) => <li key={i}>{error}</li>)}
 						<li>
 							<input for="remember-me" type="checkbox" />
 							<label id="remember-me">Remember me for 30 days</label>

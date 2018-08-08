@@ -13,7 +13,7 @@ export const signup = (user1) => dispatch => (
       }),
       (error) => dispatch({
         type: RECEIVE_SESSION_ERRORS,
-        errors: error
+        errors: error.responseJSON
       })
   )
 );
@@ -27,7 +27,7 @@ export const login = (userUtil) => dispatch => (
       }),
       (error) => dispatch({
         type: RECEIVE_SESSION_ERRORS,
-        errors: error
+        errors: error.responseJSON
       })
   )
 );
