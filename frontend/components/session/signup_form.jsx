@@ -1,4 +1,5 @@
 import React from 'react';
+import { timingSafeEqual } from 'crypto';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -29,12 +30,18 @@ class SignupForm extends React.Component {
           <ol>
             <li>
               <label id="email">
-                <input for="email" type="text" placeholder="Email address or username" />
+                <input for="email" type="text" 
+                  onChange={this.handleInput("email")}
+                  value={this.state.email}
+                  placeholder="Email address or username" />
               </label>
             </li>
             <li>
               <label id="password">
-                <input for="password"type="password" placeholder="Password" />
+                <input for="password"type="password"
+                  onChange={this.handleInput("password")}
+                  value={this.state.password}
+                  placeholder="Password" />
               </label>
             </li>
             <li>
