@@ -29,6 +29,10 @@
     border-radius: 7px;
     font-size: 1.05em;
   }
+
+  button:hover {
+    cursor: pointer;
+  }
   
   input {
     width:90%;
@@ -82,10 +86,14 @@ li {
   font-weight: 100;
 }
 
-  .submit-button {
-    background-color: #2dbe60;
-    color: white;
-  }
+.submit-button {
+  background-color: #2dbe60;
+  color: white;
+}
+
+.submit-button:hover {
+  backgroun-color: #2dbe60;
+}
 
 
 // .session-div {
