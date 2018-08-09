@@ -3,6 +3,7 @@ import React from 'react';
 class SignupForm extends React.Component {
 	constructor(props) {
 		super(props);
+		console.log(this.props);
 		this.state = {
 			email: "",
 			password: ""
@@ -55,47 +56,47 @@ class SignupForm extends React.Component {
 			</p>;
 	}
 
+	renderErrors() {
+			this.props.errors.map((error, i) => (
+				<p className="error-message" key={i}>
+					{error}
+				</p>
+			));
+	}
+
 	render() {
-		return <div className="session-div">
-				<div className="logo-text">
-					<img className="logo-image" src="http://logok.org/wp-content/uploads/2015/02/Evernote-logo.png" />
-					<h1 className="text-after-logo">{this.props.formType}</h1>
+		return <div>
+				<div className="form-only">
+					<form className="session-form">
+						<button className="button demo-button" onClick={this.handleDemo}>
+							Sign in as Demo User
+						</button>
+
+						<h2>
+							<span> or </span>
+						</h2>
+
+						<label id="email">
+							<input for="email" type="text" onChange={this.handleInput("email")} value={this.state.email} placeholder="Email address or username" />
+						</label>
+
+						<label id="password">
+							<input for="password" type="password" onChange={this.handleInput("password")} value={this.state.password} placeholder="Password" />
+						</label>
+
+						{this.renderTerms()}
+
+						<button className="button submit-button" onClick={this.handleSubmit}>
+							{this.renderSubmitButtonMessage()}
+						</button>
+
+						<input className="remember-me-checkbox" type="checkbox" />
+						<p className="remember-me">Remember me for 30 days</p>
+					</form>
 				</div>
-        <div className='form-only'>
-          <form className="session-form">
-            <button className="button demo-button" onClick={this.handleDemo}>
-              Sign in as Demo User
-            </button>
-
-            <h2><span> or </span></h2>
-
-            <label id="email">
-              <input for="email" type="text" onChange={this.handleInput("email")} value={this.state.email} placeholder="Email address or username" />
-            </label>
-
-            <label id="password">
-              <input for="password" type="password" onChange={this.handleInput("password")} value={this.state.password} placeholder="Password" />
-            </label>
-
-              {this.props.errors.map((error, i) => (
-                <p className="error-message" key={i}>
-                  {error}
-                </p>
-              ))}
-
-							{this.renderTerms()}
-
-            <button className="button submit-button" onClick={this.handleSubmit}>
-              {this.renderSubmitButtonMessage()}
-            </button>
-
-            <input className="remember-me-checkbox" type="checkbox" />
-          <p className='remember-me'>Remember me for 30 days</p>
-        </form>
-      </div>
-        {this.renderMessage()}
-        {this.props.navLink}
-    </div>;
+				{this.renderMessage()}
+				{this.renderNavLink}
+			</div>;
 	}
 }
 

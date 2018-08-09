@@ -9,7 +9,10 @@ class NavBar extends React.Component {
 					</p>
 				</div>
 
-        <div className="other-stuff">
+        <div className="other-stuff2">
+
+        </div>
+        <div className="other-stuff2">
 
         </div>
         <div className="other-stuff2">
