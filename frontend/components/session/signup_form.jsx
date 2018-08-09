@@ -34,20 +34,24 @@ class SignupForm extends React.Component {
   }
 
   renderMessage() {
-    if (this.props.formType === "Login") {
+    if (this.props.formType === "Sign in") {
       return (<h6>Don't have an account?</h6>);
     }
     return (<h6>Already have an account?</h6>);
   }
 
   render () {   
-    return <div className="session-form">
-      <img className='logo-image' src="../../../app/assets/stylesheets/Evernote-logo.png"/>
-      <h1 className='text-after-logo'>{this.props.formType}</h1>
-				<form>
+    return <div className="session-div">
+        <div className='logo-text'>
+          <img className="logo-image" src="http://logok.org/wp-content/uploads/2015/02/Evernote-logo.png" />
+          <h1 className="text-after-logo">{this.props.formType}</h1>
+        </div>
+				<form className="session-form">
 					<ol>
 						<li>
-							<button onClick={this.handleDemo}>Sign in as Demo User</button>
+							<button onClick={this.handleDemo}>
+								Sign in as Demo User
+							</button>
 						</li>
 						<li>
 							<label id="email">
@@ -59,7 +63,7 @@ class SignupForm extends React.Component {
 								<input for="password" type="password" onChange={this.handleInput("password")} value={this.state.password} placeholder="Password" />
 							</label>
 						</li>
-            {this.props.errors.map((error, i) => <li key={i}>{error}</li>)}
+						{this.props.errors.map((error, i) => <li key={i}>{error}</li>)}
 						<li>
 							<input for="remember-me" type="checkbox" />
 							<label id="remember-me">Remember me for 30 days</label>
@@ -69,8 +73,8 @@ class SignupForm extends React.Component {
 						</li>
 					</ol>
 				</form>
-        {this.renderMessage()}
-        {this.props.navLink}
+				{this.renderMessage()}
+				{this.props.navLink}
 			</div>;
   }
 }

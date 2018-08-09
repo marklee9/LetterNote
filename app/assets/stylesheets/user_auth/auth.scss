@@ -3,6 +3,34 @@
   height:105px;
 }
 
+// .logo-text {
+//   margin: auto;
+//   width: 100px;
+// }
 .text-after-logo {
-  font-family: caecilia, Times, serif;
+  font-family: Zilla Slab, serif;
+  font-weight: 100;
+  font-size:2em;
+  color: #6a6a6a;
+}
+
+// h1 {
+//   text-align: center;
+// }
+
+.session-div {
+  margin: 2rem auto;
+  max-width: 361.5px;
+  li {
+    display:block;
+  }
+  input, button {
+    width: 100%;
+    border-radius: 7px;
+  }
+}
+
+.session-form {
+  // margin:auto;
+  // width: 50%;
 }
