@@ -7,6 +7,6 @@ export default () => (
 	<div>
 		<Route path={`/signup`} component={SignupFormContainer} />
 		<Route path={`/login`} component={LoginFormContainer} />
-		<Route path={`/`} component={LoginFormContainer} />
+		<Route exact path={`/`} component={LoginFormContainer} />
 	</div>
 );
