@@ -3,34 +3,149 @@
   height:105px;
 }
 
-// .logo-text {
-//   margin: auto;
-//   width: 100px;
-// }
-.text-after-logo {
+
+.form-only {
+  border: 1px solid blue;
+
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto;
+  list-style: none;
+  padding: 20px;
+  color: #747474;
+  text-align: center;
+}
+
+.session-form{
+  width: 100%;
+  border: 1px solid pink;
+  font-family: gotham;
+  margin-bottom: 30px;
+
+  button {
+    width: inherit;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 7px;
+    font-size: 1.05em;
+  }
+  
+  input {
+    width:90%;
+    padding: 15px;
+    margin-bottom: 15px;
+    font-size: 1.05em;
+  }
+
+  h2 {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #cacaca;
+    line-height: 0.1em;
+    margin: 20px 0 30px;
+  }
+  h2 span {
+    position:relative;
+    top: 10px;
+    background: white;
+    padding: 10px 10px;
+    font: 400 15px system-ui;
+    color: #cacaca;
+  }
+}
+
+ol {
+  width: 100%;
+}
+
+li {
+  margin: 5px;
+  width: 100%;
+}
+
+.remember-me-checkbox {
+  display: inline;
+  max-width: 12px;
+  margin: 4px;
+}
+
+.remember-me {
+  display: inline;
+}
+
+
+.logo-text {
+  font-size:1.65em;
+  color: #8d8d8d;
+  margin-bottom: 30px;
   font-family: Zilla Slab, serif;
   font-weight: 100;
-  font-size:2em;
-  color: #6a6a6a;
 }
 
-// h1 {
+  .submit-button {
+    background-color: #2dbe60;
+    color: white;
+  }
+
+
+// .session-div {
+//   font-family: gotham,
+//   helvetica,
+//   arial,
+//   sans-serif;
+//   margin: 2rem auto;
+//   max-width: 320px;
 //   text-align: center;
+  
+//   h1 {
+//     font-family: Zilla Slab, serif;
+//     font-weight: 100;
+//     position: relative;
+//     padding-bottom: 20px;
+//     word-spacing: 3px;
+//   }
+
+//   li {
+//     display:flex;
+//     width:100%;
+//     margin: 5px;
+//     padding: 5px;
+//   }
+
+//   input {
+//     // width:inherit;
+//     border-radius: 5px;
+//     padding: 18px;
+//     font-size: 1.05em;
+//     border: 1px solid #cacaca;
 // }
 
-.session-div {
-  margin: 2rem auto;
-  max-width: 361.5px;
-  li {
-    display:block;
-  }
-  input, button {
-    width: 100%;
-    border-radius: 7px;
-  }
-}
+//   .button {
+//     width: inherit;
+//     padding: 20px;
+//     border-radius: 5px;
+//     font-size: 1em;
+//   }
 
-.session-form {
-  // margin:auto;
-  // width: 50%;
-}
+//   .submit-button {
+//     background-color: #2dbe60;
+//   }
+
+//   h2 {
+//     width: 100%;
+//     text-align: center;
+//     border-bottom: 1px solid #cacaca;
+//     line-height: 0.1em;
+//     padding-right: 10px;
+//     margin: 20px 0 30px;
+//   }
+  
+//   h2 span {
+//     position:relative;
+//     top: 10px;
+//     background: white;
+//     padding: 10px 10px;
+//     font: 400 15px system-ui;
+//     color: #cacaca;
+//   }
+// }
