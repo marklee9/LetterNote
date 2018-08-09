@@ -6,7 +6,6 @@
 
 .form-only {
   border: 1px solid blue;
-
   max-width: 340px;
   margin-left: auto;
   margin-right: auto;
@@ -19,7 +18,7 @@
 .session-form{
   width: 100%;
   border: 1px solid pink;
-  font-family: gotham;
+  font-family: gotham, helvetica, arial, sans-serif;
   margin-bottom: 30px;
 
   button {
@@ -27,7 +26,8 @@
     padding: 20px;
     margin-bottom: 15px;
     border-radius: 7px;
-    font-size: 1.05em;
+    font-size: 1.04em;
+    letter-spacing: 1.1px;
   }
 
   button:hover {
@@ -38,7 +38,13 @@
     width:90%;
     padding: 15px;
     margin-bottom: 15px;
-    font-size: 1.05em;
+    font-size: 1.04em;
+    letter-spacing: 1.1px;
+  }
+
+  ::placeholder {
+    color: #747474;
+    opacity: 0.8;
   }
 
   h2 {
@@ -75,6 +81,12 @@ li {
 
 .remember-me {
   display: inline;
+  color: #7a7a7a;
+  letter-spacing: 0.7px;
+  position:relative;
+  margin-left: 5px;
+  bottom:5px;
+  font-size: 16px;
 }
 
 
@@ -89,10 +101,28 @@ li {
 .submit-button {
   background-color: #2dbe60;
   color: white;
+  transition: 0.5s;
 }
 
 .submit-button:hover {
-  backgroun-color: #2dbe60;
+  background-color: #25a853;
+}
+
+.terms {
+  text-decoration: underline;
+  color: #888888;
+}
+
+.term-p {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom:10px;
+  font-size: 14px;
+  letter-spacing: .8px;
+}
+
+a:hover {
+  cursor: pointer;
 }
 
 

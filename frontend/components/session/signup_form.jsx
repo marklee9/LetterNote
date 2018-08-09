@@ -44,6 +44,17 @@ class SignupForm extends React.Component {
 		return <p>Create Account</p>;
 	}
 
+	renderTerms() {
+		if (this.props.formType === "Sign in") {
+			return <p></p>;
+		}
+		return <p className="term-p">
+				By clicking Create Account, I agree to the <a className="terms">
+					Terms of Service
+				</a> and <a className="terms">Privacy Policy</a>.
+			</p>;
+	}
+
 	render() {
 		return <div className="session-div">
 				<div className="logo-text">
@@ -71,6 +82,8 @@ class SignupForm extends React.Component {
                   {error}
                 </p>
               ))}
+
+							{this.renderTerms()}
 
             <button className="button submit-button" onClick={this.handleSubmit}>
               {this.renderSubmitButtonMessage()}
