@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBarContainer from './navbar/navbar_container';
-import SignupForm from '../session/signup_form';
+import SignupFormContainer from '../session/signup_form_container';
+import { Route } from "react-router-dom";
 
 class Home extends React.Component {
 	constructor(props) {
@@ -12,7 +13,7 @@ class Home extends React.Component {
 					<NavBarContainer />
 				</div>
 				<div className="signup-form-container">
-					<SignupForm props={this.props}/>
+					<Route component={SignupFormContainer} />
 				</div>
 			</div>;
   }

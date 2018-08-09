@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import React from "react";
 import { signup, login } from '../../actions/sessions_actions';
 import { Link } from "react-router-dom";
-import Outer from './outer_signup_form';
+import SignupForm from './signup_form';
 
 const msp = ({ errors }) => ({
   errors: errors.session,
@@ -15,4 +15,4 @@ const mdp = dispatch => ({
   login: (user) => dispatch(login(user))
 });
 
-export default connect(msp, mdp)(Outer);
+export default connect(msp, mdp)(SignupForm);
