@@ -68,41 +68,37 @@ class SignupForm extends React.Component {
 		return <div>
 				<div className="form-only">
 					<form className="session-form">
-						<button className="button demo-button" onClick={this.handleDemo}>
-							Sign in as Demo User
+					<button className="button demo-button animated infinite pulse delay-2s" onClick={this.handleDemo}>
+							<span>Sign in as Demo User</span>
 						</button>
-
 						<h2>
 							<span> or </span>
 						</h2>
-
 						<label id="email">
 							<input for="email" type="text" onChange={this.handleInput("email")} value={this.state.email} placeholder="Email address or username" />
 						</label>
-
 						<label id="password">
 							<input for="password" type="password" onChange={this.handleInput("password")} value={this.state.password} placeholder="Password" />
 						</label>
-
 						<div className="error-div">
 							{this.renderTerms()}
 							{this.props.errors.map((error, i) => (
 								<p className="error-message" key={i}>
 									{error}
 								</p>
-								))}
+							))}
 						</div>
-		
 						<button className="button submit-button" onClick={this.handleSubmit}>
 							{this.renderSubmitButtonMessage()}
 						</button>
-
 						<input className="remember-me-checkbox" type="checkbox" />
 						<p className="remember-me">Remember me for 30 days</p>
 					</form>
 				</div>
-				{this.renderMessage()}
-				{this.props.navLink}
+				<div className="endtext">
+					{this.renderMessage()}
+					{this.props.navLink}
+				</div>
 			</div>;
 	}
 }

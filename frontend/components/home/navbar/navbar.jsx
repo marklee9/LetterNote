@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 class NavBar extends React.Component {
 	render() {
 		return <nav>
-				<div className="home-navbar" id="myTopnav">
+				<div className="home-navbar">
 					<a className="home-a-tag">
 						<img align='middle' className='home-logo-img' src="https://www.devicemagic.com/wp-content/uploads/2017/01/evernote-1.png" alt=""/>
 						<span className="home-logo-text">LETTERNOTE</span>

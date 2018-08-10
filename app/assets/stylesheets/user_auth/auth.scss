@@ -3,9 +3,7 @@
   height:105px;
 }
 
-
 .form-only {
-  border: 1px solid blue;
   max-width: 340px;
   margin-left: auto;
   margin-right: auto;
@@ -13,11 +11,27 @@
   padding: 20px;
   color: #747474;
   text-align: center;
+  background-color:white;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+}
+
+.session-div {
+  background-color:#e7e7e7;
+  text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+  .session-div {
+    background-color: white;
+  }
+  .form-only {
+    border: none;
+  }
 }
 
 .session-form{
   width: 100%;
-  border: 1px solid pink;
   font-family: gotham, helvetica, arial, sans-serif;
   margin-bottom: 30px;
 
@@ -40,6 +54,8 @@
     margin-bottom: 15px;
     font-size: 1.04em;
     letter-spacing: 1.1px;
+    border-radius: 5px;
+    border: .5px solid #d3d3d3;
   }
 
   ::placeholder {
@@ -50,7 +66,7 @@
   h2 {
     width: 100%;
     text-align: center;
-    border-bottom: 1px solid #cacaca;
+    border-bottom: 1px solid #dbdbdb;
     line-height: 0.1em;
     margin: 20px 0 30px;
   }
@@ -60,7 +76,7 @@
     background: white;
     padding: 10px 10px;
     font: 400 15px system-ui;
-    color: #cacaca;
+    color: #dbdbdb;
   }
 }
 
@@ -105,6 +121,13 @@ li {
   transition: 0.5s;
 }
 
+.demo-button {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #8d8d8d;
+}
+
 .submit-button:hover {
   background-color: #25a853;
 }
@@ -132,4 +155,42 @@ a:hover {
   cursor: pointer;
 }
 
+.signup-form-container {
+  float: right;
+  margin-right: 8%;
+  margin-top: 50px;
+}
 
+@media screen and (max-width: 1000px) {
+  .signup-form-container {
+    display: none;
+  }
+}
+
+.comp-after-form {
+  padding-bottom: 40px;
+}
+
+.endtext {
+  padding: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+
+  h6 {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #a3a3a3;
+  }
+  
+  a {
+    color:#4cca78;
+    transition: 0.3s;
+    text-decoration: none;
+    margin: 20px;
+  }
+
+  a:hover {
+    color: #228d47;
+  }
+}

@@ -18,7 +18,9 @@
 .home-navbar {
   overflow: hidden;
   background-color: white;
-  font-family: "Gotham_SSm_5r", Helvetica, Arial, sans-serif
+  font-family: "Gotham_SSm_5r", Helvetica, Arial, sans-serif;
+  border-bottom: 1px solid #dddddd;
+  padding-bottom: 10px;
 }
 
 .home-navbar a {
@@ -46,8 +48,6 @@
   color: #0dc23d;
 }
 
-
-
 @media screen and (max-width: 900px) {
   .home-navbar a:not(:first-child) {
     display: none;
@@ -59,7 +59,7 @@
 
 #nav-demo {
   float: right;
-  margin-right: 60px;
+  margin-right: 10%;
   font-family: 'Nunito Sans', sans-serif;
   border: 1.5px solid black;
   border-radius: 4px;
@@ -68,4 +68,19 @@
 
 #nav-demo:hover {
  border: 2px solid #0dc23d;
+}
+
+.home-slide {
+  float: left;
+  margin-top: 50px;
+  margin-left: 5%;
+  padding: 200px;
+  border: 1px solid blue;
+}
+
+.home-signup-text {
+  padding-left: 30px;
+  font-family: 'Arimo', sans-serif;
+  font-size: 25px;
+  font-weight: 700;
 }

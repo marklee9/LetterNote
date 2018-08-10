@@ -22,7 +22,9 @@ class Outer extends React.Component {
           <img className="logo-image" src="http://logok.org/wp-content/uploads/2015/02/Evernote-logo.png" />
           <h1 className="text-after-logo">{header}</h1>
         </div>
-				{component}
+				<div className='comp-after-form'>
+					{component}
+				</div>
 			</div>
 		);
 	}
