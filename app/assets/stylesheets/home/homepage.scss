@@ -1,37 +1,71 @@
-.signup-form-container {
-  width: 50%;
-  float:right;
+.home-a-tag {
+  margin-left: 10%;
 }
 
-.home-div {
-  background-color: pink;
-  width: 100%;
+.home-logo-img {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
 }
 
-.nav-div {
-  display: flex;
+.home-logo-text {
+  vertical-align: middle;
+  font-size: 1.3em;
+  font-family: 'Crimson Text', serif;
+  color: #3dbe60
 }
 
-.logo {
+.home-navbar {
+  overflow: hidden;
   background-color: white;
+  font-family: "Gotham_SSm_5r", Helvetica, Arial, sans-serif
 }
 
-.home-logo-image {
-  width: 95px;
-  height: 65px;
+.home-navbar a {
+  color: #383838;
+  float: left;
+  display: block;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  min-width: 68px;
+  transition: .4s;
+  padding: 20px;
 }
 
-.logo-letter {
-  font-size: 1.5em;
+.home-navbar a:not(:first-child) {
+  margin-top: 14px;
+  font-weight: 600;
+  font-size: 14px;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.other-stuff {
-  padding: 30px;
-  background-color: black;
+.home-navbar a:hover {
+  background-color:white;
+  color: #0dc23d;
 }
 
-.other-stuff2 {
-  padding: 30px;
-  background-color: black;
-  margin-left: 100px;
+
+
+@media screen and (max-width: 900px) {
+  .home-navbar a:not(:first-child) {
+    display: none;
+  }
+  .home-navbar div a {
+    display: none;
+  }
+}
+
+#nav-demo {
+  float: right;
+  margin-right: 60px;
+  font-family: 'Nunito Sans', sans-serif;
+  border: 1.5px solid black;
+  border-radius: 4px;
+  transition: .4s;
+}
+
+#nav-demo:hover {
+ border: 2px solid #0dc23d;
 }

@@ -16,13 +16,8 @@
 
 //  reset file
 @import './reset.scss';
+@import './home/homepage';
  
 //signup, login page
 @import './user_auth/auth';
 
-@import './home/homepage';
-
-.link-google {
-  padding: 20px;
-  color: white;
-}
