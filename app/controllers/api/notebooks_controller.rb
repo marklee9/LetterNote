@@ -1,11 +1,21 @@
 class Api::NotebooksController < ApplicationController
   def create
     @notebook = Notebook.new(notebook_params)
+
+    if @notebook.save
+      render :show
+    else
+      render json: @notebook.errors.full_messages, status: 406
+    end 
   end
 
   def show
-    debugger
-    @notebook = current_user.notebooks.where(id: params[:id])
+    @notebook = current_user.notebooks.where(id: params[:id]).first
+    if @notebook
+      render :show
+    else
+      render json: ["Notebook was not found, Please try again."], status:404
+    end
   end
 
   def index
@@ -13,7 +23,13 @@ class Api::NotebooksController < ApplicationController
   end
 
   def destroy
-    @notebook = current_user.notebooks.where(id: params[:id])
+    @notebook = current_user.notebooks.where(id: params[:id]).first
+    if @notebook
+      @notebook.destroy
+      render :show
+    else
+      render json: ["Could not delete your notebook."], status: 406
+    end
   end
 
 private
