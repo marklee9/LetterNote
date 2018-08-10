@@ -14,7 +14,8 @@ class Home extends React.Component {
 				</div>
 				<div className='first-splash'>
 					<div className='home-slide'>
-						<h1>Slideshow</h1>
+						<h1 className="slider-big">Meet Letternote, your anywhere access notepad.</h1>
+						<p className="slider-small">Capture, organize, and share notes from anywhere. Your best ideas are always with you and always in sync.</p>
 					</div>
 					<div className="signup-form-container">
 						<h2 className='home-signup-text'>Sign Up for Free</h2>

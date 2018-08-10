@@ -83,10 +83,33 @@
 .home-slide {
   float: left;
   margin-top: 40px;
-  margin-left: 3.5%;
+  margin-left: 5%;
   margin-right: 3.5%;
-  padding:0 20%;
-  border: 1px solid blue;
+  max-width: 800px;
+  padding: 5px;
+  padding-right: 40px;
+  width: 46%;
+  transition: .5s;
+}
+
+.home-slide:hover {
+  background-color: #cccccc;
+}
+
+.slider-big {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 25px;
+  font-size: 82px;
+}
+
+.slider-small {
+  font-family: gotham, helvetica, arial, sans-serif;
+  letter-spacing: 0.8px;
+  padding-left: 20px;
+  padding-right: 55px;
+  font-size: 18px;
+  color: #b4b4b4;
 }
 
 .first-splash {
@@ -94,11 +117,12 @@
   width: 100%;
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1160px) {
   .home-slide {
     margin-left: 3.5%;
     margin-right: 3.5%;
-    width: 50%;
+    max-width: none;
+    width: 91%;
   }
 }
 
