@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBarContainer from './navbar/navbar_container';
 import SignupFormContainer from '../session/signup_form_container';
-import { Route } from "react-router-dom";
+import { Route, withRouter } from "react-router-dom";
 
 class Home extends React.Component {
 	constructor(props) {
@@ -19,4 +19,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default withRouter(Home);

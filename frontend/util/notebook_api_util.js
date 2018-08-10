@@ -12,4 +12,11 @@ export const fetchNotebook = (id) => (
   })
 );
 
+export const deleteNotebook = (id) => (
+  $.ajax({
+    method: "DELETE",
+    url: `api/notebooks/${id}`
+  })
+);
+
 

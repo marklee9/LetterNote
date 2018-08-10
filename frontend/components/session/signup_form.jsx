@@ -46,7 +46,7 @@ class SignupForm extends React.Component {
 	}
 
 	renderTerms() {
-		if (this.props.formType === "Sign in") {
+		if (this.props.formType === "Sign in" || this.props.errors.length > 0) {
 			return <p></p>;
 		}
 		return <p className="term-p">
@@ -84,8 +84,15 @@ class SignupForm extends React.Component {
 							<input for="password" type="password" onChange={this.handleInput("password")} value={this.state.password} placeholder="Password" />
 						</label>
 
-						{this.renderTerms()}
-
+						<div className="error-div">
+							{this.renderTerms()}
+							{this.props.errors.map((error, i) => (
+								<p className="error-message" key={i}>
+									{error}
+								</p>
+								))}
+						</div>
+		
 						<button className="button submit-button" onClick={this.handleSubmit}>
 							{this.renderSubmitButtonMessage()}
 						</button>
@@ -95,7 +102,7 @@ class SignupForm extends React.Component {
 					</form>
 				</div>
 				{this.renderMessage()}
-				{this.renderNavLink}
+				{this.props.navLink}
 			</div>;
 	}
 }

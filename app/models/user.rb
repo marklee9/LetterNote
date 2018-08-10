@@ -16,7 +16,9 @@ class User < ApplicationRecord
   validates :password_digest, :session_token, presence:true
   validates :password, length: {minimum: 6, allow_nil:true}
 
-  has_many :notebooks
+  has_many :notebooks,
+    foreign_key: :author_id,
+    class_name: :Notebook
 
   after_initialize :ensure_session_token
   attr_reader :password
