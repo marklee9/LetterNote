@@ -19,4 +19,20 @@ export const deleteNotebook = (id) => (
   })
 );
 
+export const createNotebook = (notebook) => (
+  $.ajax({
+    method: "POST",
+    url: `api/notebooks`,
+    data: { notebook }
+  })
+);
+
+export const updateNotebook = (notebook) => (
+  $.ajax({
+    method: "POST",
+    url: `api/notebooks/${notebook.id}`,
+    data: { notebook }
+  })
+);
+
 

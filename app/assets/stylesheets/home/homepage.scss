@@ -94,6 +94,9 @@
 
 .home-slide:hover {
   background-color: #cccccc;
+  .slider-small {
+    color: black;
+  }
 }
 
 .slider-big {
@@ -110,6 +113,7 @@
   padding-right: 55px;
   font-size: 18px;
   color: #b4b4b4;
+  transition: .5s;
 }
 
 .first-splash {

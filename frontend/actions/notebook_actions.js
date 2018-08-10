@@ -29,6 +29,34 @@ export const fetchNotebook = (id) => dispatch => (
   )
 );
 
+export const createNotebook = (notebookAPI) => dispatch => (
+  NotebookApiUtil.createNotebook(notebookAPI)
+  .then(
+    (notebook) => dispatch({
+      type: RECEIVE_NOTEBOOK,
+      notebook
+    }),
+    (error) => dispatch({
+      type: RECEIVE_NOTEBOOK_ERRORS,
+      errors: error.responseJSON
+    })
+  )
+);
+
+export const updatePost = (notebookAPI) => dispatch => (
+  NotebookApiUtil.updatePost(notebookAPI)
+  .then(
+    (notebook) => dispatch({
+      type: RECEIVE_NOTEBOOK,
+      notebook
+    }),
+    (error) => dispatch({
+      type: RECEIVE_NOTEBOOK_ERRORS,
+      errors: error.responseJSON
+    })
+  )
+);
+
 export const deleteNotebook = (id) => dispatch => (
   NotebookApiUtil.deleteNotebook(id)
   .then(

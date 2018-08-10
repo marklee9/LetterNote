@@ -21,14 +21,14 @@ class SignupForm extends React.Component {
 	handleSubmit(e) {
 		e.preventDefault();
 		const user = Object.assign({}, this.state);
-		this.props.processForm(user).then(() => this.props.history.push("/notes"));
+		this.props.processForm(user).then(() => this.props.history.push("/notebooks"));
 	}
 
 	handleDemo(e) {
 		e.preventDefault();
 		this.props
 			.login({ email: "demo_user", password: "demo123123" })
-			.then(() => this.props.history.push("/notes"));
+			.then(() => this.props.history.push("/notebooks"));
 	}
 
 	renderMessage() {

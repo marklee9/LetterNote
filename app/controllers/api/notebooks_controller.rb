@@ -14,7 +14,7 @@ class Api::NotebooksController < ApplicationController
     if @notebook
       render :show
     else
-      render json: ["Notebook was not found, Please try again."], status:404
+      render json: ["Notebook not found, Please try again."], status:404
     end
   end
 
