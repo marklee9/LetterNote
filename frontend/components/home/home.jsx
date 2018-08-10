@@ -12,12 +12,14 @@ class Home extends React.Component {
 				<div>
 					<NavBarContainer />
 				</div>
-				<div className='home-slide'>
-					<h1>Slideshow</h1>
-				</div>
-				<div className="signup-form-container">
-					<h2 className='home-signup-text'>Sign Up for Free</h2>
-					<Route component={SignupFormContainer} />
+				<div className='first-splash'>
+					<div className='home-slide'>
+						<h1>Slideshow</h1>
+					</div>
+					<div className="signup-form-container">
+						<h2 className='home-signup-text'>Sign Up for Free</h2>
+						<Route component={SignupFormContainer} />
+					</div>
 				</div>
 			</div>;
   }

@@ -57,6 +57,10 @@
   }
 }
 
+.fa-linkedin, .fa-github {
+  font-size: 20px;
+}
+
 #nav-demo {
   float: right;
   margin-right: 10%;
@@ -70,17 +74,40 @@
  border: 2px solid #0dc23d;
 }
 
+#no-space {
+  padding:0;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size:14px;
+}
+
 .home-slide {
   float: left;
-  margin-top: 50px;
-  margin-left: 5%;
-  padding: 200px;
+  margin-top: 40px;
+  margin-left: 3.5%;
+  margin-right: 3.5%;
+  padding:0 20%;
   border: 1px solid blue;
 }
 
+.first-splash {
+  margin-top:40px;
+  width: 100%;
+}
+
+@media screen and (max-width: 1050px) {
+  .home-slide {
+    margin-left: 3.5%;
+    margin-right: 3.5%;
+    width: 50%;
+  }
+}
+
 .home-signup-text {
-  padding-left: 30px;
+  padding-left: 20px;
   font-family: 'Arimo', sans-serif;
   font-size: 25px;
   font-weight: 700;
+  margin-bottom: 10px;
 }
+
+

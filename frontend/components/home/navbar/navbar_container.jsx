@@ -1,8 +1,9 @@
 import { connect } from "react-redux";
 import NavBar from "./navbar";
+import { login } from '../../../actions/sessions_actions';
 
-const msp = state => ({ });
+const mdp = dispatch => ({ 
+  processForm: user => dispatch(login(user)) 
+});
 
-const mdp = dispatch => ({ });
-
-export default connect( msp, mdp )(NavBar);
+export default connect( null, mdp )(NavBar);

@@ -9,10 +9,18 @@ class NavBar extends React.Component {
 						<img align='middle' className='home-logo-img' src="https://www.devicemagic.com/wp-content/uploads/2017/01/evernote-1.png" alt=""/>
 						<span className="home-logo-text">LETTERNOTE</span>
 					</a>
-					<a className='home-link' href="https://www.linkedin.com/in/m-arklee/">LinkedIn</a>
-					<a className='home-link' href="https://github.com/marklee9/LetterNote">Github</a>
+				<a className='home-link' href="https://www.linkedin.com/in/m-arklee/">
+					<i class="fab fa-linkedin"></i>
+					<span> </span> LinkedIn
+				</a>
+				<a className='home-link' href="https://github.com/marklee9/LetterNote">
+					<i class="fab fa-github"></i>
+					<span> </span> Github
+ 				</a>
 
-					<a id='nav-demo'>Try Letternote Demo</a>
+					<a id='nav-demo'>
+						<Link id="no-space" to={'/signup'}>Try Letternote</Link>
+					</a>
 				</div>
 			</nav>;
 	}

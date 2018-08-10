@@ -13,7 +13,7 @@
   text-align: center;
   background-color:white;
   border: 1px solid lightgray;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
 .session-div {
@@ -125,7 +125,8 @@ li {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 600;
-  color: #8d8d8d;
+  color: #808080;
+  border-bottom: 1px solid #707070;
 }
 
 .submit-button:hover {
@@ -158,10 +159,9 @@ a:hover {
 .signup-form-container {
   float: right;
   margin-right: 8%;
-  margin-top: 50px;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1050px) {
   .signup-form-container {
     display: none;
   }
@@ -172,7 +172,8 @@ a:hover {
 }
 
 .endtext {
-  padding: 30px;
+  padding-top: 10px;
+  padding-bottom: 50px;
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 400;
