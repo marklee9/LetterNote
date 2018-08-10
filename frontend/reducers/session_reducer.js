@@ -6,7 +6,7 @@ import {
 
 const defaultState = Object.freeze({ currentUserId: null });
 
-const SessionReducer = (oldState = defaultState, action) => {
+export default (oldState = defaultState, action) => {
   Object.freeze(oldState);
   
   switch (action.type) {
@@ -18,5 +18,3 @@ const SessionReducer = (oldState = defaultState, action) => {
       return oldState;
   }
 };
-
-export default SessionReducer;

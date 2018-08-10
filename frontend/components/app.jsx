@@ -8,7 +8,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 export default () => (
 	<div>
 		<Switch>
-			<ProtectedRoute path={`/notebooks`}></ProtectedRoute>
+			<ProtectedRoute path={`/notebooks`} component={ HomeContainer }></ProtectedRoute>
 			<AuthRoute exact path={`/signup`} component={ OuterComponent } />
 			<AuthRoute exact path={`/login`} component={ OuterComponent } />
 			<Route exact path={`/`} component={ HomeContainer } />

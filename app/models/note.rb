@@ -12,4 +12,9 @@
 #
 
 class Note < ApplicationRecord
+  validates :title, :author_id, :notebook_id, presense:true;
+
+  belongs_to :user,
+    foreign_key: :author_id,
+    class_name: :User
 end
