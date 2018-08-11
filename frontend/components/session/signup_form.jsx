@@ -21,14 +21,14 @@ class SignupForm extends React.Component {
 	handleSubmit(e) {
 		e.preventDefault();
 		const user = Object.assign({}, this.state);
-		this.props.processForm(user).then(() => this.props.history.push("/notebooks"));
+		this.props.processForm(user).then(() => this.props.history.push("/main"));
 	}
 
 	handleDemo(e) {
 		e.preventDefault();
 		this.props
 			.login({ email: "demo_user", password: "demo123123" })
-			.then(() => this.props.history.push("/notebooks"));
+			.then(() => this.props.history.push("/main"));
 	}
 
 	renderMessage() {
@@ -104,5 +104,3 @@ class SignupForm extends React.Component {
 }
 
 export default SignupForm;
-
-// [type] needs [] because it needs to be evaluated before assign as key

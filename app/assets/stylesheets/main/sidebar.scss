@@ -1,0 +1,11 @@
+.sidebar-div {
+  float: left;
+  border: 1px solid black;
+  width: 75px;
+  height: 100%;
+
+  div {
+    border: 1px solid blue;
+    text-align: center;
+  }
+}

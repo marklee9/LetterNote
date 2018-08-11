@@ -11,6 +11,10 @@ export const fetchNotebooks = () => dispatch => (
     (notebooks) => dispatch({
       type: RECEIVE_NOTEBOOKS,
       notebooks
+    }),
+    (error) => dispatch({
+      type: RECEIVE_NOTEBOOK_ERRORS,
+      errors: error.responseJSON
     })
   )
 );

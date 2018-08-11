@@ -5,25 +5,22 @@ import {
 } from '../../actions/notebooks_action';
 import {
   merge
-} from 'lodash/merge';
+} from 'lodash';
 
-const initialState = Object.freeze({
-  notes: null
-});
-
-export default (oldState = initialState, action) => {
+export default (oldState = {}, action) => {
   Object.freeze(oldState);
 
   switch (action.type) {
     case RECEIVE_NOTEBOOKS:
-      return merge({}, oldState, action.notes);
+      debugger;
+      return merge({}, oldState, action.notebooks);
     case RECEIVE_NOTEBOOK:
       return merge({}, oldState, {
-        [action.note.id]: action.note
+        [action.notebook.id]: action.notebook
       });
     case DELETE_NOTEBOOK:
       let newState = merge({}, oldState);
-      delete newState[action.noteId];
+      delete newState[action.notebookId];
       return newState;
     default:
       return oldState;

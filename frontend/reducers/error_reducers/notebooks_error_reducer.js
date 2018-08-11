@@ -1,9 +1,6 @@
 import {
   RECEIVE_NOTEBOOK_ERRORS,
-  RECEIVE_NOTEBOOKS,
-  RECEIVE_NOTEBOOK,
-  DELETE_NOTEBOOK,
-} from '../../actions/notebook_actions';
+} from '../../actions/notebooks_action';
 
 export default (state = [], action) => {
   Object.freeze(state);
