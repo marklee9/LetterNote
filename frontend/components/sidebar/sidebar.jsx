@@ -15,6 +15,14 @@ class Sidebar extends React.Component {
     }; 
   }
 
+  openCreateNotebookModal() {
+    console.log("clicked");
+    return (e) => {
+      e.preventDefault();
+      this.props.openModal("createNotebook");
+    };
+  }
+
   render () {
     if (this.props.currentUserId) {
 
@@ -33,6 +41,9 @@ class Sidebar extends React.Component {
         </div>
         <div>
           <button onClick={this.logoutUser()}>Log out</button>
+        </div>
+        <div>
+          <button onClick={this.openCreateNotebookModal()}>New Notebook</button>
         </div>
       </div>;
     }
