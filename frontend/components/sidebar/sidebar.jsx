@@ -30,17 +30,25 @@ class Sidebar extends React.Component {
         <div className='sidebar-logo'>
           <img align='middle' className='home-logo-img' src="https://www.devicemagic.com/wp-content/uploads/2017/01/evernote-1.png" />
         </div>
-        <div>
-          <button onClick={this.openCreateNotebookModal()}>New Notebook</button>
+        <div className='sidebar-outer-div'>
+          <div className='sidebar-inner-div'>
+            <button onClick={this.openCreateNotebookModal()}>New</button>
+          </div>
         </div>
-        <div>
-          <span>1</span>
+        <div className='sidebar-outer-div'>
+          <div className='sidebar-inner-div'>
+            <span>1</span>
+          </div>
         </div>
-        <div>
-          <span>1</span>
+        <div className='sidebar-outer-div'>
+          <div className='sidebar-inner-div'>
+            <span>1</span>
+          </div>
         </div>
-        <div>
-          <span>1</span>
+        <div className='sidebar-outer-div'>
+          <div className='sidebar-inner-div'>
+            <span>1</span>
+          </div>
         </div>
 
         <div id="sidebar-account">
