@@ -42,7 +42,8 @@ class Sidebar extends React.Component {
         <div>
           <span>1</span>
         </div>
-        <div>
+
+        <div id="sidebar-account">
           <button onClick={this.logoutUser()}>Log out</button>
         </div>
       </div>;
