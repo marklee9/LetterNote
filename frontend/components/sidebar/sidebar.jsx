@@ -28,11 +28,11 @@ class Sidebar extends React.Component {
 
     return <div className="sidebar-div">
         <div className='sidebar-logo'>
-          <img align='middle' className='home-logo-img' src="https://www.devicemagic.com/wp-content/uploads/2017/01/evernote-1.png" />
+          <img className='home-logo-img' src="https://www.devicemagic.com/wp-content/uploads/2017/01/evernote-1.png" />
         </div>
         <div className='sidebar-outer-div'>
           <div className='sidebar-inner-div'>
-            <button onClick={this.openCreateNotebookModal()}>New</button>
+            <button className='new-note-img'></button>
           </div>
         </div>
         <div className='sidebar-outer-div'>
@@ -60,3 +60,5 @@ class Sidebar extends React.Component {
 }
 
 export default withRouter(Sidebar);
+
+/* <button onClick={this.openCreateNotebookModal()}>New</button> */ 

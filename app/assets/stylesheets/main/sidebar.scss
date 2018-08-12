@@ -1,20 +1,52 @@
+$new-note-icon: image_url("new-note-icon.png");
+$new-note-hover: image_url("new-note-hover.png");
+
 .sidebar-div {
   float: left;
   border: 1px solid black;
   width: 75px;
   height: 100vh;
-  background-color: #e4e4e4;
+  background-color: #e9e9e9;
+
+  div {
+    border: 1px solid blue;
+  }
 
   .sidebar-outer-div {
     margin: 5px 0;
     padding: 5px;
-    border: 1px solid blue;
     text-align: center;
+
+    .sidebar-inner-div {
+      button {
+        border:1px solid green;
+        background-size: 100%;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: $new-note-icon;
+        width: 35px;
+        height: 35px;
+        transition: .2s;
+      }
+
+      button:focus{
+        outline:none;
+      }
+
+      .new-note-img:hover {
+        background-image: $new-note-hover;
+      }
+    }
   }
 
   .sidebar-logo {
     margin-top: 10px;
     margin-bottom: 20px;
+    padding-left: 16px;
   }
 }
 
