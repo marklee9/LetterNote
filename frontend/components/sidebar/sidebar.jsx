@@ -1,10 +1,14 @@
-import React from 'react';
+import React from "react";
 import { withRouter } from 'react-router-dom';
+import NotebooksIndexContainer from '../../components/notebooks/index/notebooks_index_container';
 
 class Sidebar extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
+    this.state = {
+      showNotebooks: false
+    };
+    this.renderNotebooks = this.renderNotebooks.bind(this);
   }
 
   logoutUser() {
@@ -23,16 +27,24 @@ class Sidebar extends React.Component {
     };
   }
 
+  renderNotebooks(e) {
+    e.preventDefault();
+    this.setState({
+      showNotebooks: !this.state.showNotebooks
+    });
+  }
+
   render () {
     if (this.props.currentUserId) {
 
-    return <div className="sidebar-div">
+    return <div>
+      <div className="sidebar-div">
         <div className='sidebar-logo'>
           <img className='home-logo-img' src="https://www.devicemagic.com/wp-content/uploads/2017/01/evernote-1.png" />
         </div>
         <div className='sidebar-outer-div'>
           <div className='sidebar-inner-div'>
-            <button className='new-note-img'></button>
+            <button onClick={this.openCreateNotebookModal()} className='new-note-img'></button>
           </div>
         </div>
         <div className='sidebar-outer-div'>
@@ -67,7 +79,7 @@ class Sidebar extends React.Component {
 
         <div className='sidebar-outer-div'>
           <div className='sidebar-inner-div'>
-            <button className='notebooks-img'></button>
+            <button onClick={this.renderNotebooks} className='notebooks-img'></button>
           </div>
         </div>
 
@@ -80,7 +92,12 @@ class Sidebar extends React.Component {
         <div id="sidebar-account">
           <button onClick={this.logoutUser()}>Log out</button>
         </div>
-      </div>;
+      </div>
+      
+      <div>
+        {this.state.showNotebooks && <NotebooksIndexContainer />}
+      </div>
+    </div>;
     }
   }
 }
