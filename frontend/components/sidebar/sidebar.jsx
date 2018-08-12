@@ -37,17 +37,43 @@ class Sidebar extends React.Component {
         </div>
         <div className='sidebar-outer-div'>
           <div className='sidebar-inner-div'>
-            <span>1</span>
+            <button className='meeting-img'></button>
           </div>
         </div>
         <div className='sidebar-outer-div'>
           <div className='sidebar-inner-div'>
-            <span>1</span>
+            <button className='search-img'></button>
           </div>
         </div>
         <div className='sidebar-outer-div'>
           <div className='sidebar-inner-div'>
-            <span>1</span>
+            <button className='workchat-img'></button>
+          </div>
+        </div>
+
+        <div className="sidebar-space"></div>
+
+        <div className='sidebar-outer-div'>
+          <div className='sidebar-inner-div'>
+            <button className='star-img'></button>
+          </div>
+        </div>
+
+        <div className='sidebar-outer-div'>
+          <div className='sidebar-inner-div'>
+            <button className='notes-img'></button>
+          </div>
+        </div>
+
+        <div className='sidebar-outer-div'>
+          <div className='sidebar-inner-div'>
+            <button className='notebooks-img'></button>
+          </div>
+        </div>
+
+        <div className='sidebar-outer-div'>
+          <div className='sidebar-inner-div'>
+            <button className='tags-img'></button>
           </div>
         </div>
 

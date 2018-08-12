@@ -55,12 +55,18 @@
     font-size: 1.04em;
     letter-spacing: 1.1px;
     border-radius: 5px;
-    border: .5px solid #d3d3d3;
+    border:.5px solid #d3d3d3;
+    transition: .3s;
+  }
+
+  input:hover {
+    border:.5px solid #47dd7b;
   }
 
   ::placeholder {
     color: #747474;
     opacity: 0.8;
+    transition: .3s;
   }
 
   h2 {
@@ -118,7 +124,7 @@ li {
   background-color: #2dbe60;
   margin-top:10px;
   color: white;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .demo-button {
@@ -126,11 +132,16 @@ li {
   font-size: 16px;
   font-weight: 600;
   color: #464646;
-  border-bottom: 1px solid #707070;
+  transition: .2s;
+}
+
+.demo-button:hover {
+  border:1px solid #47dd7b;
+  color: #47dd7b;
 }
 
 .submit-button:hover {
-  background-color: #25a853;
+  background-color: #47dd7b;
 }
 
 .terms {

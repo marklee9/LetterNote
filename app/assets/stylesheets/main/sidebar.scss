@@ -1,25 +1,38 @@
 $new-note-icon: image_url("new-note-icon.png");
 $new-note-hover: image_url("new-note-hover.png");
+$meeting-hover: image_url("new_meeting_note_hover");
+$meeting: image_url("new_meeting_note");
+$search: image_url("search");
+$search_hover: image_url("search_hover");
+$workchat: image_url("work_chat");
+$workchat_hover: image_url("work_chat_hover");
+$star: image_url("star");
+$star_hover: image_url("star_hover");
+$notes: image_url("note-icon");
+$notes_hover: image_url("note-icon-hover");
+$notebooks: image_url("notebook-icon");
+$notebooks_hover: image_url("notebook-icon-hover");
+$tags: image_url("tag-icon");
+$tags_hover: image_url("tag-icon-hover");
 
 .sidebar-div {
   float: left;
-  border: 1px solid black;
   width: 75px;
   height: 100vh;
-  background-color: #e9e9e9;
+  background-color: #f3f3f3;
 
-  div {
-    border: 1px solid blue;
+  .sidebar-space {
+    padding: 24px 0;
   }
 
   .sidebar-outer-div {
-    margin: 5px 0;
-    padding: 5px;
+    margin: 4px 0;
+    padding: 4px;
     text-align: center;
-
+    
     .sidebar-inner-div {
       button {
-        border:1px solid green;
+        border:1px solid rgb(0, 214, 0);
         background-size: 100%;
         border-radius: 50%;
         width: 35px;
@@ -27,7 +40,6 @@ $new-note-hover: image_url("new-note-hover.png");
         border-radius: 50%;
         background-repeat: no-repeat;
         background-position: center;
-        background-image: $new-note-icon;
         width: 35px;
         height: 35px;
         transition: .2s;
@@ -37,15 +49,83 @@ $new-note-hover: image_url("new-note-hover.png");
         outline:none;
       }
 
+      .new-note-img {
+        background-image: $new-note-icon;
+      }
+
       .new-note-img:hover {
         background-image: $new-note-hover;
+      }
+
+      .meeting-img {
+        background-image: $meeting;
+      }
+
+      .meeting-img:hover {
+        background-image: $meeting_hover;
+      }
+
+      .search-img {
+        background-image: $search;
+      }
+
+      .search-img:hover {
+        background-image: $search_hover;
+      }
+
+      .workchat-img {
+        background-image: $workchat;
+      }
+
+      .workchat-img:hover {
+        background-image: $workchat_hover;        
+      }
+
+      .star-img {
+        background-image: $star;
+        background-color: #f3f3f3;
+        border: none;
+      }
+
+      .star-img:hover {
+        background-image: $star_hover;
+      }
+
+      .notes-img {
+        background-image: $notes;
+        background-color: #f3f3f3;
+        border: none;
+      }
+
+      .notes-img:hover {
+        background-image: $notes_hover;
+      }
+
+      .notebooks-img {
+        background-image: $notebooks;
+        background-color: #f3f3f3;
+        border: none;
+      }
+
+      .notebooks-img:hover {
+        background-image: $notebooks_hover;
+      }
+
+      .tags-img {
+        background-image: $tags;
+        background-color: #f3f3f3;
+        border: none;
+      }
+
+      .tags-img:hover {
+        background-image: $tags_hover;
       }
     }
   }
 
   .sidebar-logo {
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: 15px;
+    margin-bottom: 25px;
     padding-left: 16px;
   }
 }
