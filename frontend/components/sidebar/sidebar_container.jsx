@@ -4,7 +4,8 @@ import { logout } from '../../actions/sessions_actions';
 import { openModal } from '../../actions/modal_actions';
 
 const msp = (state) => ({
-  currentUserId: state.session.currentUserId
+  currentUserId: state.session.currentUserId,
+  showNotebooks: true
 });
 
 const mdp = dispatch => ({
