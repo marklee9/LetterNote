@@ -15,10 +15,14 @@ class NotebooksIndex extends React.Component {
       <NotebooksIndexItem key={notebook.id} notebook={notebook}></NotebooksIndexItem>
   );
 
-    return <div>
-          <h1>Notebooks</h1> 
-          {index} 
-    </div>;
+    return (
+    <div>
+      <div>
+        <h1>Notebooks</h1> 
+      </div>
+      {index} 
+    </div>
+    );
   }
 }
 
