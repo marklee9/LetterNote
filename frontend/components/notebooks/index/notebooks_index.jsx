@@ -10,17 +10,30 @@ class NotebooksIndex extends React.Component {
     this.props.fetchNotebooks();
   }
 
+  openModal(field) {
+    return (e) => {
+      e.preventDefault();
+      this.props.openModal(field);
+    };
+  }
+
   render() {
     const index = this.props.notebooks.map((notebook) =>
-      <NotebooksIndexItem key={notebook.id} notebook={notebook}></NotebooksIndexItem>
+      <NotebooksIndexItem props={this.props} key={notebook.id} notebook={notebook}></NotebooksIndexItem>
   );
 
+
     return (
-    <div>
-      <div>
-        <h1>Notebooks</h1> 
+    <div className='modal-notebook-index'>
+      <div className='modal-notebook-notebook'>
+        <div className='modal-notebook-notebook-title'>
+          <p>Notebooks</p> 
+          <button onClick={this.openModal('createNotebook')} className='create-notebook-img'></button>
+        </div>
       </div>
-      {index} 
+      <div className='all-notebook-list'>
+        {index} 
+      </div>
     </div>
     );
   }

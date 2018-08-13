@@ -1,4 +1,8 @@
 $delete-notebook: image_url("trash-icon");
+$delete-notebook-hover: image_url("trash-icon-hover");
+$create-notebook: image_url("add-notebook");
+$edit-notebook: image_url('edit-icon');
+$edit-notebook-hover: image_url('edit-icon-hover');
 
 .fade-modal-background {
   position: fixed;
@@ -31,7 +35,7 @@ $delete-notebook: image_url("trash-icon");
 }
 
 .slide-modal-child {
-  border: 1px solid blue;
+  border-right: 2px solid #dadada;
   position: absolute;
   top: 50%;
   left: 231.5px;
@@ -39,45 +43,120 @@ $delete-notebook: image_url("trash-icon");
   transform: translate(-50%, -50%);
 }
 
-
-
-.each-notebook {
-  border: 1px solid black;
-  width: 450px;
-  height: 50px;
-  padding: 5px;
-  transition: 0.25s;
-
-  .title-div {
-    text-align: left;
-    width: 250px;
-    float:left;
-  }
-
-  .delete-div {
-    text-align: right;
-    display:inline-block;
-    width:100px;  
-
-    button {
-      border: none;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 100%;
-      width: 40px;
-      height: 40px;
-      transition: .25s;
-    }
-
-    .index-notebook-delete {
-      background-image: $delete-notebook;
-    }
-  }
+.all-notebook-list {
+  width: 465px;
 }
 
-.each-notebook:hover {
-  background-color: #3dbe60;
-  .index-notebook-delete {
+.modal-notebook-index {
+  background-color: white;
+
+  .modal-notebook-notebook {
+    text-align: center;
+    height:60px;
+    border-bottom: 2px solid #eeeeee;
+
+
+    .modal-notebook-notebook-title {
+      padding: 18px;
+
+
+      p {
+        float: left;
+        font-family: gotham, helvetica, arial, sans-serif;
+        font-size: 21px;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 0.7px;
+        font-weight: 300;
+        color: #878787;
+      }
+
+      button {
+        border: none;
+        float: right;
+        width: 26px;
+        height: 26px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        transition: .2s;
+      }
+
+      button:hover {
+        cursor: pointer;
+      }
+
+      .create-notebook-img {
+        display: inline-block;
+        background-image: $create-notebook;
+      }
+    }
+  }
+
+  .each-notebook {
+    border-bottom: 1px solid #f1f1f1;
+    width: 450px;
+    height: 50px;
+    padding: 8px;
+    transition: 0.25s;
+    text-align: center;
+
+    .title-div {
+      text-align: left;
+      width: 330px;
+      float:left;
+      font-family: 'Slabo 27px', serif;
+      font-size: 18px;
+      font-weight: 300;
+      color: #4a4a4a;
+      padding: 5px;
+      white-space: nowrap;
+      letter-spacing: .5px;
+      transform: scale(1, 0.9);
+      padding-left:10px;
+    }
+
+    .delete-div {
+      text-align: right;
+      display:inline-block;
+      width:100px;  
+
+      button {
+        border: none;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        width: 24px;
+        height: 24px;
+        transition: .25s;
+        margin:5px 8px;
+      }
+
+      .index-notebook-delete {
+        background-image: $delete-notebook;
+      }
+
+      .index-notebook-delete:hover {
+        background-image: $delete-notebook-hover;
+      }
+
+      .index-notebook-edit {
+        background-image: $edit-notebook;
+      }
+
+      .index-notebook-edit:hover {
+        background-image: $edit-notebook-hover;
+      }
+    }
+  }
+
+  .each-notebook:hover {
     background-color: #3dbe60;
+    .index-notebook-delete {
+      background-color: #3dbe60;
+    }
+    .index-notebook-edit {
+      background-color: #3dbe60
+    }
   }
 }

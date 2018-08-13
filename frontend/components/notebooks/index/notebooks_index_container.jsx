@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import NotebooksIndex from './notebooks_index';
-import { fetchNotebooks, deleteNotebook } from '../../../actions/notebooks_action';
+import { fetchNotebooks, deleteNotebook, updateNotebook } from '../../../actions/notebooks_action';
+import { openModal } from "../../../actions/modal_actions";
 
 const msp = (state) => ({
   notebooks: Object.values(state.entities.notebooks),
@@ -10,7 +11,9 @@ const msp = (state) => ({
 
 const mdp = dispatch => ({
   fetchNotebooks: () => dispatch(fetchNotebooks()),
+  updateNotebook: (notebook) => dispatch(updateNotebook(notebook)), 
   deleteNotebook: (id) => dispatch(deleteNotebook(id)),
+  openModal: (modal) => dispatch(openModal(modal))
 });
 
 export default connect(	msp, mdp )(NotebooksIndex);

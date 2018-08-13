@@ -24,6 +24,7 @@ class Api::NotebooksController < ApplicationController
 
   def destroy
     @notebook = current_user.notebooks.where(id: params[:id]).first
+    debugger
     if @notebook
       @notebook.destroy
       render :show
