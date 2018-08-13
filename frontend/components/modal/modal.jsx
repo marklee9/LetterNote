@@ -17,7 +17,7 @@ class Modal extends React.Component {
     let component;
     switch (this.props.modal) {
 			case "createNotebook":
-				component = <CreateNotebookContainer />;
+				component = <CreateNotebookContainer props={this.props.closeModal}/>;
 				break;
 			case "notebookIndex":
         component = <NotebookIndexContainer />;

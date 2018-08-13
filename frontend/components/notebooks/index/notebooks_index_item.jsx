@@ -20,7 +20,6 @@ class NotebooksIndexItem extends React.Component {
 					</p>
 				</div>
 				<div className="delete-div">
-					<button className="index-notebook-edit" />
 					<button onClick={this.deleteNotebook} className="index-notebook-delete" />
 				</div>
 			</div>;

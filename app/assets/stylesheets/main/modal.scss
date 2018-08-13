@@ -1,8 +1,6 @@
 $delete-notebook: image_url("trash-icon");
 $delete-notebook-hover: image_url("trash-icon-hover");
 $create-notebook: image_url("add-notebook");
-$edit-notebook: image_url('edit-icon');
-$edit-notebook-hover: image_url('edit-icon-hover');
 
 .fade-modal-background {
   position: fixed;
@@ -45,6 +43,7 @@ $edit-notebook-hover: image_url('edit-icon-hover');
 
 .all-notebook-list {
   width: 465px;
+  overflow: auto;
 }
 
 .modal-notebook-index {
@@ -119,7 +118,8 @@ $edit-notebook-hover: image_url('edit-icon-hover');
     .delete-div {
       text-align: right;
       display:inline-block;
-      width:100px;  
+      width:100px;
+      margin-top: 6px;
 
       button {
         border: none;
@@ -139,14 +139,6 @@ $edit-notebook-hover: image_url('edit-icon-hover');
       .index-notebook-delete:hover {
         background-image: $delete-notebook-hover;
       }
-
-      .index-notebook-edit {
-        background-image: $edit-notebook;
-      }
-
-      .index-notebook-edit:hover {
-        background-image: $edit-notebook-hover;
-      }
     }
   }
 
@@ -154,9 +146,6 @@ $edit-notebook-hover: image_url('edit-icon-hover');
     background-color: #3dbe60;
     .index-notebook-delete {
       background-color: #3dbe60;
-    }
-    .index-notebook-edit {
-      background-color: #3dbe60
     }
   }
 }
