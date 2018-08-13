@@ -9,7 +9,7 @@ const msp = (state) => ({
 
 const mdp = dispatch => ({
   logout: (id) => dispatch(logout(id)),
-  openModal : (modal) => dispatch(openModal(modal))
+  openModal : (modal) => dispatch(openModal(modal)),
 });
 
 export default connect(msp, mdp)(Sidebar);

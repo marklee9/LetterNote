@@ -16,10 +16,12 @@ $tags: image_url("tag-icon");
 $tags_hover: image_url("tag-icon-hover");
 
 .sidebar-div {
+  position: relative;
   float: left;
   width: 75px;
   height: 100vh;
   background-color: #f3f3f3;
+  z-index:15;
 
   .sidebar-space {
     padding: 24px 0;

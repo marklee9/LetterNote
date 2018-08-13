@@ -1,6 +1,25 @@
 $delete-notebook: image_url("trash-icon");
 
-.modal-background {
+.fade-modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.8);
+  animation-duration: .5s;
+  z-index: 20;
+  transition: 1s;
+}
+
+.fade-modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.slide-modal-background {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -11,7 +30,8 @@ $delete-notebook: image_url("trash-icon");
   z-index: 10;
 }
 
-.modal-child {
+.slide-modal-child {
+  border: 1px solid blue;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -20,29 +40,40 @@ $delete-notebook: image_url("trash-icon");
 
 .each-notebook {
   border: 1px solid black;
-  margin: 10px;
+  width: 450px;
+  height: 50px;
+  padding: 5px;
+  transition: 0.25s;
 
-  .index-notebook-title {
-    float: left;
+  .title-div {
+    text-align: left;
+    width: 250px;
+    float:left;
   }
 
-  button {
-    border: none;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-    width: 40px;
-    height: 40px;
-  }
+  .delete-div {
+    text-align: right;
+    display:inline-block;
+    width:100px;  
 
-  .index-notebook-delete {
-    background-image: $delete-notebook;
+    button {
+      border: none;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+      width: 40px;
+      height: 40px;
+      transition: .25s;
+    }
+
+    .index-notebook-delete {
+      background-image: $delete-notebook;
+    }
   }
 }
 
 .each-notebook:hover {
   background-color: #3dbe60;
-
   .index-notebook-delete {
     background-color: #3dbe60;
   }

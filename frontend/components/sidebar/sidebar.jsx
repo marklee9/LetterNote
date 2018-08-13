@@ -19,11 +19,10 @@ class Sidebar extends React.Component {
     }; 
   }
 
-  openCreateNotebookModal() {
-    console.log("clicked");
+  openModal(field) {
     return (e) => {
       e.preventDefault();
-      this.props.openModal("createNotebook");
+      this.props.openModal(field);
     };
   }
 
@@ -44,7 +43,7 @@ class Sidebar extends React.Component {
         </div>
         <div className='sidebar-outer-div'>
           <div className='sidebar-inner-div'>
-            <button onClick={this.openCreateNotebookModal()} className='new-note-img'></button>
+            <button onClick={this.openModal("createNotebook")} className='new-note-img'></button>
           </div>
         </div>
         <div className='sidebar-outer-div'>
@@ -73,7 +72,7 @@ class Sidebar extends React.Component {
 
         <div className='sidebar-outer-div'>
           <div className='sidebar-inner-div'>
-            <button className='notes-img'></button>
+            <button onClick={this.openModal('notebookIndex')} className='notes-img'></button>
           </div>
         </div>
 
@@ -94,7 +93,7 @@ class Sidebar extends React.Component {
         </div>
       </div>
 
-      <div>
+      <div className='notebook-index-container'>
         {this.state.showNotebooks && <NotebooksIndexContainer />}
       </div>
     </div>;
@@ -104,4 +103,4 @@ class Sidebar extends React.Component {
 
 export default withRouter(Sidebar);
 
-/* <button onClick={this.openCreateNotebookModal()}>New</button> */ 
+/* <button onClick={this.openModal()}>New</button> */ 

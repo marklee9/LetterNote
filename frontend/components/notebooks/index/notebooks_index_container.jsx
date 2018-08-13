@@ -10,7 +10,7 @@ const msp = (state) => ({
 
 const mdp = dispatch => ({
   fetchNotebooks: () => dispatch(fetchNotebooks()),
-  deleteNotebook: (id) => dispatch(deleteNotebook(id))
+  deleteNotebook: (id) => dispatch(deleteNotebook(id)),
 });
 
 export default connect(	msp, mdp )(NotebooksIndex);

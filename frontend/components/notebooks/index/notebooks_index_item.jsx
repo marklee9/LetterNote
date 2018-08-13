@@ -1,10 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const NotebookIndexItem = props => (
 	<div className="each-notebook">
-		<p className="index-notebook-title">{props.notebook.title}</p>
+    <div className="title-div">
+		  <p className="index-notebook-title">{props.notebook.title}</p>
+    </div>
+    <div className="delete-div">
 			<button className='index-notebook-delete'></button>
+    </div>
 	</div>
 );
 

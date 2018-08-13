@@ -2,6 +2,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import CreateNotebookContainer from '../notebooks/create_notebook_container';
+import NotebookIndexContainer from '../notebooks/index/notebooks_index_container';
 
 class Modal extends React.Component {
   constructor(props) {
@@ -15,20 +16,35 @@ class Modal extends React.Component {
     
     let component;
     switch (this.props.modal) {
-      case 'createNotebook':
-        component = <CreateNotebookContainer />;
-        break;
-      default:
-        return null;
-    }
+			case "createNotebook":
+				component = <CreateNotebookContainer />;
+				break;
+			case "notebookIndex":
+        component = <NotebookIndexContainer />;
+				break;
+			default:
+				return null;
+		}
 
-    return (
-      <div className="modal-background" onClick={this.props.closeModal}>
-        <div className="modal-child" onClick={e => e.stopPropagation()}>
+    if (this.props.modal === 'createNotebook') {
+      return (
+      <div className="fade-modal-background" onClick={this.props.closeModal}>
+        <div className="fade-modal-child" onClick={e => e.stopPropagation()}>
           {component}
         </div>
       </div>
-    );
+      );
+    }
+
+    if (this.props.modal === 'notebookIndex') {
+      return (
+        <div className="slide-modal-background" onClick={this.props.closeModal}>
+          <div className="slide-modal-child" onClick={e => e.stopPropagation()}>
+            {component}
+          </div>
+        </div>
+      );
+    }
   } 
 }
 
