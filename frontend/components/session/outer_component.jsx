@@ -6,7 +6,6 @@ import { Route, withRouter } from "react-router-dom";
 class Outer extends React.Component {
 
 	render() {
-		console.log(this.props);
 		let component, header;
 		if (this.props.location.pathname === '/login') {
 			component = <Route component ={LoginFormContainer} />;
