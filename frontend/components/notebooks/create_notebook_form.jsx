@@ -4,7 +4,11 @@ import { withRouter } from "react-router-dom";
 class CreateNotebookForm extends React.Component {
   constructor(props) {
 		super(props);
-		this.state = {title: ""};
+		this.state = {
+			title: '',
+			currentUserId: this.props.currentUserId
+		};
+		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
 	closeModal() {
@@ -14,18 +18,37 @@ class CreateNotebookForm extends React.Component {
 		};
 	}
 
+	update(field) {
+		return (e) => (
+			this.setState({ [field]: e.target.value })
+		);
+	}
+
+	handleSubmit() {
+		console.log(this.props);
+		console.log(this.state);
+		const notebook = this.props;
+		return (e) => {
+			e.preventDefault();
+			this.props.createNotebook(notebook);
+		};
+	}
+
   render() {
-    return <form onSubmit={this.handleSubmit}>
-				<div>
-					<h1>Create Notebook</h1>
-						<div>Line break</div>
-						<input type="text" placeholder="Title your notebook" />
+		return <div className='create-notebook-form'>
+			
+			<form>
 					<div>
-						<button onClick={this.closeModal()}>Cancel</button>
-						<input></input>
+						<h1>Create Notebook</h1>
+							<div></div>
+							<input type="text" onChange={this.update('title')} value={this.props.title} placeholder="Title your notebook" />
+						<div>
+							<button onClick={this.closeModal()}>Cancel</button>
+							<button onClick={this.handleSubmit()}>Create Notebook</button>
+						</div>
 					</div>
-				</div>
-			</form>;
+				</form>
+		</div>;
   }
 }
 

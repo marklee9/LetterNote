@@ -12,7 +12,6 @@ export default (oldState = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_NOTEBOOKS:
-      debugger;
       return merge({}, oldState, action.notebooks);
     case RECEIVE_NOTEBOOK:
       return merge({}, oldState, {

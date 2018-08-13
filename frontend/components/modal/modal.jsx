@@ -21,6 +21,8 @@ class Modal extends React.Component {
 				break;
 			case "notebookIndex":
         component = <NotebookIndexContainer />;
+      case "deleteNotebook":
+        component = <NotebookIndexContainer />;
 				break;
 			default:
 				return null;
@@ -37,6 +39,16 @@ class Modal extends React.Component {
     }
 
     if (this.props.modal === 'notebookIndex') {
+      return (
+        <div className="slide-modal-background" onClick={this.props.closeModal}>
+          <div className="slide-modal-child" onClick={e => e.stopPropagation()}>
+            {component}
+          </div>
+        </div>
+      );
+    }
+
+    if (this.props.modal === 'deleteNotebook') {
       return (
         <div className="slide-modal-background" onClick={this.props.closeModal}>
           <div className="slide-modal-child" onClick={e => e.stopPropagation()}>
