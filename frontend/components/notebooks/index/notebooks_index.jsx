@@ -17,7 +17,7 @@ class NotebooksIndex extends React.Component {
 
     return <div>
           <h1>Sup bro</h1> 
-          {index}       
+          {index} 
     </div>;
   }
 }

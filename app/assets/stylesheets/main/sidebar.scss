@@ -32,16 +32,14 @@ $tags_hover: image_url("tag-icon-hover");
     
     .sidebar-inner-div {
       button {
-        border:1px solid rgb(0, 214, 0);
-        background-size: 100%;
-        border-radius: 50%;
         width: 35px;
         height: 35px;
+        border:1px solid rgb(0, 214, 0);
+        border-radius: 50%;
         border-radius: 50%;
         background-repeat: no-repeat;
         background-position: center;
-        width: 35px;
-        height: 35px;
+        background-size: 100%;
         transition: .2s;
       }
 

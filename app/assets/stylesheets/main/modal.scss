@@ -1,3 +1,5 @@
+$delete-notebook: image_url("trash-icon");
+
 .modal-background {
   position: fixed;
   top: 0;
@@ -14,4 +16,34 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.each-notebook {
+  border: 1px solid black;
+  margin: 10px;
+
+  .index-notebook-title {
+    float: left;
+  }
+
+  button {
+    border: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 40px;
+    height: 40px;
+  }
+
+  .index-notebook-delete {
+    background-image: $delete-notebook;
+  }
+}
+
+.each-notebook:hover {
+  background-color: #3dbe60;
+
+  .index-notebook-delete {
+    background-color: #3dbe60;
+  }
 }

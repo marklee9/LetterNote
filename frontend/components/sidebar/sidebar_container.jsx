@@ -5,7 +5,6 @@ import { openModal } from '../../actions/modal_actions';
 
 const msp = (state) => ({
   currentUserId: state.session.currentUserId,
-  notebookSlide: state.ui.notebookSlide
 });
 
 const mdp = dispatch => ({

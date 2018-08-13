@@ -93,7 +93,7 @@ class Sidebar extends React.Component {
           <button onClick={this.logoutUser()}>Log out</button>
         </div>
       </div>
-      
+
       <div>
         {this.state.showNotebooks && <NotebooksIndexContainer />}
       </div>
