@@ -25,8 +25,6 @@ class CreateNotebookForm extends React.Component {
 	}
 
 	handleSubmit() {
-		console.log(this.props);
-		console.log(this.state);
 		const notebook = this.props;
 		return (e) => {
 			e.preventDefault();

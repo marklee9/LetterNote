@@ -22,7 +22,6 @@ class NotebooksIndex extends React.Component {
       <NotebooksIndexItem props={this.props} key={notebook.id} notebook={notebook}></NotebooksIndexItem>
   );
 
-
     return (
     <div className='modal-notebook-index'>
       <div className='modal-notebook-notebook'>

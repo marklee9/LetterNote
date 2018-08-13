@@ -8,11 +8,8 @@ class NotebooksIndexItem extends React.Component {
 		this.deleteNotebook = this.deleteNotebook.bind(this);
 	}
 
-	openModal(field) {
-		return (e) => {
-			e.preventDefault();
-			this.props.openModal(field);
-		};
+	deleteNotebook() {
+		this.props.props.deleteNotebook(this.props.notebook.id);
 	}
 
 	render() {
@@ -23,7 +20,7 @@ class NotebooksIndexItem extends React.Component {
 					</p>
 				</div>
 				<div className="delete-div">
-					<button onClick={this.props.props('deleteNotebook')} className="index-notebook-delete" />
+					<button onClick={this.deleteNotebook} className="index-notebook-delete" />
 				</div>
 			</div>;
 	}
