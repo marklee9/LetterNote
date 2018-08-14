@@ -6,7 +6,6 @@ class Notes extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     if (this.props.noteBar === true) {
       return <div>
         <h1>Worked!!</h1>
