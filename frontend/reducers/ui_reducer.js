@@ -5,4 +5,5 @@ import NotesBarReducer from './ui_reducers/notes_bar_reducer';
 export default combineReducers({
   modal: modalReducer,
 });
+// currentNotebook: currentNotebookReducer
 // notesBar: NotesBarReducer

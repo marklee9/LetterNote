@@ -26,7 +26,7 @@ class Home extends React.Component {
 					<Route component={SignupFormContainer} />
 				</div>
 			</div>
-      <Splash />
+      <Splash props={this.props}/>
 		</div>;
   }
 }
