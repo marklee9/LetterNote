@@ -7,11 +7,7 @@ import {
   merge
 } from 'lodash/merge';
 
-const initialState = Object.freeze({
-  notes: null
-});
-
-export default (oldState = initialState, action) => {
+export default (oldState = null, action) => {
   Object.freeze(oldState);
 
   switch (action.type) {

@@ -4,6 +4,15 @@ export const RECEIVE_NOTEBOOKS = 'RECEIVE_NOTEBOOKS';
 export const RECEIVE_NOTEBOOK = 'RECEIVE_NOTEBOOK';
 export const DELETE_NOTEBOOK = 'DELETE_NOTEBOOK';
 export const RECEIVE_NOTEBOOK_ERRORS = 'RECEIVE_NOTEBOOK_ERRORS';
+export const CURRENT_NOTEBOOK = 'CURRENT_NOTEBOOK';
+
+
+export const fetchCurrentNotebook = id => {
+  return {
+    type: CURRENT_NOTEBOOK,
+    currentNotebook: id
+  };
+};
 
 export const fetchNotebooks = () => dispatch => (
   NotebookApiUtil.fetchNotebooks()

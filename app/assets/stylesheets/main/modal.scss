@@ -218,7 +218,7 @@ $notebook: image_url("notebook");
 
     .title-div {
       text-align: left;
-      width: 330px;
+      width: 370px;
       float:left;
       font-family: 'Slabo 27px', serif;
       font-size: 18px;
@@ -234,8 +234,8 @@ $notebook: image_url("notebook");
     .delete-div {
       text-align: right;
       display:inline-block;
-      width:100px;
-      margin-top: 6px;
+      width: 25px;
+      margin-top: 9px;
 
       button {
         border: none;
@@ -245,7 +245,6 @@ $notebook: image_url("notebook");
         width: 24px;
         height: 24px;
         transition: .25s;
-        margin:5px 8px;
       }
 
       .index-notebook-delete {
