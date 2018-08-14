@@ -37,6 +37,13 @@ class CreateNotebookForm extends React.Component {
 
   render() {
 		return <div className='create-notebook-form'>	
+			<div className="create-notebook-error">
+				{this.props.errors.map((error, i) => (
+					<p className="error-message" key={i}>
+						{error}
+					</p>
+				))}
+			</div>
 			<form>
 					<div>
 						<h1>Create Notebook</h1>
