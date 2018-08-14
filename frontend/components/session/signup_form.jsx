@@ -96,7 +96,9 @@ class SignupForm extends React.Component {
 				</div>
 				<div className="endtext">
 					{this.renderMessage()}
-					{this.props.navLink}
+					<div onClick={this.props.removeSessionErrors}>
+						{this.props.navLink}
+					</div>
 				</div>
 			</div>;
 	}

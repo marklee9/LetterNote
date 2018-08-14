@@ -2,6 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 class NavBar extends React.Component {
+	constructor(props) {
+		super(props);
+		console.log(this.props);
+	}
+
 	render() {
 		return <nav>
 				<div className="home-navbar">
@@ -21,7 +26,7 @@ class NavBar extends React.Component {
 						<span> </span> Github
 					</a>
 
-					<a id='nav-demo'>
+				<a id='nav-demo' onClick={this.props.removeSessionErrors}>
 						<Link id="no-space" to={'/signup'}>Try Letternote</Link>
 					</a>
 				</div>
