@@ -29,22 +29,20 @@ class Modal extends React.Component {
 
     if (this.props.modal === 'createNotebook') {
       return (
-      <div className="fade-modal-background" onClick={this.props.closeModal}>
-        <div className="fade-modal-child" onClick={e => e.stopPropagation()}>
-          {component}
-        </div>
-      </div>
-      );
-    }
-
-    if (this.props.modal === 'notebookIndex') {
-      return (
-        <div className="slide-modal-background" onClick={this.props.closeModal}>
-          <div className="slide-modal-child" onClick={e => e.stopPropagation()}>
+        <div className="fade-modal-background" onClick={this.props.closeModal}>
+          <div className="fade-modal-child" onClick={e => e.stopPropagation()}>
             {component}
           </div>
         </div>
       );
+    }
+
+    if (this.props.modal === 'notebookIndex') {
+      return <div className="slide-modal-background" onClick={this.props.closeModal}>
+					<div className="slide-modal-child" onClick={e => e.stopPropagation()}>
+						{component}
+					</div>
+				</div>;
     }
   } 
 }

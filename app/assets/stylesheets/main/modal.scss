@@ -3,6 +3,26 @@ $delete-notebook-hover: image_url("trash-icon-hover");
 $create-notebook: image_url("add-notebook");
 $notebook: image_url("notebook");
 
+.slide-modal-background {
+  position: fixed;
+  top: 0;
+  right: 1000px;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 10;
+  transition: 2s;
+  width: 450px;
+}
+
+.slide-modal-child {
+  border-right: 2px solid #dadada;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 2s;
+  height: 100vh;
+  transform: translate(119%, 0%);
+}
+
 .fade-modal-background {
   position: fixed;
   top: 0;
@@ -12,7 +32,7 @@ $notebook: image_url("notebook");
   background: rgba(255, 255, 255, 1);
   animation-duration: .5s;
   z-index: 20;
-  transition: 1.2s;
+  transition: 1s;
 }
 
 .fade-modal-child {
@@ -85,11 +105,11 @@ $notebook: image_url("notebook");
     }
 
     .new-notebook-create:hover {
-      background-color: #34a753;
+      background-color: #2d8f47;
     }
 
     .new-notebook-cancel:hover {
-      background-color: #d8d8d8;
+      background-color: #929292;
     }
   }
 
@@ -135,26 +155,6 @@ $notebook: image_url("notebook");
       background-image: $notebook;
     }
   }
-}
-
-.slide-modal-background {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 75px;
-  background: rgba(255, 255, 255, 0.8);
-  animation-duration: .5s;
-  z-index: 10;
-}
-
-.slide-modal-child {
-  border-right: 2px solid #dadada;
-  position: absolute;
-  top: 50%;
-  left: 231.5px;
-  height: 100vh;
-  transform: translate(-50%, -50%);
 }
 
 .all-notebook-list {

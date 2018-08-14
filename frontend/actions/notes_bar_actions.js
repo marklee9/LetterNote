@@ -1,0 +1,2 @@
+export const OPEN_NOTESBAR = 'OPEN_NOTESBAR';
+export const CLOSE_NOTESBAR = 'CLOSE_NOTESBAR';
