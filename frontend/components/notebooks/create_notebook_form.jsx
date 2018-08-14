@@ -6,7 +6,7 @@ class CreateNotebookForm extends React.Component {
 		super(props);
 		this.state = {
 			title: '',
-			currentUserId: this.props.currentUserId
+			author_id: this.props.currentUserId
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
@@ -25,16 +25,18 @@ class CreateNotebookForm extends React.Component {
 	}
 
 	handleSubmit() {
-		const notebook = this.props;
+		const notebook = this.state;
+		const prev = this.props.closeModal;
+
 		return (e) => {
 			e.preventDefault();
-			this.props.createNotebook(notebook);
+			this.props.createNotebook(notebook)
+				.then(() => prev());
 		};
 	}
 
   render() {
-		return <div className='create-notebook-form'>
-			
+		return <div className='create-notebook-form'>	
 			<form>
 					<div>
 						<h1>Create Notebook</h1>

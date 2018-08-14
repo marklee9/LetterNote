@@ -1,5 +1,5 @@
 import {
-  RECEIVE_NOTEBOOK_ERRORS,
+  RECEIVE_NOTEBOOK_ERRORS, RECEIVE_NOTEBOOK
 } from '../../actions/notebooks_action';
 
 export default (state = [], action) => {
@@ -8,7 +8,9 @@ export default (state = [], action) => {
   switch (action.type) {
     case RECEIVE_NOTEBOOK_ERRORS:
       return action.errors;
-    default:
+    case RECEIVE_NOTEBOOK:
       return [];
+    default:
+      return state;
   }
 };

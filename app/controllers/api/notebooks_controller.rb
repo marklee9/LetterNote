@@ -1,7 +1,6 @@
 class Api::NotebooksController < ApplicationController
   def create
     @notebook = Notebook.new(notebook_params)
-    debugger
     if @notebook.save
       render :show
     else
@@ -34,6 +33,6 @@ class Api::NotebooksController < ApplicationController
 
 private
   def notebook_params
-    params.require(:notebook).permit(:title)
+    params.require(:notebook).permit(:title, :author_id)
   end
 end

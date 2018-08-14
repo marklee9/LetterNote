@@ -3,8 +3,6 @@ import React from 'react';
 class NotebooksIndexItem extends React.Component {
 	constructor(props) {
 		super(props);
-		console.log("Notebookindexitem");
-		console.log(props);
 		this.deleteNotebook = this.deleteNotebook.bind(this);
 	}
 
