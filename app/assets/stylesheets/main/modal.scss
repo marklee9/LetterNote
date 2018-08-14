@@ -1,6 +1,7 @@
 $delete-notebook: image_url("trash-icon");
 $delete-notebook-hover: image_url("trash-icon-hover");
 $create-notebook: image_url("add-notebook");
+$notebook: image_url("notebook");
 
 .fade-modal-background {
   position: fixed;
@@ -8,17 +9,132 @@ $create-notebook: image_url("add-notebook");
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 1);
   animation-duration: .5s;
   z-index: 20;
-  transition: 1s;
+  transition: 1.2s;
 }
 
 .fade-modal-child {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  .new-notebook-img{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 40px;
+    height:40px;
+  }
+
+  .create-notebook-form {
+    text-align: center;
+    width: 624px;
+
+    .create-notebook-error {
+      height: 30px;
+
+      .error-message {
+        border: 1.5px solid rgb(144, 0, 0);
+        font-color: rgb(144, 0, 0);
+        border-radius: 10px;
+        font-family: gotham, helvetica, arial, sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  .new-notebook-linebreak {
+    width: 124px;
+    margin: 18px auto 54px;
+    border-bottom: 1px solid #d9d9d9;
+  }
+}
+
+.actual-form {
+
+  .new-notebook-buttons {
+    width: 500px;
+    margin: 70px auto 0; 
+
+    button {
+      font-family: gotham, helvetica, arial, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      margin: 0 10px;
+      width: 190px;
+      height: 35px;
+      letter-spacing: 0.5px;
+      border-radius: 5px;
+    }
+
+    .new-notebook-create {
+      color: white;
+      background-color: #3dbe60;
+      border: none;
+    }
+
+    .new-notebook-cancel {
+      border: 0.5px solid #dadada;
+      background-color: #e9e9e9;
+      color: #777777;
+    }
+
+    .new-notebook-create:hover {
+      background-color: #34a753;
+    }
+
+    .new-notebook-cancel:hover {
+      background-color: #d8d8d8;
+    }
+  }
+
+  .new-notebook-input-div {
+    text-align: center;
+
+    .new-notebook-input {
+      width: 100%;
+      height: 60px;
+      border: none;
+      font-size: 45px;
+      font-weight: 300;
+      line-height: 44px;
+      text-align: center;
+      outline: none;
+      background: none;
+      margin: 0;
+      padding: 0;
+      color: #636363;
+      font-family: 'Roboto Slab', serif;
+      transform: scale(1, 0.9);
+    }
+
+    .new-notebook-input::placeholder {
+      color: #c4c4c4;
+    }
+
+    .new-notebook-input:focus {
+      outline:none;
+    }
+  }
+
+  .actual-form-title {
+    font-family: gotham, helvetica, arial, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #aaaaaa;
+
+    .new-notebook-img {
+      margin: 20px auto 15px;
+      background-image: $notebook;
+    }
+  }
 }
 
 .slide-modal-background {
@@ -144,8 +260,14 @@ $create-notebook: image_url("add-notebook");
 
   .each-notebook:hover {
     background-color: #3dbe60;
+    
+    .title-div {
+      color: rgb(243, 243, 243);
+    }
+
     .index-notebook-delete {
       background-color: #3dbe60;
     }
   }
 }
+

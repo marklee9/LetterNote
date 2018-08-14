@@ -44,17 +44,24 @@ class CreateNotebookForm extends React.Component {
 					</p>
 				))}
 			</div>
-			<form>
-					<div>
-						<h1>Create Notebook</h1>
-							<div></div>
-							<input type="text" onChange={this.update('title')} value={this.props.title} placeholder="Title your notebook" />
-						<div>
-							<button onClick={this.closeModal()}>Cancel</button>
-							<button onClick={this.handleSubmit()}>Create Notebook</button>
-						</div>
-					</div>
-				</form>
+			<form className='actual-form'>
+				<div className='actual-form-title'>
+					<div className='new-notebook-img'></div>
+					<h1>Create Notebook</h1>
+				</div>
+
+				<div className='new-notebook-linebreak'></div>
+
+				<div className='new-notebook-input-div'>
+					<input className='new-notebook-input' type="text" onChange={this.update('title')} value={this.props.title} placeholder="Title your notebook" />
+				</div>
+
+				<div className='new-notebook-buttons'>
+					<button className='new-notebook-cancel' onClick={this.closeModal()}>Cancel</button>
+					<button className='new-notebook-create' onClick={this.handleSubmit()}>Create Notebook</button>
+				</div>
+
+			</form>
 		</div>;
   }
 }

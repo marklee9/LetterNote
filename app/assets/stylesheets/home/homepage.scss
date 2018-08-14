@@ -53,8 +53,10 @@
 }
 
 #nav-demo {
+  padding:0;
   float: right;
   margin-right: 10%;
+  margin-top: 15px;
   font-family: 'Nunito Sans', sans-serif;
   border: 1.5px solid black;
   border-radius: 4px;
@@ -67,7 +69,7 @@
 }
 
 #no-space {
-  padding:0;
+  padding:15px 20px;
   font-family: 'Nunito Sans', sans-serif;
   font-size:14px;
 }
