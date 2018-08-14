@@ -5,8 +5,8 @@ import TagsReducer from './entities_reducers/tags_reducer';
 import TaggingsReducer from './entities_reducers/taggings_reducer';
 
 export default combineReducers({
-  notebooks: NotebooksReducer
+  notebooks: NotebooksReducer,
+  notes: NotesReducer
 });
-// notes: NotesReducer,
 // tags: TagsReducer,
 // Taggings: TaggingsReducer

@@ -1,18 +1,15 @@
 import { connect } from "react-redux";
+import { fetchNotes } from "../../actions/note_actions";
 import React from 'react';
-import { login } from "../../actions/sessions_actions";
 import { Link } from "react-router-dom";
+import Notes from './notes';
 
-const msp = ({ errors }) => ({
-  errors: errors.session,
-  formType: "Sign in",
-  from: "home",
-  navLink: <Link to="/signup">Create account</Link>
+const msp = (state) => ({
+
 });
 
 const mdp = dispatch => ({
-  processForm: user => dispatch(login(user)),
-  login: (user) => dispatch(login(user))
+	fetchNotes: () => dispatch(fetchNotes())
 });
 
-export default connect(msp, mdp)();
+export default connect(msp, mdp)(Notes);

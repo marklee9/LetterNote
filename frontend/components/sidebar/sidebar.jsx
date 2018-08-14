@@ -102,5 +102,3 @@ class Sidebar extends React.Component {
 }
 
 export default withRouter(Sidebar);
-
-/* <button onClick={this.openModal()}>New</button> */ 

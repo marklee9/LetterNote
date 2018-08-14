@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     resource :session, only:[:create, :destroy]
     
     resources :notebooks, only:[:create, :show, :destroy, :index]
+
+    resources :notes
+    
   end
 
 

@@ -4,6 +4,7 @@ class NotebooksIndexItem extends React.Component {
 	constructor(props) {
 		super(props);
 		this.deleteNotebook = this.deleteNotebook.bind(this);
+		console.log(this.props);
 	}
 
 	deleteNotebook() {

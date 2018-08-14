@@ -29,10 +29,10 @@ class Modal extends React.Component {
 
     if (this.props.modal === 'createNotebook') {
       return (
-        <div className="fade-modal-background" onClick={this.props.closeModal}>
-          <div className="fade-modal-child" onClick={e => e.stopPropagation()}>
-            {component}
-          </div>
+         <div className="fade-modal-background" onClick={this.props.closeModal}>
+            <div className="fade-modal-child" onClick={e => e.stopPropagation()}>
+              {component}
+            </div>
         </div>
       );
     }

@@ -11,6 +11,10 @@ export const fetchNotes = () => dispatch => (
     (notes) => dispatch({
       type: RECEIVE_NOTES,
       notes
+    }),
+    (error) => dispatch({
+      type: RECEIVE_NOTE_ERRORS,
+      errors: error.responseJSON
     })
   )
 );
