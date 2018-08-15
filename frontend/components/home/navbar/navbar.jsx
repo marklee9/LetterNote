@@ -7,7 +7,8 @@ class NavBar extends React.Component {
 	}
 
 	render() {
-		if (this.props.session === null) {
+		console.log(this.props);
+		if (!this.props.session) {
 			return <nav>
 				<div className="home-navbar">
 				
@@ -31,21 +32,23 @@ class NavBar extends React.Component {
 					</a>
 				</div>
 			</nav>;
-		} else {
-			return <nav>
-				<div className="home-navbar">
-					<a className="home-a-tag">
-						<img align='middle' className='home-logo-img' src="https://www.devicemagic.com/wp-content/uploads/2017/01/evernote-1.png" alt=""/>
-						<span className="home-logo-text">LETTERNOTE</span>
-					</a>
-
-					<a id='nav-demo' onClick={this.props.removeSessionErrors}>
-						<Link id="no-space" to={'/main'}>Back to Letternote</Link>
-					</a>
-				</div>
-			</nav>;
 		}
 	}
 }
 
 export default NavBar;
+
+// } else {
+// 	return <nav>
+// 		<div className="home-navbar">
+// 			<a className="home-a-tag">
+// 				<img align='middle' className='home-logo-img' src="https://www.devicemagic.com/wp-content/uploads/2017/01/evernote-1.png" alt=""/>
+// 				<span className="home-logo-text">LETTERNOTE</span>
+// 			</a>
+
+// 			<a id='nav-demo' onClick={this.props.removeSessionErrors}>
+// 				<Link id="no-space" to={'/main'}>Back to Letternote</Link>
+// 			</a>
+// 		</div>
+// 	</nav>;
+// }
