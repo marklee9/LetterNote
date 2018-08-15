@@ -66,15 +66,15 @@ class SignupForm extends React.Component {
 	render() {
 		return <div>
 				<div className="form-only">
-					<form className="session-form">
-					<button className="button demo-button animated infinite pulse delay-2s" onClick={this.handleDemo}>
+						<button className="button demo-button animated infinite pulse delay-2s" onClick={this.handleDemo}>
 							<span>Sign in as Demo User</span>
 						</button>
+					<form className="session-form">
 						<h2>
 							<span> or </span>
 						</h2>
 						<label id="email">
-							<input for="email" type="text" onChange={this.handleInput("email")} value={this.state.email} placeholder="Email address or username" />
+							<input for="email" type="text"  onChange={this.handleInput("email")} value={this.state.email} placeholder="Email address or username" />
 						</label>
 						<label id="password">
 							<input for="password" type="password" onChange={this.handleInput("password")} value={this.state.password} placeholder="Password" />

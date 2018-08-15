@@ -4,8 +4,8 @@ import { login, removeSessionErrors } from "../../actions/sessions_actions";
 import { Link } from "react-router-dom";
 import Home from "./home";
 
-const msp = ({errors}) => ({
-  errors: errors.session,
+const msp = (state) => ({
+  errors: state.errors.session,
   formType: "Sign in",
   from: "home",
   navLink: <Link to="/signup">Create account</Link>

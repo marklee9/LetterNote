@@ -30,11 +30,23 @@
   }
 }
 
+.button {
+  width: inherit;
+  padding: 25px 45px;
+  border-radius: 7px;
+  font-size: 25px;
+  letter-spacing: 1.1px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #464646;
+  transition: 1s;
+}
+
 .session-form{
   width: 100%;
   font-family: gotham, helvetica, arial, sans-serif;
   margin-bottom: 30px;
-
+  
   button {
     width: inherit;
     padding: 20px;
@@ -129,15 +141,15 @@ li {
 
 .demo-button {
   font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 600;
   color: #464646;
   transition: .2s;
 }
 
 .demo-button:hover {
-  border:1px solid #47dd7b;
-  color: #47dd7b;
+  border:1px solid #17c955;
+  color: #3cbb69;
 }
 
 .submit-button:hover {

@@ -17,6 +17,21 @@ class NotebooksIndex extends React.Component {
     };
   }
 
+  renderCreateNotebookMessage() {
+    if (this.props.notebooks === undefined || this.props.notebooks.length < 3) {
+      return <div>
+        <div>
+          <h4>
+            Click <span /> to create a notebook
+						</h4>
+          <p>
+            Notebooks keep notes organized. Share them to work together
+						</p>
+        </div>
+      </div>;
+    }
+  }
+
   render() {
     const index = this.props.notebooks.map((notebook) =>
       <NotebooksIndexItem props={this.props} key={notebook.id} notebook={notebook}></NotebooksIndexItem>
@@ -33,6 +48,7 @@ class NotebooksIndex extends React.Component {
       <div className='all-notebook-list'>
         {index} 
       </div>
+      {this.renderCreateNotebookMessage()}
     </div>
     );
   }
