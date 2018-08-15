@@ -15,7 +15,10 @@ $plus_sign: image_url("plus_gray");
     white-space: nowrap;
     overflow: hidden;
     color: white;
-
+    font-family: 'Rokkitt', serif;
+    padding-top: 30px;
+    font-size: 25px;
+    letter-spacing: .7px;
   }
 }
 
@@ -30,7 +33,7 @@ $plus_sign: image_url("plus_gray");
     background-size: 100%;
     width: 80px;
     height: 75px;
-    margin: 200px auto 20px;
+    margin: 220px auto 20px;
     background-image: $big-note
   }
   .modal-empty-note-content {
@@ -40,23 +43,28 @@ $plus_sign: image_url("plus_gray");
     h4 {
       font-family: 'Slabo 27px', serif;
       vertical-align: middle;
-      .modal-empty-img {
+      color: rgb(126, 126, 126);
+      transform: scale(1, 0.9);
+
+      .plus-img {
         display: inline-block;
         background-repeat: no-repeat;
         background-position: center;
         background-size: 100%;
         background-image: $plus_sign;
-        width: 26px;
-        height: 26px;
+        width: 20px;
+        height: 20px;
       }
     }
     p {
       margin-top: 10px;
+      margin-right: auto;
+      margin-left: auto;
+      width: 280px;
       font-family: gotham, helvetica, arial, sans-serif;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 300;
       letter-spacing: 0.5px;
-      font-weight: 300;
       color: #929292;
     }
   }
