@@ -76,7 +76,7 @@ class Sidebar extends React.Component {
 
 					<div className="sidebar-outer-div">
 						<div className="sidebar-inner-div">
-							<button onClick={this.renderNotebooks} className="notes-img" />
+							<button className="notes-img" />
 						</div>
 					</div>
 
