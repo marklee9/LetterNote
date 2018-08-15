@@ -5,10 +5,6 @@ import NotebooksIndexContainer from '../../components/notebooks/index/notebooks_
 class Sidebar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      showNotebooks: false
-    };
-    this.renderNotebooks = this.renderNotebooks.bind(this);
 	}
 	
 	componentDidMount() {
@@ -29,13 +25,12 @@ class Sidebar extends React.Component {
       this.props.openModal(field);
     };
 	}
-
-  renderNotebooks(e) {
-    e.preventDefault();
-    this.setState({
-      showNotebooks: !this.state.showNotebooks
-    });
-  }
+	
+	renderNotesList() {
+		return (e) => {
+			e.preventDefault();
+		};
+	}
 
   render () {
     if (this.props.currentUserId) {
@@ -96,10 +91,6 @@ class Sidebar extends React.Component {
 					<div id="sidebar-account">
 						<button className='logout-button' onClick={this.logoutUser()}><i class="fas fa-sign-out-alt"></i></button>
 					</div>
-				</div>
-
-				<div className="notebook-index-container">
-					{this.state.showNotebooks && <NotebooksIndexContainer />}
 				</div>
 			</div>;
     }

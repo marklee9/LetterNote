@@ -10,5 +10,5 @@ export default combineReducers({
   currentNotebookId: CurrentNotebookIdReducer,
   currentNotebookTitle: CurrentNotebookTitleReducer,
   notesBar: NotesBarReducer,
+  notesListBar: NotesListBarReducer
 });
-// notesListBar: NotesListBarReducer

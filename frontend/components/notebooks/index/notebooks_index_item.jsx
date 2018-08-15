@@ -3,13 +3,15 @@ import React from 'react';
 class NotebooksIndexItem extends React.Component {
 	constructor(props) {
 		super(props);
-		this.deleteNotebook = this.deleteNotebook.bind(this);
 		this.setCurrentNotebookAndCloseModal = this.setCurrentNotebookAndCloseModal.bind(this);
 	}
 
 	deleteNotebook() {
-		this.props.props.closeNoteBar();
-		this.props.props.deleteNotebook(this.props.notebook.id);
+		return (e) => {
+			e.preventDefault();
+			this.props.props.closeNoteBar();
+			this.props.props.deleteNotebook(this.props.notebook.id);
+		};
 	}
 
 	setCurrentNotebookAndCloseModal() {
