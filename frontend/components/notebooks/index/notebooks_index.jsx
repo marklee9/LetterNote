@@ -19,15 +19,13 @@ class NotebooksIndex extends React.Component {
 
   renderCreateNotebookMessage() {
     if (this.props.notebooks === undefined || this.props.notebooks.length < 3) {
-      return <div>
-        <div>
-          <h4>
-            Click <span /> to create a notebook
-						</h4>
-          <p>
-            Notebooks keep notes organized. Share them to work together
-						</p>
-        </div>
+      return <div className='modal-empty-notebook'>
+            <div className='modal-empty-notebook-big-img'></div>
+
+          <div className='modal-empty-notebook-content'>
+            <h4>Click <div className='modal-empty-img' /> to create a notebook</h4>
+            <p>Notebooks keep notes organized. Share them to work together</p>
+          </div>
       </div>;
     }
   }

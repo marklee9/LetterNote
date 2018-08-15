@@ -2,6 +2,7 @@ $delete-notebook: image_url("trash-icon");
 $delete-notebook-hover: image_url("trash-icon-hover");
 $create-notebook: image_url("add-notebook");
 $notebook: image_url("notebook");
+$big-notebook: image_url("big-new-notebook");
 
 .fade-modal-background {
   position: fixed;
@@ -266,6 +267,51 @@ $notebook: image_url("notebook");
 
     .index-notebook-delete {
       background-color: #3dbe60;
+    }
+  }
+}
+
+.modal-empty-notebook {
+  width: 466px;
+  text-align: center;
+
+  .modal-empty-notebook-big-img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 80px;
+    height: 75px;
+    margin: 200px auto 20px;
+    background-image: $big-notebook
+  }
+
+  .modal-empty-notebook-content {
+    width: 350px;
+    margin: 0 auto;
+
+    h4 {
+      font-family: 'Slabo 27px', serif;
+      vertical-align: middle;
+
+      .modal-empty-img {
+        display: inline-block;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        background-image: $create-notebook;
+        width: 26px;
+        height: 26px;
+      }
+    }
+  
+    p {
+      margin-top: 10px;
+      font-family: gotham, helvetica, arial, sans-serif;
+      font-size: 15px;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+      font-weight: 300;
+      color: #929292;
     }
   }
 }
