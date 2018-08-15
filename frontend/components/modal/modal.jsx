@@ -53,7 +53,7 @@ const msp = state => ({
 
 const mdp = dispatch => {
   return {
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
   };
 };
 

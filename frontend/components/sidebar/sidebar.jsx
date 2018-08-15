@@ -28,7 +28,7 @@ class Sidebar extends React.Component {
       e.preventDefault();
       this.props.openModal(field);
     };
-  }
+	}
 
   renderNotebooks(e) {
     e.preventDefault();

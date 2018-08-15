@@ -77,12 +77,14 @@ $big-notebook: image_url("big-new-notebook");
       color: white;
       background-color: #3dbe60;
       border: none;
+      float: right;
     }
 
     .new-notebook-cancel {
       border: 0.5px solid #dadada;
       background-color: #e9e9e9;
       color: #777777;
+      float: left;
     }
 
     .new-notebook-create:hover {
@@ -161,11 +163,13 @@ $big-notebook: image_url("big-new-notebook");
 
 .all-notebook-list {
   width: 465px;
-  overflow: auto;
+  overflow: scroll;
+  height: 80vh;
 }
 
 .modal-notebook-index {
   background-color: white;
+  height: 100vh;
 
   .modal-notebook-notebook {
     text-align: center;

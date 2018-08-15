@@ -15,5 +15,4 @@ export default connect(msp, null)(Notes);
 
 
 // fetchCurrentNotebook: (id) => dispatch(fetchCurrentNotebook(id))
-
 // currentNotebook: state.ui.currentNotebook

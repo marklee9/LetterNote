@@ -8,6 +8,7 @@ class NotebooksIndexItem extends React.Component {
 	}
 
 	deleteNotebook() {
+		this.props.props.closeNoteBar();
 		this.props.props.deleteNotebook(this.props.notebook.id);
 	}
 

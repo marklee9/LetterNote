@@ -44,7 +44,7 @@ class CreateNotebookForm extends React.Component {
 					</p>
 				))}
 			</div>
-			<form className='actual-form'>
+			<form className='actual-form' onSubmit={this.handleSubmit()}>
 				<div className='actual-form-title'>
 					<div className='new-notebook-img'></div>
 					<h1>Create Notebook</h1>
@@ -57,10 +57,9 @@ class CreateNotebookForm extends React.Component {
 				</div>
 
 				<div className='new-notebook-buttons'>
-					<button className='new-notebook-cancel' onClick={this.closeModal()}>Cancel</button>
 					<button className='new-notebook-create' onClick={this.handleSubmit()}>Create Notebook</button>
+					<button className='new-notebook-cancel' onClick={this.closeModal()}>Cancel</button>
 				</div>
-
 			</form>
 		</div>;
   }
