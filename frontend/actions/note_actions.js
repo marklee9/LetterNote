@@ -1,4 +1,4 @@
-import * as NoteApiUtil from '../util/notebook_api_util';
+import * as NoteApiUtil from '../util/note_api_util';
 
 export const RECEIVE_NOTES = 'RECEIVE_NOTES';
 export const RECEIVE_NOTE = 'RECEIVE_NOTE';

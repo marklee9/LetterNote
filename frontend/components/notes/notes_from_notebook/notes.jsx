@@ -3,7 +3,6 @@ import React from 'react';
 class Notes extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
   }
 
   renderLittleNotes(){
@@ -23,13 +22,28 @@ class Notes extends React.Component {
 		}
   } 
 
+  renderNoteCounter() {
+    if (!this.props.notes) {
+      return "0";
+    } else {
+      return String(this.props.notes.length);
+    }
+  }
+
   renderAllNotes() {
     if (this.props.notes) {
-      return <div>
-        <div>
-
+      return this.props.notes.map((note) => 
+        <div className="each-note">
+          <div className="title-div">
+            <p className="index-note-title">
+              {note.title}
+            </p>
+          </div>
+          <div className="delete-div">
+            <button className="index-note-delete" />
+          </div>
         </div>
-      </div>;
+      );
     }
   }
 
@@ -40,17 +54,19 @@ class Notes extends React.Component {
   }
   
   render() {
+    console.log(this.props);
     if (!this.props.notesBar) {
       return null;
     } else {
      return <div className="note-list-id">
-					<div className="note-list-id-transform">
-						<div className="note-list-id-title">{this.renderTitle()}</div>
-						<div />
-						{this.renderAllNotes()}
-						{this.renderLittleNotes()}
-					</div>
-        </div>;
+			<div className="note-list-id-title">{this.renderTitle()}</div>
+        <div className='note-list-id-note'>
+          <h5>{this.renderNoteCounter()} Notes</h5>
+        </div>
+        <div className='linebreak-note-list'></div>
+        {this.renderAllNotes()}
+        {this.renderLittleNotes()}
+      </div>;
     }
   }
 }

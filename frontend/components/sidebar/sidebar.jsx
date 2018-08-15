@@ -9,7 +9,11 @@ class Sidebar extends React.Component {
       showNotebooks: false
     };
     this.renderNotebooks = this.renderNotebooks.bind(this);
-  }
+	}
+	
+	componentDidMount() {
+		this.props.fetchNotes();
+	}
 
   logoutUser() {
     return (e) => {

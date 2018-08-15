@@ -2,7 +2,7 @@ export const selectNotes = (state) => {
   if (state.entities.notes === null) {
     return null;
   } else {
-    return Object.values(state.entities.notes).filter((note) => note.notebook_id === state.ui.currentNotebook);
+    return Object.values(state.entities.notes).filter((note) => note.notebook_id === state.ui.currentNotebookId);
   }
 };
 

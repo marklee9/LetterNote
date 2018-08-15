@@ -1,20 +1,40 @@
 $big-note: image_url("new-notes-big");
 $plus_sign: image_url("plus_gray");
+$delete-note: image_url("trash-icon");
+$delete-note-hover: image_url("trash-icon-hover");
 
 .note-list-id {
-  border: 1px solid black;
+  border: 1.5px solid rgb(221, 221, 221);
   width: 350px;
   height: 100vh;
   margin-left: 75px;
 
+  .linebreak-note-list {
+    margin: 0 auto;
+    width: 300px;
+    border-bottom: 1px solid rgb(221, 221, 221);
+  }
+
+  .note-list-id-note {
+    height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    color: rgb(190, 190, 190);
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.8px;
+    margin-top: 25px;
+    font-weight:100;
+  }
+
   .note-list-id-title {
     text-align: center;
     vertical-align: middle;
-    height: 150px;
+    overflow: hidden;
+    height: 120px;
     background-color: #393d41;
     white-space: nowrap;
     overflow: hidden;
-    color: white;
+    color: rgb(211, 211, 211);
     font-family: 'Rokkitt', serif;
     padding-top: 30px;
     font-size: 25px;
@@ -24,7 +44,6 @@ $plus_sign: image_url("plus_gray");
 
 .modal-empty-note {
   width: 350px;
-  border: 1px solid red;
   text-align: center;
 
   .modal-empty-note-big-img {
@@ -33,7 +52,7 @@ $plus_sign: image_url("plus_gray");
     background-size: 100%;
     width: 80px;
     height: 75px;
-    margin: 220px auto 20px;
+    margin: 170px auto 20px;
     background-image: $big-note
   }
   .modal-empty-note-content {
@@ -67,5 +86,62 @@ $plus_sign: image_url("plus_gray");
       letter-spacing: 0.5px;
       color: #929292;
     }
+  }
+}
+
+.each-note {
+  border-bottom: 1px solid #f1f1f1;
+  width: 334px;
+  height: 50px;
+  padding: 8px;
+  transition: 0.25s;
+  text-align: center;
+
+  .title-div {
+    text-align: left;
+    width: 240px;
+    float: left;
+    font-family: 'Slabo 27px', serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: #5f5f5f;
+    padding: 5px;
+    white-space: nowrap;
+    letter-spacing: .5px;
+    transform: scale(1, 0.9);
+    padding-left: 10px;
+  }
+
+  .delete-div {
+    text-align: right;
+    display: inline-block;
+    width: 25px;
+    margin-top: 9px;
+
+    button {
+      border: none;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+      width: 24px;
+      height: 24px;
+      transition: .25s;
+    }
+    .index-note-delete {
+      background-image: $delete-note;
+    }
+    .index-note-delete:hover {
+      background-image: $delete-note-hover;
+    }
+  }
+}
+
+.each-note:hover {
+  background-color: #3dbe60;
+  .title-div {
+    color: rgb(243, 243, 243);
+  }
+  .index-note-delete {
+    background-color: #3dbe60;
   }
 }
