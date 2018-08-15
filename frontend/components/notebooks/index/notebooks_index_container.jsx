@@ -3,9 +3,10 @@ import NotebooksIndex from './notebooks_index';
 import { fetchNotebooks, deleteNotebook, updateNotebook, fetchCurrentNotebook } from '../../../actions/notebooks_action';
 import { openModal, closeModal } from "../../../actions/modal_actions";
 import { openNoteBar } from '../../../actions/notes_bar_actions';
+import { selectNotebooks } from '../../../reducers/selector';
 
 const msp = (state) => ({
-  notebooks: Object.values(state.entities.notebooks),
+  notebooks: selectNotebooks(state),
   errors: state.errors.notebooks
 });
 
