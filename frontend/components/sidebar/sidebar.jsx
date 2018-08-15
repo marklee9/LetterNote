@@ -88,8 +88,9 @@ class Sidebar extends React.Component {
 						</div>
 					</div>
 
+					<div className='linebreak-sidebar'></div>
 					<div id="sidebar-account">
-						<button onClick={this.logoutUser()}>Log out</button>
+						<button className='logout-button' onClick={this.logoutUser()}><i class="fas fa-sign-out-alt"></i></button>
 					</div>
 				</div>
 

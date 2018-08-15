@@ -17,7 +17,7 @@ const mdp = dispatch => ({
 	deleteNotebook: id => dispatch(deleteNotebook(id)),
 	openModal: modal => dispatch(openModal(modal)),
 	closeModal: () => dispatch(closeModal()),
-	fetchCurrentNotebook: id => dispatch(fetchCurrentNotebook(id)),
+	fetchCurrentNotebook: notebook => dispatch(fetchCurrentNotebook(notebook)),
 	openNoteBar: () => dispatch(openNoteBar())
 });
 

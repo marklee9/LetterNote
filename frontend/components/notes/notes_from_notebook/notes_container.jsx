@@ -5,16 +5,17 @@ import { selectNotes } from '../../../reducers/selector';
 
 const msp = (state) => ({
   notes: selectNotes(state),
-  currentNotebook: state.ui.currentNotebook,
+  currentNotebookId: state.ui.currentNotebookId,
+  currentNotebookTitle: state.ui.currentNotebookTitle,
   notesBar: state.ui.notesBar
 });
 
-const mdp = dispatch => ({
-  fetchCurrentNotebook: (id) => dispatch(fetchCurrentNotebook(id))
-});
+// const mdp = dispatch => ({
+// });
 
-export default connect(msp, mdp)(Notes);
+export default connect(msp, null)(Notes);
 
 
+// fetchCurrentNotebook: (id) => dispatch(fetchCurrentNotebook(id))
 
 // currentNotebook: state.ui.currentNotebook

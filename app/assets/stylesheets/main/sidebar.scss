@@ -136,3 +136,21 @@ $tags_hover: image_url("tag-icon-hover");
   height: 80px;
 }
 
+.linebreak-sidebar {
+  margin:0 auto;
+  width: 45px;
+  border: 1px solid rgb(219, 219, 219);
+  margin-top: 70px;
+}
+
+.fa-sign-out-alt {
+  font-size: 30px;
+  padding: 17px 10px 17px 17px;
+  color:  rgb(0, 189, 0);
+}
+
+.logout-button {
+  margin: 0 auto;
+  border: none;
+  background-color: #f3f3f3;
+}

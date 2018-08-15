@@ -7,10 +7,11 @@ export const RECEIVE_NOTEBOOK_ERRORS = 'RECEIVE_NOTEBOOK_ERRORS';
 export const CURRENT_NOTEBOOK = 'CURRENT_NOTEBOOK';
 
 
-export const fetchCurrentNotebook = id => {
+export const fetchCurrentNotebook = notebook => {
   return {
     type: CURRENT_NOTEBOOK,
-    currentNotebook: id
+    currentNotebookId: notebook.id,
+    currentNotebookTitle: notebook.title
   };
 };
 
