@@ -24,6 +24,7 @@ class Api::NotesController < ApplicationController
   end
 
   def destroy
+    debugger
     @note = current_user.notes.where(id: params[:id]).first
     if @note
       @note.destroy

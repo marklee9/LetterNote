@@ -1,4 +1,5 @@
 import React from 'react';
+import NotesItem from './notes_item';
 
 class Notes extends React.Component {
   constructor(props) {
@@ -33,16 +34,7 @@ class Notes extends React.Component {
   renderAllNotes() {
     if (this.props.notes) {
       return this.props.notes.map((note) => 
-        <div className="each-note">
-          <div className="title-div">
-            <p className="index-note-title">
-              {note.title}
-            </p>
-          </div>
-          <div className="delete-div">
-            <button className="index-note-delete" />
-          </div>
-        </div>
+        <NotesItem props={this.props} key={note.id} note={note}></NotesItem>        
       );
     }
   }

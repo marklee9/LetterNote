@@ -6,7 +6,7 @@ class NotesListItem extends React.Component {
     this.setWorkingNote = this.setWorkingNote.bind(this);
   }
 
-  deleteNotebook() {
+  deleteNote() {
     return (e) => {
       e.preventDefault();
       e.stopPropagation();
@@ -27,7 +27,7 @@ class NotesListItem extends React.Component {
         </p>
       </div>
       <div className="delete-div">
-        <button className="index-note-delete" />
+        <button className="index-note-delete" onClick={this.deleteNote()}/>
       </div>
     </div>;
   }
