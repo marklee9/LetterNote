@@ -9,6 +9,7 @@ class NotebooksIndexItem extends React.Component {
 	deleteNotebook() {
 		return (e) => {
 			e.preventDefault();
+			e.stopPropagation();
 			this.props.props.closeNoteBar();
 			this.props.props.deleteNotebook(this.props.notebook.id);
 		};
@@ -28,7 +29,7 @@ class NotebooksIndexItem extends React.Component {
 					</p>
 				</div>
 				<div className="delete-div">
-					<button onClick={this.deleteNotebook} className="index-notebook-delete" />
+					<button onClick={this.deleteNotebook()} className="index-notebook-delete" />
 				</div>
 			</div>;
 	}

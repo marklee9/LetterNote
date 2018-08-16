@@ -26,9 +26,11 @@ class Sidebar extends React.Component {
     };
 	}
 	
-	renderNotesList() {
+	openNotesList() {
 		return (e) => {
 			e.preventDefault();
+			this.props.closeNoteBar();
+			this.props.openNoteListBar();
 		};
 	}
 
@@ -71,7 +73,7 @@ class Sidebar extends React.Component {
 
 					<div className="sidebar-outer-div">
 						<div className="sidebar-inner-div">
-							<button className="notes-img" />
+						<button onClick={this.openNotesList()} className="notes-img" />
 						</div>
 					</div>
 

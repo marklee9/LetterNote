@@ -92,7 +92,7 @@ $delete-note-hover: image_url("trash-icon-hover");
 .each-note {
   border-bottom: 1px solid #f1f1f1;
   width: 334px;
-  height: 50px;
+  height: 70px;
   padding: 8px;
   transition: 0.25s;
   text-align: center;
@@ -144,4 +144,8 @@ $delete-note-hover: image_url("trash-icon-hover");
   .index-note-delete {
     background-color: #3dbe60;
   }
+}
+
+.full-list {
+  height: 60px;
 }

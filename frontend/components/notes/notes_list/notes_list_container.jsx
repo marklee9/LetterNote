@@ -3,7 +3,7 @@ import NoteList from "./notes_list";
 import { closeNoteBar } from '../../../actions/notes_bar_actions';
 
 const msp = state => ({
-	notes: state.entities.notes,
+	notes: Object.values(state.entities.notes),
 	notesListBar: state.ui.notesListBar
 });
 
