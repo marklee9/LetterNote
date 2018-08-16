@@ -13,7 +13,7 @@
   text-align: center;
   background-color:white;
   border: 1px solid lightgray;
-  border-radius: 5px;
+  border-radius: 8px;
   transition: 1s;
 }
 
@@ -46,7 +46,6 @@
 .session-form{
   width: 100%;
   font-family: gotham, helvetica, arial, sans-serif;
-  margin-bottom: 30px;
   
   button {
     width: inherit;
@@ -201,6 +200,7 @@ a:hover {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 400;
+  text-align: center;
 
   h6 {
     margin: 10px 0;
@@ -212,7 +212,6 @@ a:hover {
     color:#4cca78;
     transition: 0.3s;
     text-decoration: none;
-    margin: 20px;
   }
 
   a:hover {

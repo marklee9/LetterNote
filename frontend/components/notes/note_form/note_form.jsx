@@ -15,8 +15,11 @@ class NoteForm extends React.Component {
 
   render() {
     return (
+      <div className='quill-container'>
+        
         <ReactQuill value={this.state.text}
           onChange={this.handleChange} />
+      </div>
     );
   }
 }
