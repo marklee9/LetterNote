@@ -4,7 +4,9 @@ $delete-note: image_url("trash-icon");
 $delete-note-hover: image_url("trash-icon-hover");
 
 .note-list-id {
-  border: 1.5px solid rgb(221, 221, 221);
+  border-right: 1.5px solid rgb(221, 221, 221);
+  border-top: 1.5px solid white;
+  border-bottom: 1.5px solid white;
   width: 350px;
   height: 100vh;
   margin-left: 75px;
@@ -99,7 +101,7 @@ $delete-note-hover: image_url("trash-icon-hover");
 
   .title-div {
     text-align: left;
-    width: 240px;
+    width: 260px;
     float: left;
     font-family: 'Slabo 27px', serif;
     font-size: 18px;
@@ -147,5 +149,7 @@ $delete-note-hover: image_url("trash-icon-hover");
 }
 
 .full-list {
-  height: 60px;
+  height: 70px;
+
+  padding: 10px;
 }

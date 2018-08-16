@@ -12,6 +12,7 @@ class NotebooksIndexItem extends React.Component {
 			e.stopPropagation();
 			this.props.props.closeNoteBar();
 			this.props.props.deleteNotebook(this.props.notebook.id);
+			this.props.props.openNoteListBar();
 		};
 	}
 
@@ -19,6 +20,7 @@ class NotebooksIndexItem extends React.Component {
 		this.props.props.fetchCurrentNotebook(this.props.notebook);
 		this.props.props.closeModal();
 		this.props.props.openNoteBar();
+		this.props.props.closeNoteListBar();
 	}
 
 	render() {

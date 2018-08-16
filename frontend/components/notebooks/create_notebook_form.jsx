@@ -53,7 +53,7 @@ class CreateNotebookForm extends React.Component {
 				<div className='new-notebook-linebreak'></div>
 
 				<div className='new-notebook-input-div'>
-					<input className='new-notebook-input' type="text" onChange={this.update('title')} value={this.props.title} placeholder="Title your notebook" />
+					<input className='new-notebook-input' type="text" onChange={this.update('title')} value={this.props.title} placeholder="Title your notebook" autofocus/>
 				</div>
 
 				<div className='new-notebook-buttons'>

@@ -5,7 +5,7 @@ import NotesListContainer from './notes/notes_list/notes_list_container';
 import Modal from './modal/modal';
 
 export default () => (
-  <div>
+  <div className='prevent-bouncy-scroll'>
     <Modal />
     <SidebarContainer />
     <NotesBarContainer />
