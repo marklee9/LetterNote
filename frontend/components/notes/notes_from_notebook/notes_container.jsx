@@ -1,6 +1,4 @@
 import { connect } from "react-redux";
-import { fetchCurrentNotebook } from "../../../actions/notebooks_action";
-import { fetchNotes } from '../../../actions/note_actions';
 import Notes from './notes';
 import { selectNotes } from '../../../reducers/selector';
 
