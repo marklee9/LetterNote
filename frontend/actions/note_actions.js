@@ -4,6 +4,21 @@ export const RECEIVE_NOTES = 'RECEIVE_NOTES';
 export const RECEIVE_NOTE = 'RECEIVE_NOTE';
 export const DELETE_NOTE = 'DELETE_NOTE';
 export const RECEIVE_NOTE_ERRORS = 'RECEIVE_NOTE_ERRORS';
+export const WORKING_NOTE = 'WORKING_NOTE';
+export const CLOSE_WORKING_NOTE = 'CLOSE_WORKING_NOTE';
+
+export const fetchWorkingNote = note => {
+  return {
+    type: WORKING_NOTE,
+    workingNote: note.id,
+  };
+};
+
+export const closeWorkingNote = () => {
+  return {
+    type: CLOSE_WORKING_NOTE,
+  };
+};
 
 export const fetchNotes = () => dispatch => (
   NoteApiUtil.fetchNotes()

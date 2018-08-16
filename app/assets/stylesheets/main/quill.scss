@@ -1,21 +1,52 @@
-.quill-container {
+.quill-outer-container {
   height: 100vh;
   align-content:center;
   display: flex;
 
-  .quill {
+  .quill-container {
+    float: left;
     width: 100%;
 
-    .ql-toolbar {
+    .tool-container {
       width: 100%;
       height: 40px;
+    }
+
+    .note-title {
+      position: absolute;
+      top: 85px;
+      margin: 9px;
+      width: 67%;
       border: none;
+      height: 50px;
+      font-size: 30px;
+      padding: 5px;
+      font-family: 'Rokkitt', serif;
+      color: rgb(0, 189, 0);
     }
   
-    .ql-container {
-      width: 100%;
-      height: 200px;
-      border:none;
+    input:focus {
+      outline: none;
+    }
+
+    .quill {
+      height: 100vh;
+
+      .ql-toolbar {
+        width: 100%;
+        height: 45px;
+        border: none;
+        overflow: auto;
+      }
+    
+      .ql-container {
+        width: 70%;
+        position: absolute;
+        top: 150px;
+        height: 75vh;
+        padding: 5px;
+        border: none;
+      }
     }
   }
 }

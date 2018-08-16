@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import NoteList from "./notes_list";
 import { closeNoteBar } from '../../../actions/notes_bar_actions';
+import { fetchNote, fetchWorkingNote, closeWorkingNote, deleteNote } from "../../../actions/note_actions";
 
 const msp = state => ({
 	notes: Object.values(state.entities.notes),
@@ -8,7 +9,11 @@ const msp = state => ({
 });
 
 const mdp = dispatch => ({
-  closeNoteBar: () => dispatch(closeNoteBar())
+	closeNoteBar: () => dispatch(closeNoteBar()),
+	fetchNote: id => dispatch(fetchNote(id)),
+	fetchWorkingNote: note => dispatch(fetchWorkingNote(note)),
+	closeWorkingNote: () => dispatch(closeWorkingNote()),
+	deleteNote: id => dispatch(deleteNote())
 });
 
 export default connect(

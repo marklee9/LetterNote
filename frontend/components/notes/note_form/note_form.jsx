@@ -14,13 +14,17 @@ class NoteForm extends React.Component {
   }
 
   render() {
-    return (
-      <div className='quill-container'>
-        
-        <ReactQuill value={this.state.text}
-          onChange={this.handleChange} />
-      </div>
-    );
+    return <div className="quill-outer-container">
+				<div className="quill-container">
+					<div className="tool-container">
+            <div>
+              <p>other stuff</p>
+            </div>
+          </div>
+					<input className="note-title" type="text" placeholder="Title your note" autofocus />
+					<ReactQuill value={this.state.text} onChange={this.handleChange} />
+				</div>
+			</div>;
   }
 }
 
