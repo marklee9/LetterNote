@@ -5,6 +5,7 @@ import CurrentNotebookTitleReducer from './ui_reducers/current_notebook_title_re
 import NotesBarReducer from './ui_reducers/notes_bar_reducer';
 import NotesListBarReducer from './ui_reducers/notes_list_bar_reducer';
 import WorkingNoteReducer from './ui_reducers/working_note_reducer';
+import QuillContainerReducer from './ui_reducers/quill_container_reducer';
 
 export default combineReducers({
   modal: modalReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
   currentNotebookTitle: CurrentNotebookTitleReducer,
   notesBar: NotesBarReducer,
   notesListBar: NotesListBarReducer,
-  workingNote: WorkingNoteReducer
+  workingNote: WorkingNoteReducer,
+  quillContainer: QuillContainerReducer,
 });

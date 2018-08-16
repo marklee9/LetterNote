@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import Notes from './notes';
 import { selectNotes } from '../../../reducers/selector';
 import { fetchNote, fetchWorkingNote, closeWorkingNote, deleteNote } from "../../../actions/note_actions";
-
+import { editQuill } from "../../../actions/quill_actions";
 
 const msp = (state) => ({
   notes: selectNotes(state),
@@ -14,8 +14,9 @@ const msp = (state) => ({
 const mdp = dispatch => ({
   fetchWorkingNote: note => dispatch(fetchWorkingNote(note)),
   closeWorkingNote: () => dispatch(closeWorkingNote()),
-  deleteNote: id => dispatch(deleteNote()),
-  fetchNote: id => dispatch(fetchNote(id))
+  deleteNote: id => dispatch(deleteNote(id)),
+  fetchNote: id => dispatch(fetchNote(id)),
+  editQuill: () => dispatch(editQuill())
 });
 
 export default connect(msp, mdp)(Notes);

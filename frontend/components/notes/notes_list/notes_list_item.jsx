@@ -17,6 +17,7 @@ class NotesListItem extends React.Component {
 
   setWorkingNote() {
     this.props.props.fetchWorkingNote(this.props.note);
+    this.props.props.editQuill();
   }
 
   render() {

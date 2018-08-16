@@ -6,13 +6,13 @@ import NoteFormContainer from './notes/note_form/note_form_container';
 import Modal from './modal/modal';
 
 export default () => (
-  <div className='prevent-bouncy-scroll'>
-    <Modal />
-    <SidebarContainer />
-    <NotesBarContainer />
-    <NotesListContainer />
-    <NoteFormContainer />
-  </div>
+	<div className="prevent-bouncy-scroll">
+		<Modal />
+		<SidebarContainer />
+		<NotesBarContainer />
+		<NotesListContainer />
+		<NoteFormContainer />
+	</div>
 );
 
 // import NotebooksIndexContainer from '../components/notebooks/index/notebooks_index_container';
