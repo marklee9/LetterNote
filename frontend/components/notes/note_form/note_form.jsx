@@ -4,7 +4,7 @@ import React from 'react';
 class NoteForm extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.state = { text: '' };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -15,8 +15,8 @@ class NoteForm extends React.Component {
 
   render() {
     return (
-      <ReactQuill value={this.state.text}
-        onChange={this.handleChange} />
+        <ReactQuill value={this.state.text}
+          onChange={this.handleChange} />
     );
   }
 }

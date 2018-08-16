@@ -4,12 +4,13 @@ $delete-note: image_url("trash-icon");
 $delete-note-hover: image_url("trash-icon-hover");
 
 .note-list-id {
-  border-right: 1.5px solid rgb(221, 221, 221);
-  border-top: 1.5px solid white;
-  border-bottom: 1.5px solid white;
+  border-right: 1.5px solid rgb(228, 228, 228);
   width: 350px;
   height: 100vh;
-  margin-left: 75px;
+  margin: 0;
+  float: left;
+  display: flex;
+  flex-direction: column;
 
   .linebreak-note-list {
     margin: 0 auto;
@@ -24,7 +25,6 @@ $delete-note-hover: image_url("trash-icon-hover");
     color: rgb(190, 190, 190);
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 0.8px;
-    margin-top: 25px;
     font-weight:100;
   }
 
@@ -41,6 +41,7 @@ $delete-note-hover: image_url("trash-icon-hover");
     padding-top: 30px;
     font-size: 25px;
     letter-spacing: .7px;
+    margin-bottom: 30px;
   }
 }
 
@@ -151,5 +152,5 @@ $delete-note-hover: image_url("trash-icon-hover");
 .full-list {
   height: 70px;
 
-  padding: 10px;
+  padding: 20px 10px 10px 10px;
 }

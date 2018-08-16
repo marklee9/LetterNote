@@ -37,8 +37,7 @@ class Sidebar extends React.Component {
   render () {
     if (this.props.currentUserId) {
 
-    return <div>
-				<div className="sidebar-div">
+    return <div className="sidebar-div">
 					<div className="sidebar-logo">
 						<img className="home-logo-img" src="https://www.devicemagic.com/wp-content/uploads/2017/01/evernote-1.png" />
 					</div>
@@ -93,8 +92,7 @@ class Sidebar extends React.Component {
 					<div id="sidebar-account">
 						<button className='logout-button' onClick={this.logoutUser()}><i class="fas fa-sign-out-alt"></i></button>
 					</div>
-				</div>
-			</div>;
+				</div>;
     }
   }
 }

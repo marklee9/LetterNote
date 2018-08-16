@@ -32,4 +32,9 @@
 // notes
 @import './main/notes';
 
+.prevent-bouncy-scroll {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
 
