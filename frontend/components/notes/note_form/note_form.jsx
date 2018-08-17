@@ -6,9 +6,16 @@ class NoteForm extends React.Component {
 	constructor(props) {
 		super(props);
 
-		if (!this.props.workingNote) {
-			this.state = { title: "", body: "" };
-		} else {
+		if (this.props.form === 'new') {
+      this.state = { title: "", body: "" };
+    } 
+      // else if (Object.keys(this.props.allNotes).length !== 0) {
+      //   let array = Object.values(this.props.allNotes);
+      //   let lastNote = array[array.length - 1];
+      //   this.state = lastNote;}
+    else if (!this.props.form) {
+      this.state = { title: "", body: "" };
+    } else {
 			this.state = this.props.note;
     }
    
@@ -24,27 +31,41 @@ class NoteForm extends React.Component {
   }
   
 	handleChangeBody(value) {
-		this.setState({ body: value }, debounce(this.actionNote, 3000));
+		this.setState({ body: value }, debounce(this.actionNote, 1000));
 	}
 
 	handleChangeTitle(e) {
     this.setState({ title: e.target.value }, 
-      debounce(this.actionNote, 3000));
+      debounce(this.actionNote, 1000));
 	}
 
 	actionNote() {
-    // let note = this.state;
-		// note.body = this.state.body;
-    // note.title = this.state.title;
 		if (this.props.workingNote) {
 			return this.props.updateNote(this.state);
     } else {
 			return this.props.createNote(this.state);
 		}
-	}
+  }
+
+  openModal(field) {
+    return (e) => {
+      e.preventDefault();
+      this.props.openModal(field);
+    };
+  }
 
 	render() {
-    if (this.props.form) {
+    if (!this.props.notebooks) {
+      return (
+        <div className="quill-outer-container">
+          <div className="quill-select-notebook">
+            <h1>You don't have any notebooks</h1>
+              <button className='create' onClick={this.openModal("notebookIndex")} />
+            <h1>Click to create notebook</h1>
+          </div>
+        </div>
+      );
+    } else {
       return (
         <div className="quill-outer-container">
           <div className="quill-container">
@@ -67,14 +88,6 @@ class NoteForm extends React.Component {
             />
           </div>
         </div>
-      );
-    } else {
-      return (
-      <div>
-        <p>
-          Please select note;
-        </p>
-      </div>
       );
     }
 	}

@@ -1,7 +1,62 @@
+$notebooks: image_url("notebook-icon");
+$notebooks_hover: image_url("notebook-icon-hover");
+$new-note-icon: image_url("new-note-icon.png");
+$new-note-hover: image_url("new-note-hover.png");
+
 .quill-outer-container {
   height: 100vh;
   align-content:center;
   display: flex;
+  vertical-align: middle;
+
+  .quill-select-notebook {
+    text-align: center;
+    margin: auto;
+    color: #bebebe;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+
+    button {
+      margin-bottom: 10px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border-radius: 50%;
+      border: none;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: $notebooks;
+      background-size: 100%;
+      transition: .4s;
+      cursor: pointer;
+    }
+
+    button:focus {
+      outline: none;
+    }
+
+    .open {
+      background-image: $notebooks;
+    }
+
+    .create {
+      background-image: $new-note-icon;
+    }
+
+    .open:hover {
+      background-image: $notebooks_hover;
+    }
+
+    .create:hover {
+      background-image: $new-note-hover;
+    }
+
+  }
+
+  .no-notebook-text {
+    text-align: center;
+    margin: 0 auto;
+  }
 
   .quill-container {
     float: left;

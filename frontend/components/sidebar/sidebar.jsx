@@ -1,6 +1,5 @@
 import React from "react";
 import { withRouter } from 'react-router-dom';
-import NotebooksIndexContainer from '../../components/notebooks/index/notebooks_index_container';
 
 class Sidebar extends React.Component {
   constructor(props) {

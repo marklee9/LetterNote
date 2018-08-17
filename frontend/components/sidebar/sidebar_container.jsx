@@ -8,7 +8,8 @@ import { openNoteBar, closeNoteBar } from '../../actions/notes_bar_actions';
 import { newQuill, resetQuill } from '../../actions/quill_actions';
 
 const msp = (state) => ({
-  currentUserId: state.session.currentUserId,
+	currentUserId: state.session.currentUserId,
+	notebooks: state.entities.notebooks,
   notes: state.entities.notes
 });
 
