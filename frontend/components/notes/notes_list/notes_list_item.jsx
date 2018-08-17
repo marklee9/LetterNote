@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class NotesListItem extends React.Component {
   constructor(props) {
@@ -17,20 +18,21 @@ class NotesListItem extends React.Component {
 
   setWorkingNote() {
     this.props.props.fetchWorkingNote(this.props.note);
+    this.props.props.resetQuill();
     this.props.props.editQuill();
   }
 
   render() {
     return <div className="each-note" onClick={this.setWorkingNote}>
-      <div className="title-div">
-        <p className="index-note-title">
-          {this.props.note.title}
-        </p>
-      </div>
-      <div className="delete-div">
-        <button className="index-note-delete" onClick={this.deleteNote()}/>
-      </div>
-    </div>;
+				<div className="title-div">
+					<p className="index-note-title">
+            {this.props.note.title}
+					</p>
+				</div>
+				<div className="delete-div">
+					<button className="index-note-delete" onClick={this.deleteNote()} />
+				</div>
+			</div>;
   }
 }
 

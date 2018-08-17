@@ -1,9 +1,14 @@
 import { connect } from "react-redux";
 import NoteForm from "./note_form";
-import { fetchNote, createNote, updateNote, deleteNote } from "../../../actions/note_actions";
+import { 
+  fetchNote, 
+  createNote, 
+  updateNote, 
+  deleteNote 
+} from "../../../actions/note_actions";
 
-const msp = state => ({
-	workingNote: state.ui.workingNote,
+const msp = state => ({	
+  workingNote: state.ui.workingNote,
   note: state.entities.notes[state.ui.workingNote],
   form: state.ui.quillContainer
 });

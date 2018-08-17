@@ -10,29 +10,33 @@ class NoteForm extends React.Component {
 			this.state = { title: "", body: "" };
 		} else {
 			this.state = this.props.note;
-		}
-
+    }
+   
 		this.handleChangeBody = this.handleChangeBody.bind(this);
 		this.handleChangeTitle = this.handleChangeTitle.bind(this);
 		this.actionNote = this.actionNote.bind(this);
-	}
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.workingNote !== nextProps.workingNote) {
+      return this.setState(nextProps.note);
+    }
+  }
   
 	handleChangeBody(value) {
-		this.setState({ body: value }, debounce(this.actionNote, 2000));
+		this.setState({ body: value }, debounce(this.actionNote, 3000));
 	}
 
 	handleChangeTitle(e) {
-		this.setState({ title: e.target.value }, debounce(this.actionNote, 2000));
+    this.setState({ title: e.target.value }, 
+      debounce(this.actionNote, 3000));
 	}
 
 	actionNote() {
-    console.log(this.props.note);
-		let note = this.props.note;
-		if (!note) {
-			note = {};
-		}
+		let note = this.state;
 		note.body = this.state.body;
-		note.title = this.state.title;
+    note.title = this.state.title;
+    
 		if (this.props.workingNote) {
 			this.props.updateNote(note);
 		} else {
