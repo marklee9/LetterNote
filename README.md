@@ -74,9 +74,17 @@ To keep code DRY, similar components were combined into a singular, more adaptab
 ```js
 // By passing different formType props, the sign up form will render differently.
 
+//container
+const msp = ({ errors }) => ({
+  errors: errors.session,
+  formType: "Create Account",
+  navLink: <Link to="/login">Sign in</Link>
+});
+
+//component
 renderMessage() {
   if (this.props.formType === "Sign in") {
-    return <h6>Don't have an account?</h6>;
+    return <h6>Do not have an account?</h6>;
   }
   return <h6>Already have an account?</h6>;
 }
@@ -87,22 +95,29 @@ renderSubmitButtonMessage() {
   }
   return <p>Create Account</p>;
 }
-
-renderTerms() {
-  if (this.props.formType === "Sign in" ||  this.props.errors.length > 0) {
-    return <p></p>;
-  }
-  return (
-    <p className="term-p"> 
-      By clicking Create Account, I agree to the 
-      <a className="terms">
-        Terms of Service
-      </a> 
-      and 
-      <a className="terms">
-        Privacy Policy
-      </a>.
-    </p>
-  );
-}
 ```
+
+# Project Design
+
+Considering 10-day working time period, Letternote was focused on simplicity with few of the crucial functionalities of Evernote.  Keeping code manageable was prioritized over cloning every major feature of the target app.  
+
+# Technologies
+
+ As this project was a smaller-scale portfolio piece being built in a relatively short timeframe, convenience and speed was prioritized over scalability. Rails was chosen due to its relational database and RESTful architecture.
+
+ React and Redux was chosen to make the overall app a single page web application. Session, notebooks, notes, errors, and modals all have separate reducers and actions to normalize the state and optimize overall speed of the application.
+
+## Additional Resources
+  * [Proposal Wireframes][wireframes]
+  * [API Endpoints][apiEndPoints]
+  * [Database Schema][dbSchema]
+
+[wireframes]: https://github.com/s-pangburn/small/wiki/Wireframes
+[apiEndPoints]: https://github.com/s-pangburn/small/wiki/Routes
+[dbSchema]: https://github.com/s-pangburn/small/wiki/Schema
+
+# Future Features.
+
+* Tags and Taggings
+* Note Search
+* Sort by date updated.
