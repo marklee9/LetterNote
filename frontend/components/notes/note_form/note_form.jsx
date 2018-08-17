@@ -55,17 +55,29 @@ class NoteForm extends React.Component {
   }
 
 	render() {
-    if (!this.props.notebooks) {
+    if (Object.keys(this.props.allNotes).length === 0) {
       return (
         <div className="quill-outer-container">
           <div className="quill-select-notebook">
             <h1>You don't have any notebooks</h1>
-              <button className='create' onClick={this.openModal("notebookIndex")} />
+            <div className='linebreak'></div>
+              <button className='create' onClick={this.openModal("createNotebook")} />
             <h1>Click to create notebook</h1>
           </div>
         </div>
       );
-    } else {
+    } else if (Object.keys(this.props.notebooks).length === 0) {
+      return (
+        <div className="quill-outer-container">
+          <div className="quill-select-notebook">
+            <h1>Click to create notes</h1>
+            <div className='linebreak'></div>
+            <button className='create' onClick={this.openModal("notebookIndex")} />
+          </div>
+        </div>
+      );
+    }
+    else {
       return (
         <div className="quill-outer-container">
           <div className="quill-container">

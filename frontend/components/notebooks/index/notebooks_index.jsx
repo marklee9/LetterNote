@@ -31,9 +31,15 @@ class NotebooksIndex extends React.Component {
   }
 
   render() {
-    const index = this.props.notebooks.map((notebook) =>
+    let index = this.props.notebooks.map((notebook) =>
       <NotebooksIndexItem props={this.props} key={notebook.id} notebook={notebook}></NotebooksIndexItem>
   );
+    if (index.length === 0) {
+      index = <div className="notebook-index-empty">
+        <button onClick={this.openModal("createNotebook")} />
+        <h1>Make your first Notebook!</h1>
+      </div>;
+    }
 
     return (
     <div className='modal-notebook-index'>

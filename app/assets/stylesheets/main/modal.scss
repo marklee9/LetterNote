@@ -165,6 +165,25 @@ $big-notebook: image_url("big-new-notebook");
   width: 465px;
   overflow: scroll;
   height: 80vh;
+
+  .notebook-index-empty {
+    margin: 300px auto 0 auto;
+    text-align: center;
+    color: #bebebe;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+
+    button {
+      width: 60px;
+      height: 60px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+      background-image: $create-notebook;
+      cursor: pointer;
+      border: none;
+    }
+  }
 }
 
 .modal-notebook-index {

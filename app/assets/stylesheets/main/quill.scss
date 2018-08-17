@@ -16,7 +16,14 @@ $new-note-hover: image_url("new-note-hover.png");
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
 
+    .linebreak {
+      width: 300px;
+      border: .5px solid #e0e0e0;
+      margin: 20px 0;
+    }
+
     button {
+      padding: 20px;
       margin-bottom: 10px;
       width: 60px;
       height: 60px;
@@ -35,19 +42,19 @@ $new-note-hover: image_url("new-note-hover.png");
       outline: none;
     }
 
-    .open {
+    .create {
       background-image: $notebooks;
     }
 
-    .create {
+    .open {
       background-image: $new-note-icon;
     }
 
-    .open:hover {
+    .create:hover {
       background-image: $notebooks_hover;
     }
 
-    .create:hover {
+    .open:hover {
       background-image: $new-note-hover;
     }
 
