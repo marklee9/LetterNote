@@ -7,9 +7,9 @@ import TagsErrorReducer from './error_reducers/tags_error_reducer';
 
 export default combineReducers({
   session: SessionErrorReducer,
-  notebooks: NotebookErrorReducer
+  notebooks: NotebookErrorReducer,
+  notes: NoteErrorReducer,
 });
 
-// notes: NoteErrorReducer,
 // notebooks: NotebookErrorReducer,
 // tags: TagsErrorReducer

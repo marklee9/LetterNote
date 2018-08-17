@@ -11,7 +11,7 @@ class Api::NotesController < ApplicationController
   end
 
   def show
-    @note = current_user.notes.find(params[:id]).first
+    @note = current_user.notes.find(params[:id])
     if @note
       render :show
     else
@@ -33,7 +33,7 @@ class Api::NotesController < ApplicationController
   end
 
   def destroy
-    @note = current_user.notes.where(id: params[:id]).first
+    @note = current_user.notes.find(params[:id])
     if @note
       @note.destroy
       render :show

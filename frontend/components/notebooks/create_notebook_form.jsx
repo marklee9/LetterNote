@@ -25,13 +25,10 @@ class CreateNotebookForm extends React.Component {
 	}
 
 	handleSubmit() {
-		const notebook = this.state;
-		const prev = this.props.closeModal;
-
 		return (e) => {
 			e.preventDefault();
-			this.props.createNotebook(notebook)
-				.then(() => prev());
+			this.props.createNotebook(this.state);
+			this.props.closeModal();
 		};
 	}
 

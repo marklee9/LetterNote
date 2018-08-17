@@ -18,7 +18,7 @@ const mdp = dispatch => ({
 	fetchNote: id => dispatch(fetchNote(id)),
 	fetchWorkingNote: note => dispatch(fetchWorkingNote(note)),
 	closeWorkingNote: () => dispatch(closeWorkingNote()),
-	deleteNote: id => dispatch(deleteNote()),
+	deleteNote: id => dispatch(deleteNote(id)),
 	editQuill: () => dispatch(editQuill()),
 	resetQuill: () => dispatch(resetQuill())
 });

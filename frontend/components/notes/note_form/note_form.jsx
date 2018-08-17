@@ -9,10 +9,6 @@ class NoteForm extends React.Component {
 		if (this.props.form === 'new') {
       this.state = { title: "", body: "" };
     } 
-      // else if (Object.keys(this.props.allNotes).length !== 0) {
-      //   let array = Object.values(this.props.allNotes);
-      //   let lastNote = array[array.length - 1];
-      //   this.state = lastNote;}
     else if (!this.props.form) {
       this.state = { title: "", body: "" };
     } else {
@@ -66,13 +62,13 @@ class NoteForm extends React.Component {
           </div>
         </div>
       );
-    } else if (Object.keys(this.props.notebooks).length === 0) {
+    } else if (!this.props.form) {
       return (
         <div className="quill-outer-container">
           <div className="quill-select-notebook">
-            <h1>Click to create notes</h1>
+            <h1>Pick your notebook and Create a new note</h1>
             <div className='linebreak'></div>
-            <button className='create' onClick={this.openModal("notebookIndex")} />
+            <button className='open' onClick={this.openModal("notebookIndex")} />
           </div>
         </div>
       );
