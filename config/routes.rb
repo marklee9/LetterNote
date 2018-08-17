@@ -9,13 +9,10 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resources :users, only:[:create]
     resource :session, only:[:create, :destroy]
-    
     resources :notebooks, only:[:create, :show, :destroy, :index]
-
     resources :notes
     
   end
-
 
   # sets root page to yield: /static_pages/root.html.erb
   root "static_pages#root"

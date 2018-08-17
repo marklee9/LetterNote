@@ -9,7 +9,7 @@ class Api::NotebooksController < ApplicationController
   end
 
   def show
-    @notebook = current_user.notebooks.where(id: params[:id]).first
+    @notebook = current_user.notebooks.find(params[:id]).first
     if @notebook
       render :show
     else
@@ -22,7 +22,7 @@ class Api::NotebooksController < ApplicationController
   end
 
   def destroy
-    @notebook = current_user.notebooks.where(id: params[:id]).first
+    @notebook = current_user.notebooks.find(params[:id]).first
     if @notebook
       @notebook.destroy
       render :show

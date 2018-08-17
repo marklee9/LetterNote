@@ -33,14 +33,13 @@ class NoteForm extends React.Component {
 	}
 
 	actionNote() {
-		let note = this.state;
-		note.body = this.state.body;
-    note.title = this.state.title;
-    
+    // let note = this.state;
+		// note.body = this.state.body;
+    // note.title = this.state.title;
 		if (this.props.workingNote) {
-			this.props.updateNote(note);
-		} else {
-			this.props.createNote(note);
+			return this.props.updateNote(this.state);
+    } else {
+			return this.props.createNote(this.state);
 		}
 	}
 

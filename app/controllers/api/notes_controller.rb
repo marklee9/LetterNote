@@ -11,11 +11,20 @@ class Api::NotesController < ApplicationController
   end
 
   def show
-    @note = current_user.notes.where(id: params[:id]).first
+    @note = current_user.notes.find(params[:id]).first
     if @note
       render :show
     else
       render json: ["Note not found, Please try again."], status:404
+    end
+  end
+
+  def update 
+    @note = current_user.notes.find(params[:id])
+    if @note.update(note_params)
+      render :show
+    else
+      render json: ["Could not update your note, please try again"], status:404
     end
   end
 
@@ -24,7 +33,6 @@ class Api::NotesController < ApplicationController
   end
 
   def destroy
-    debugger
     @note = current_user.notes.where(id: params[:id]).first
     if @note
       @note.destroy
