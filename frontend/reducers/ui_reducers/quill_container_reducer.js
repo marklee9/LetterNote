@@ -4,7 +4,8 @@ import {
   RESET_QUILL
 } from '../../actions/quill_actions';
 
-import { DELETE_NOTE } from '../../actions/note_actions';
+import { DELETE_NOTE, RECEIVE_NOTE } from '../../actions/note_actions';
+import { LOGOUT_CURRENT_USER } from '../../actions/sessions_actions';
 
 export default function workingNoteIdReducer(state = null, action) {
   switch (action.type) {
@@ -15,6 +16,8 @@ export default function workingNoteIdReducer(state = null, action) {
     case DELETE_NOTE:
       return null;
     case RESET_QUILL:
+      return null;
+    case LOGOUT_CURRENT_USER:
       return null;
     default:
       return state;

@@ -6,12 +6,17 @@ class NotebooksIndexItem extends React.Component {
 		this.setCurrentNotebookAndCloseModal = this.setCurrentNotebookAndCloseModal.bind(this);
 	}
 
+	componentDidMount() {
+		this.props.props.fetchNotebooks();
+	}
+
 	deleteNotebook() {
 		return (e) => {
 			e.preventDefault();
 			e.stopPropagation();
 			this.props.props.closeNoteBar();
 			this.props.props.deleteNotebook(this.props.notebook.id);
+			this.props.props.closeNoteListBar();
 			this.props.props.openNoteListBar();
 		};
 	}

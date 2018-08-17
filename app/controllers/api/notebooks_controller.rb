@@ -24,6 +24,7 @@ class Api::NotebooksController < ApplicationController
   def destroy
     @notebook = current_user.notebooks.find(params[:id])
     if @notebook
+      @notes = @notebook.notes.map{|note| note.id}
       @notebook.notes.each do |note|
         note.destroy
       end

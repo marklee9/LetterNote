@@ -6,6 +6,8 @@ import {
 import {
   merge
 } from 'lodash';
+import { LOGOUT_CURRENT_USER } from '../../actions/sessions_actions';
+
 
 export default (oldState = {}, action) => {
   Object.freeze(oldState);
@@ -19,8 +21,10 @@ export default (oldState = {}, action) => {
       });
     case DELETE_NOTEBOOK:
       let newState = merge({}, oldState);
-      delete newState[action.notebookId];
+      delete newState[action.payload.notebook.id];
       return newState;
+    case LOGOUT_CURRENT_USER:
+      return {};
     default:
       return oldState;
   }

@@ -5,12 +5,15 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 import { fetchNotes } from "../../actions/note_actions";
 import { openNoteListBar, closeNoteListBar } from '../../actions/notes_list_bar_actions';
 import { openNoteBar, closeNoteBar } from '../../actions/notes_bar_actions';
-import { newQuill, resetQuill } from '../../actions/quill_actions';
+import { newQuill, editQuill, resetQuill } from '../../actions/quill_actions';
+import { createNote } from '../../actions/note_actions';
+import { fetchWorkingNote } from '../../actions/note_actions';
 
-const msp = (state) => ({
+const msp = state => ({
 	currentUserId: state.session.currentUserId,
 	notebooks: state.entities.notebooks,
-  notes: state.entities.notes
+	notes: state.entities.notes,
+	currentNotebookId: state.ui.currentNotebookId
 });
 
 const mdp = dispatch => ({
@@ -23,7 +26,10 @@ const mdp = dispatch => ({
 	openNoteBar: () => dispatch(openNoteBar()),
 	closeNoteBar: () => dispatch(closeNoteBar()),
 	newQuill: () => dispatch(newQuill()),
-	resetQuill: () => dispatch(resetQuill())
+	editQuill: () => dispatch(editQuill()),
+	resetQuill: () => dispatch(resetQuill()),
+	createNote: note => dispatch(createNote(note)),
+	fetchWorkingNote: note => dispatch(fetchWorkingNote(note))
 });
 
 export default connect(msp, mdp)(Sidebar);

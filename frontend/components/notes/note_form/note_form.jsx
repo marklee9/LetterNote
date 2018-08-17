@@ -5,7 +5,6 @@ import { debounce } from 'lodash';
 class NoteForm extends React.Component {
 	constructor(props) {
 		super(props);
-
 		if (this.props.form === 'new') {
       this.state = { title: "", body: "" };
     } 
@@ -36,10 +35,11 @@ class NoteForm extends React.Component {
 	}
 
 	actionNote() {
+    this.state.notebook_id = this.props.currentNotebookId;
 		if (this.props.workingNote) {
 			return this.props.updateNote(this.state);
     } else {
-			return this.props.createNote(this.state);
+      this.props.createNote(this.state);
 		}
   }
 
@@ -47,6 +47,21 @@ class NoteForm extends React.Component {
     return (e) => {
       e.preventDefault();
       this.props.openModal(field);
+    };
+  }
+
+  openModal2(field) {
+    return (e) => {
+      e.preventDefault();
+      if (this.props.currentNotebookId) {
+        this.props.createNote({
+          title: 'New Note',
+          body: '',
+          notebook_id: this.props.currentNotebookId
+        });
+      } else { 
+        this.props.openModal(field);
+      }
     };
   }
 
@@ -68,7 +83,7 @@ class NoteForm extends React.Component {
           <div className="quill-select-notebook">
             <h1>Pick your notebook and Create a new note</h1>
             <div className='linebreak'></div>
-            <button className='open' onClick={this.openModal("notebookIndex")} />
+            <button className='open' onClick={this.openModal2("notebookIndex")} />
           </div>
         </div>
       );
@@ -79,7 +94,6 @@ class NoteForm extends React.Component {
           <div className="quill-container">
             <div className="tool-container">
               <div>
-                <p>Add notebooks here</p>
               </div>
             </div>
             <input

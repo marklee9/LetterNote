@@ -39,7 +39,9 @@ class NoteList extends React.Component {
 						<h5>All Notes</h5>
 					</div>
 					<div className="linebreak-note-list" />	
-				{this.renderAllNotes()}
+					<div className='all-notes'>
+						{this.renderAllNotes()}
+					</div>
 				{this.renderLittleNotes()}
 				</div>;
 		}

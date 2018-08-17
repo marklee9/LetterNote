@@ -21,7 +21,7 @@ const msp = state => ({
 const mdp = dispatch => ({
   fetchNotebooks: () => dispatch(fetchNotebooks()),
   fetchNote: (id) => dispatch(fetchNote(id)),
-	createNote: () => dispatch(createNote()),
+	createNote: (note) => dispatch(createNote(note)),
 	updateNote: note => dispatch(updateNote(note)),
   deleteNote: id => dispatch(deleteNote(id)),
   openModal: modal => dispatch(openModal(modal)),  

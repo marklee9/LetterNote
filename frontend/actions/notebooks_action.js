@@ -32,7 +32,7 @@ export const fetchNotebooks = () => dispatch => (
 export const fetchNotebook = (id) => dispatch => (
   NotebookApiUtil.fetchNotebook(id)
   .then(
-    (notebook) => dispatch({
+    ({notebook}) => dispatch({
       type: RECEIVE_NOTEBOOK,
       notebook
     }),
@@ -46,7 +46,7 @@ export const fetchNotebook = (id) => dispatch => (
 export const createNotebook = (notebookAPI) => dispatch => (
   NotebookApiUtil.createNotebook(notebookAPI)
   .then(
-    (notebook) => dispatch({
+    ({notebook}) => dispatch({
       type: RECEIVE_NOTEBOOK,
       notebook
     }),
@@ -60,7 +60,7 @@ export const createNotebook = (notebookAPI) => dispatch => (
 export const updateNotebook = (notebookAPI) => dispatch => (
   NotebookApiUtil.updateNotebook(notebookAPI)
   .then(
-    (notebook) => dispatch({
+    ({notebook}) => dispatch({
       type: RECEIVE_NOTEBOOK,
       notebook
     }),
@@ -74,9 +74,9 @@ export const updateNotebook = (notebookAPI) => dispatch => (
 export const deleteNotebook = (id) => dispatch => (
   NotebookApiUtil.deleteNotebook(id)
   .then(
-    () => dispatch({
+    (payload) => dispatch({
       type: DELETE_NOTEBOOK,
-      notebookId: id
+      payload
     }),
     (error) => dispatch({
       type: RECEIVE_NOTEBOOK_ERRORS,
@@ -84,3 +84,4 @@ export const deleteNotebook = (id) => dispatch => (
     })
   )
 );
+

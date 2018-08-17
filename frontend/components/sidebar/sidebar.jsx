@@ -33,6 +33,21 @@ class Sidebar extends React.Component {
 		};
 	}
 
+	newNote() {
+		return (e) => {
+			e.preventDefault();
+			if (this.props.currentNotebookId) {
+				this.props.createNote({
+					title: 'New Note',
+					body: '',
+					notebook_id: this.props.currentNotebookId
+				});
+			} else {
+				this.props.openModal("notebookIndex");
+			}
+		};
+	}
+
   render () {
     if (this.props.currentUserId) {
 
@@ -42,7 +57,7 @@ class Sidebar extends React.Component {
 					</div>
 					<div className="sidebar-outer-div">
 						<div className="sidebar-inner-div">
-							<button onClick={this.openModal("createNotebook")} className="new-note-img" />
+							<button onClick={this.newNote()} className="new-note-img" />
 						</div>
 					</div>
 					<div className="sidebar-outer-div">

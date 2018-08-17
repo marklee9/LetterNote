@@ -1,22 +1,4 @@
-# README
+Letternote
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+[Letternote](https://letter-note.herokuapp.com/)is a clone of famous note taking web app Evernote. Letternote is a single page application developed using Ruby, Rails, React, Redux, and PostgreSQL. 
+Letternote allows users to create notebooks that contains many notes that users can create. It allows users to manage their notes by organizing the notes with notebooks. 
