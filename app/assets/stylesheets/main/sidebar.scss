@@ -61,34 +61,18 @@ $tags_hover: image_url("tag-icon-hover");
         background-image: $meeting;
       }
 
-      .meeting-img:hover {
-        background-image: $meeting_hover;
-      }
-
       .search-img {
         background-image: $search;
-      }
-
-      .search-img:hover {
-        background-image: $search_hover;
       }
 
       .workchat-img {
         background-image: $workchat;
       }
 
-      .workchat-img:hover {
-        background-image: $workchat_hover;        
-      }
-
       .star-img {
         background-image: $star;
         background-color: #f3f3f3;
         border: none;
-      }
-
-      .star-img:hover {
-        background-image: $star_hover;
       }
 
       .notes-img {

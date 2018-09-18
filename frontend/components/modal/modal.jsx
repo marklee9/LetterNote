@@ -29,7 +29,7 @@ class Modal extends React.Component {
 
     if (this.props.modal === 'createNotebook') {
       return (
-         <div className="fade-modal-background" onClick={this.props.closeModal}>
+         <div id='modal' className="fade-modal-background" onClick={this.props.closeModal}>
             <div className="fade-modal-child" onClick={e => e.stopPropagation()}>
               {component}
             </div>
@@ -38,8 +38,8 @@ class Modal extends React.Component {
     }
 
     if (this.props.modal === 'notebookIndex') {
-      return <div className="slide-modal-background" onClick={this.props.closeModal}>
-					<div className="slide-modal-child" onClick={e => e.stopPropagation()}>
+      return <div id='modal' className="slide-modal-background" onClick={this.props.closeModal}>
+          <div className="slide-modal-child animated slideInLeft" onClick={e => e.stopPropagation()}>
 						{component}
 					</div>
 				</div>;

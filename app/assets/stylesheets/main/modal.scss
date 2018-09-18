@@ -5,11 +5,6 @@ $notebook: image_url("notebook");
 $big-notebook: image_url("big-new-notebook");
 
 .fade-modal-background {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
   background: rgba(255, 255, 255, 1);
   animation-duration: .5s;
   z-index: 20;
@@ -154,8 +149,6 @@ $big-notebook: image_url("big-new-notebook");
 .slide-modal-child {
   border-right: 2px solid #dadada;
   position: absolute;
-  top: 50%;
-  left: 231.5px;
   height: 100vh;
   transform: translate(-50%, -50%);
   background-color: white;
@@ -195,10 +188,8 @@ $big-notebook: image_url("big-new-notebook");
     height:60px;
     border-bottom: 2px solid #eeeeee;
 
-
     .modal-notebook-notebook-title {
       padding: 18px;
-
 
       p {
         float: left;
