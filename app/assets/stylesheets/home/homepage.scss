@@ -1,3 +1,5 @@
+$focus-image: image_url("homepage-focus.png");
+
 .home-a-tag {
   margin-left: 2%;
 }
@@ -194,5 +196,34 @@
   }
   #nav-demo {
     display: block;
+  }
+}
+
+.focus-splash {
+  height: 600px;
+  width: 100%;
+  border: 1px solid black;
+  text-align: center;
+
+  .focus-image-div {
+    border: 1px solid black;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    height: 120px;
+
+    .focus-image {
+      margin: 0 auto;
+      border: 1px solid black;
+      background-image: $focus-image;
+      background-size: 100%;
+      width: 120px;
+      height: 100%;
+    }
+  }
+
+  .focus-text {
+    display: inline-block;
+    width: 30%;
+    border: 1px solid black;
   }
 }

@@ -3,6 +3,7 @@ import NavBarContainer from './navbar/navbar_container';
 import SignupFormContainer from '../session/signup_form_container';
 import { Route, withRouter } from "react-router-dom";
 import Splash from './splash/splash';
+import Focus from './focus/focus';
 
 class Home extends React.Component {
 	constructor(props) {
@@ -27,6 +28,7 @@ class Home extends React.Component {
 				</div>
 			</div>
       <Splash props={this.props}/>
+			<Focus />
 		</div>;
   }
 }
