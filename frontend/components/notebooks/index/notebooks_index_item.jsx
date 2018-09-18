@@ -23,7 +23,11 @@ class NotebooksIndexItem extends React.Component {
 
 	setCurrentNotebookAndCloseModal() {
 		this.props.props.fetchCurrentNotebook(this.props.notebook);
-		this.props.props.closeModal();
+
+		let modal = document.getElementById('modal');
+		modal.classList.add("animated");
+		modal.classList.add("slideOutLeft");
+		setTimeout(() => {this.props.props.closeModal();}, 775);
 		this.props.props.openNoteBar();
 		this.props.props.closeNoteListBar();
 	}
