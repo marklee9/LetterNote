@@ -98,7 +98,7 @@ class Sidebar extends React.Component {
 
 					<div className="sidebar-outer-div">
 						<div className="sidebar-inner-div">
-							<button className="tags-img" />
+							<button onClick={this.openModal("tagIndex")} className="tags-img" />
 						</div>
 					</div>
 
