@@ -6,7 +6,6 @@ export const selectNotes = (state) => {
   }
 };
 
-export const selectNotebooks = state => {
+export const selectNotebooks = (state) => {
   return Object.values(state.entities.notebooks).filter((note) => note.author_id === state.session.currentUserId);
 };
-

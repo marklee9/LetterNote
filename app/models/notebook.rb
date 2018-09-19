@@ -10,7 +10,7 @@
 #
 
 class Notebook < ApplicationRecord
-  validates :title, :author_id, presence:true;
+  validates :title, :author_id, presence:true
 
   belongs_to :user,
     foreign_key: :author_id,
