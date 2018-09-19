@@ -11,7 +11,8 @@ Rails.application.routes.draw do
     resource :session, only:[:create, :destroy]
     resources :notebooks, only:[:create, :show, :destroy, :index]
     resources :notes
-    
+    resources :tags, only: [:index, :create, :update, :show, :destroy]
+    resources :taggings, only: [:create]
   end
 
   # sets root page to yield: /static_pages/root.html.erb
