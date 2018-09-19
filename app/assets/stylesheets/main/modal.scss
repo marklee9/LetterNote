@@ -160,8 +160,8 @@ $big-notebook: image_url("big-new-notebook");
 }
 
 .all-notebook-list {
-  width: 465px;
-  overflow: scroll;
+  width: 467px;
+  overflow: auto;
   height: 80vh;
 
   .notebook-index-empty {
