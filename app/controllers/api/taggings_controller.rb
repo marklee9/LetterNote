@@ -1,10 +1,10 @@
 class Api::TaggingsController < ApplicationController
   def create
     @tag = current_user.tags.find_by_name(tagging_params[:tag_name])
+    note = Note.find_by_id(tagging_params[:note_id])
     unless @tag
       @tag = Tag.create(name: tagging_params[:tag_name], user_id: current_user.id)
     end
-    note = Note.find_by_id(tagging_params[:note_id])
 
     if @tag.user_id != note.author_id
       render json: ["Forbidden taggings creation"], status: 403
@@ -27,9 +27,7 @@ class Api::TaggingsController < ApplicationController
 
   def destroy
     @tag = current_user.tags.find_by_name(tagging_params[:tag_name])
-    @tagging = current_user.taggings.find_by(
-      note_id: tagging_params[:note_id],
-      tag_id: @tag.id)
+    @tagging = current_user.taggings.find_by(note_id: tagging_params[:note_id], tag_id: @tag.id)
     if @tagging.destroy
       render :show
     else

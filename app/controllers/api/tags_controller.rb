@@ -1,19 +1,32 @@
 class Api::TagsController < ApplicationController
   def create
     @tag = Tags.new(tags_params)
-    if @notebook.save
+    if @tag.save
       render :show
     else
-      render json: @notebook.errors.full_messages, status: 422
+      render json: @tag.errors.full_messages, status: 422
     end 
   end
 
   def show
     @tag = current_user.tag.find(params[:id])
-    if @notebook
+    if @tag
       render :show
     else
-      render json: ["Notebook not found, Please try again."], status:404
+      render json: ["Tag not found, Please try again."], status:404
+    end
+  end
+
+  def update
+    @tag = current_user.tags.find(params[:id])
+    if @tag
+      if @tag.update(tag_params)
+        render :show
+      else
+        render json: @tag.errors.full_messages, status: 400
+      end
+    else
+      render json: ["tag note found"], status: 404
     end
   end
 
@@ -22,12 +35,12 @@ class Api::TagsController < ApplicationController
   end
 
   def destroy
-    @tag = current_user.notes.find(params[:id]).first
+    @tag = current_user.notes.find(params[:id])
     if @tag
       @tag.destroy
       render :show
     else
-      render json: ["Unauthorized access to/Non-existing tag"], status: 401
+      render json: ["Unauthorized access to tag"], status: 401
     end
   end
 

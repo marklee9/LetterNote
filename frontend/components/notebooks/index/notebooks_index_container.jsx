@@ -11,7 +11,6 @@ const msp = (state) => ({
   errors: state.errors.notebooks
 });
 
-
 const mdp = dispatch => ({
 	fetchNotebooks: () => dispatch(fetchNotebooks()),
 	updateNotebook: notebook => dispatch(updateNotebook(notebook)),
