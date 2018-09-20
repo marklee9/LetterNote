@@ -157,6 +157,7 @@ $big-notebook: image_url("big-new-notebook");
   height: 100vh;
   transform: translate(-50%, -50%);
   background-color: white;
+  animation-duration: 0.6s !important;
 }
 
 .all-notebook-list {

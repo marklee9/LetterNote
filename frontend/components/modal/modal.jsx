@@ -8,6 +8,16 @@ import TagIndexContainer from "../tags/index/tags_index_container";
 class Modal extends React.Component {
   constructor(props) {
     super(props);
+
+    this.closeModal = this.closeModal.bind(this);    
+  }
+
+  closeModal() {
+    let modal = document.getElementById('modal');
+    modal.classList.add("animated");
+    modal.classList.add("slideOutLeft");
+    setTimeout(() => { 
+      this.props.closeModal(); }, 600);
   }
 
   render() {
@@ -42,7 +52,7 @@ class Modal extends React.Component {
     }
 
     if (this.props.modal === "notebookIndex" || this.props.modal === "tagIndex") {
-			return <div className="slide-modal-background" onClick={this.props.closeModal}>
+			return <div className="slide-modal-background" onClick={this.closeModal}>
 					<div id="modal" className="slide-modal-child animated slideInLeft" onClick={e => e.stopPropagation()}>
 						{component}
 					</div>
