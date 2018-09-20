@@ -8,6 +8,7 @@ class Sidebar extends React.Component {
 	
 	componentDidMount() {
 		this.props.fetchNotes();
+		this.props.fetchTags();
 	}
 
   logoutUser() {

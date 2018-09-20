@@ -6,17 +6,18 @@ import { fetchNotes } from "../../actions/note_actions";
 import { openNoteListBar, closeNoteListBar } from '../../actions/notes_list_bar_actions';
 import { openNoteBar, closeNoteBar } from '../../actions/notes_bar_actions';
 import { newQuill, editQuill, resetQuill } from '../../actions/quill_actions';
-import { createNote } from '../../actions/note_actions';
-import { fetchWorkingNote } from '../../actions/note_actions';
+import { createNote, fetchWorkingNote } from "../../actions/note_actions";
+import { fetchTags } from '../../actions/tags_actions';
 
 const msp = state => ({
 	currentUserId: state.session.currentUserId,
 	notebooks: state.entities.notebooks,
 	notes: state.entities.notes,
-	currentNotebookId: state.ui.currentNotebookId
+	currentNotebookId: state.ui.currentNotebookId,
 });
 
 const mdp = dispatch => ({
+	fetchTags: () => dispatch(fetchTags()),
 	fetchNotes: () => dispatch(fetchNotes()),
 	logout: id => dispatch(logout(id)),
 	openModal: modal => dispatch(openModal(modal)),

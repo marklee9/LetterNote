@@ -1,6 +1,6 @@
-export const fetchTags = () => {
+export const fetchTags = () => (
   $.ajax({
     method: "GET",
     url: "api/tags"
-  });
-};
+  })
+);
