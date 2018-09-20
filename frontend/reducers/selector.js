@@ -11,5 +11,5 @@ export const selectNotebooks = (state) => {
 };
 
 export const selectTags = (state) => {
-  return Object.values(state.).filter((tag) => tag.user_id === state.session.currentUserId);
-}
+  return Object.values(state.entities.tags).filter((tag) => tag.user_id === state.session.currentUserId);
+};

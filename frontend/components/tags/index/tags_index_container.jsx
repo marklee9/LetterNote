@@ -7,7 +7,7 @@ import { openNoteListBar, closeNoteListBar } from '../../../actions/notes_list_b
 import { selectTags } from '../../../reducers/selector';
 
 const msp = (state) => ({
-  notebooks: selectTags(state),
+  tags: selectTags(state),
   errors: state.errors.tags
 });
 
