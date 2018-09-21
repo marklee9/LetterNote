@@ -1,19 +1,38 @@
 import {
   RECEIVE_TAGS,
-} from '../../actions/tags_actions';
-import { merge } from 'lodash';
+  RECEIVE_TAG,
+  REMOVE_TAG,
+  RECEIVE_TAGGING,
+} from "../actions/tag_actions";
+import merge from "lodash/merge";
 import { LOGOUT_CURRENT_USER } from '../../actions/sessions_actions';
 
-
-export default (oldState = {}, action) => {
-  Object.freeze(oldState);
+const tagsReducer = (state = {}, action) => {
+  Object.freeze(state);
+  let newState;
 
   switch (action.type) {
     case RECEIVE_TAGS:
-      return merge({}, oldState, action.tags);
+      return action.tags;
+    case RECEIVE_TAG:
+      newState = merge({}, state);
+      newState[action.tag.id] = action.tag;
+      return newState;
+    case REMOVE_TAG:
+      newState = merge({}, state);
+      delete newState[action.tag.id];
+      return newState;
+    case RECEIVE_TAGGING:
+      newState = merge({}, state);
+      if (!newState[action.tagging.tag.id]) {
+        newState[action.tagging.tag.id] = action.tagging.tag;
+      }
+      return newState;
     case LOGOUT_CURRENT_USER:
       return {};
     default:
-      return oldState;
+      return state;
   }
 };
+
+export default tagsReducer;
