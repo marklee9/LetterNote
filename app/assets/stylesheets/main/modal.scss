@@ -3,6 +3,8 @@ $delete-notebook-hover: image_url("trash-icon-hover");
 $create-notebook: image_url("add-notebook");
 $notebook: image_url("notebook");
 $big-notebook: image_url("big-new-notebook");
+$big-tag: image_url("big_tag");
+$tag: image_url("tag");
 
 .fade-modal-background {
   position: fixed;
@@ -22,7 +24,7 @@ $big-notebook: image_url("big-new-notebook");
   left: 50%;
   transform: translate(-50%, -50%);
 
-  .new-notebook-img{
+  .new-notebook-img, .new-tag-img {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
@@ -136,6 +138,11 @@ $big-notebook: image_url("big-new-notebook");
     .new-notebook-img {
       margin: 20px auto 15px;
       background-image: $notebook;
+    }
+
+    .new-tag-img {
+      margin: 20px auto 15px;
+      background-image: $tag;
     }
   }
 }
@@ -306,6 +313,16 @@ $big-notebook: image_url("big-new-notebook");
     height: 75px;
     margin: 200px auto 20px;
     background-image: $big-notebook
+  }
+
+  .modal-empty-tag-big-img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 80px;
+    height: 75px;
+    margin: 200px auto 20px;
+    background-image: $big-tag
   }
 
   .modal-empty-notebook-content {

@@ -4,3 +4,10 @@ export const fetchTags = () => (
     url: "api/tags"
   })
 );
+
+export const createTags = () => (
+  $.ajax({
+    method: "GET",
+    url: "api/tags"
+  })
+);

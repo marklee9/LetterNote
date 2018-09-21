@@ -3,7 +3,8 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import CreateNotebookContainer from '../notebooks/create_notebook_container';
 import NotebookIndexContainer from '../notebooks/index/notebooks_index_container';
-import TagIndexContainer from "../tags/index/tags_index_container";
+import TagsIndexContainer from "../tags/index/tags_index_container";
+import CreateTagContainer from '../tags/create_tag_container';
 
 class Modal extends React.Component {
   constructor(props) {
@@ -29,27 +30,28 @@ class Modal extends React.Component {
 
     switch (this.props.modal) {
 			case "createNotebook":
-				component = <CreateNotebookContainer props={this.props.closeModal}/>;
+				component = <CreateNotebookContainer />;
 				break;
 			case "notebookIndex":
         component = <NotebookIndexContainer />;
         break;
       case "tagIndex":
-        component = <TagIndexContainer />;
+        component = <TagsIndexContainer />;
+        break;
+      case "createTag":
+        component = <CreateTagContainer />;
         break;
 			default:
 				return null;
 		}
 
-    if (this.props.modal === 'createNotebook') {
-      return (
-         <div className="fade-modal-background" onClick={this.props.closeModal}>
-            <div className="fade-modal-child" onClick={e => e.stopPropagation()}>
-              {component}
-            </div>
-        </div>
-      );
-    }
+    if (this.props.modal === "createNotebook" || this.props.modal === "createTag") {
+			return <div className="fade-modal-background" onClick={this.props.closeModal}>
+					<div className="fade-modal-child" onClick={e => e.stopPropagation()}>
+						{component}
+					</div>
+				</div>;
+		}
 
     if (this.props.modal === "notebookIndex" || this.props.modal === "tagIndex") {
 			return <div className="slide-modal-background" onClick={this.closeModal}>

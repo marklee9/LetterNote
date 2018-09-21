@@ -3,7 +3,7 @@ import {
   RECEIVE_TAG,
   REMOVE_TAG,
   RECEIVE_TAGGING,
-} from "../actions/tag_actions";
+} from "../../actions/tags_actions";
 import merge from "lodash/merge";
 import { LOGOUT_CURRENT_USER } from '../../actions/sessions_actions';
 
