@@ -1,6 +1,6 @@
 class Api::TagsController < ApplicationController
   def create
-    @tag = Tags.new(tags_params)
+    @tag = Tag.new(tags_params)
     if @tag.save
       render :show
     else
@@ -46,6 +46,6 @@ class Api::TagsController < ApplicationController
 
 private
   def tags_params
-    params.require(:tag).permit(:name)
+    params.require(:tag).permit(:name, :user_id)
   end
 end

@@ -5,9 +5,10 @@ export const fetchTags = () => (
   })
 );
 
-export const createTags = () => (
+export const createTag = (tag) => (
   $.ajax({
-    method: "GET",
-    url: "api/tags"
+    method: "POST",
+    url: "api/tags",
+    data: { tag }
   })
 );

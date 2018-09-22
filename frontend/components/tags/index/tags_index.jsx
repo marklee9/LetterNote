@@ -4,6 +4,9 @@ import TagsIndexItem from './tags_index_item';
 class TagsIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      tags: this.props.tags
+    };
   }
 
   openModal(field) {
@@ -27,15 +30,22 @@ class TagsIndex extends React.Component {
   }
 
   render() {
-    let index = this.props.tags.map((tag) =>
-      <TagsIndexItem props={this.props} key={tag.id} tag={tag}></ TagsIndexItem>
+    let firstLetters;
+    let alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+    this.props.tags.forEach((tag) =>
+      console.log(tag)
+      
     );
-    if (index.length === 0) {
-      index = <div className="notebook-index-empty">
-        <button onClick={this.openModal("createNotebook")} />
-        <h1>Make your first Tag!</h1>
-      </div>;
-    }
+
+    // <TagsIndexItem props={this.props} key={tag.id} tag={tag}></ TagsIndexItem>
+
+
+    // if (index.length === 0) {
+    //   index = <div className="notebook-index-empty">
+    //     <button onClick={this.openModal("createNotebook")} />
+    //     <h1>Make your first Tag!</h1>
+    //   </div>;
+    // }
 
     return <div className="modal-notebook-index">
 				<div className="modal-notebook-notebook">
@@ -44,7 +54,7 @@ class TagsIndex extends React.Component {
 						<button onClick={this.openModal("createTag")} className="create-notebook-img" />
 					</div>
 				</div>
-				<div className="all-notebook-list">{index}</div>
+				{/* <div className="all-notebook-list">{index}</div> */}
 				{this.renderCreateTagMessage()}
 			</div>;
   }

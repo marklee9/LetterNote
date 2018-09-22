@@ -6,7 +6,7 @@ class CreateTagForm extends React.Component {
     super(props);
     this.state = {
       name: '',
-      author_id: this.props.currentUserId
+      user_id: this.props.currentUserId
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -27,7 +27,6 @@ class CreateTagForm extends React.Component {
   handleSubmit() {
     return (e) => {
       e.preventDefault();
-      console.log("mark");
       this.props.createTag(this.state);
       this.props.closeModal();
     };
