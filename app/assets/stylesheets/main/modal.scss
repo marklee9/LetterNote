@@ -5,6 +5,10 @@ $notebook: image_url("notebook");
 $big-notebook: image_url("big-new-notebook");
 $big-tag: image_url("big_tag");
 $tag: image_url("tag");
+$tag-delete: image_url("tag-delete-icon");
+$tag-delete-hover: image_url("tag-delete-icon-hover");
+$tag-edit: image_url("tag-edit-icon");
+$tag-edit-hover: image_url("tag-edit-icon-hover");
 
 .fade-modal-background {
   position: fixed;
@@ -214,34 +218,82 @@ $tag: image_url("tag");
       .tag-div {
         margin: 8px;
         display: inline-block;
-  
-        .tag-name {
-  
-          .tag-name-div {
-            border: 1px solid #dddddd;
-            border-radius: 5px;
-            background-color: #f6f6f6;
-            font-family: 'Montserrat', sans-serif;
-            color: #363636;
-            font-size: 14px;
-            padding: 2px 10px;
-            cursor: pointer;
+    
+        .tag-name-div {
+          border: 1px solid #dddddd;
+          border-radius: 5px;
+          background-color: #f6f6f6;
+          font-family: 'Montserrat', sans-serif;
+          color: #363636;
+          font-size: 14px;
+          padding: 2px 10px;
+          cursor: pointer;
+          display: inline-block;
 
-            .tag-count {
-              margin-left: 10px;
-              color: #3dbe60;
-            }
+          .tag-count {
+            margin-left: 10px;
+            color: #3dbe60;
           }
+        }
 
-          .tag-name-div:hover {
-            border: 1px solid #3dbe60;
-            background-color: #3dbe60;
+        .tag-name-div:hover {
+          border: 1px solid #3dbe60;
+          background-color: #3dbe60;
 
+          color: #f6f6f6;
+
+          .tag-count {
             color: #f6f6f6;
+          }
+        }
 
-            .tag-count {
-              color: #f6f6f6;
-            }
+        .edit-tag-div {
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          margin-left: 16px;
+
+          .edit-tag-img {
+            text-align: center;
+            vertical-align: middle;
+            border: none;
+            width: 18px;
+            height: 18px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+            background-image: $tag-edit;
+          }
+        }
+
+        .edit-tag-div:hover {
+          .edit-tag-img {
+            background-image: $tag-edit-hover;
+          }
+        }
+
+        .delete-tag-div {
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          margin-left: 2px;
+          
+          .delete-tag-img {
+            text-align: center;
+            vertical-align: middle;
+            border: none;
+            width: 18px;
+            height: 18px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+            background-image: $tag-delete;
+          }
+        }
+
+        .delete-tag-div:hover {
+          .delete-tag-img {
+            background-image: $tag-delete-hover;
           }
         }
       }

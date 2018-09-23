@@ -37,10 +37,10 @@ class TagsIndex extends React.Component {
     this.props.tags.forEach((tag) => {
       let firstLetter = tag.name[0].toLowerCase();
       if (!firstLetters[firstLetter]) {
-        firstLetters[firstLetter] = [tag.name];
+        firstLetters[firstLetter] = [tag];
         firstLettersArray.push(firstLetter);
       } else {
-        firstLetters[firstLetter].push(tag.name);
+        firstLetters[firstLetter].push(tag);
       }
     });
     this.setState({firstLetters, firstLettersArray});
@@ -48,7 +48,7 @@ class TagsIndex extends React.Component {
 
   organizeTags(ch) {
     let result = this.state.firstLetters[ch].map((fl) => {
-      return <TagsIndexItem tagName={fl} count={this.state.firstLetters[ch].length} updateTag={this.props.updateTag} deleteTag={this.props.deleteTag} />;
+      return <TagsIndexItem tagId={fl.id} tagName={fl.name} count={this.state.firstLetters[ch].length} updateTag={this.props.updateTag} deleteTag={this.props.deleteTag} />;
     });
     return result;
   }

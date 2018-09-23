@@ -8,6 +8,13 @@ class TagsIndexItem extends React.Component {
 		};
 	}
 
+	deleteTag() {
+		return (e) => {
+			e.preventDefault();
+			this.props.deleteTag(this.props.tagId);
+		};
+	}
+
 	render() {
 		console.log(this.props);
 		return <div className="each-tag">
@@ -18,10 +25,10 @@ class TagsIndexItem extends React.Component {
 						</div>
 					</span>
 					<div className="edit-tag-div">
-						<div className="edit-tag-img" />
+						<button className="edit-tag-img"></button>
 					</div>
 					<div className="delete-tag-div">
-						<div className="delete-tag-img" />
+						<button onClick={this.deleteTag()} className="delete-tag-img"></button>
 					</div>
 				</div>
 			</div>;
