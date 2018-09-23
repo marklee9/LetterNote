@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class NotesListItem extends React.Component {
   constructor(props) {
     super(props);
@@ -21,7 +22,12 @@ class NotesListItem extends React.Component {
     this.props.props.editQuill();
   }
 
+  renderBody() {
+    this.props
+  }
+
   render() {
+    console.log(this.props);
     return <div className="each-note" onClick={this.setWorkingNote}>
 				<div className="title-div">
 					<p className="index-note-title">

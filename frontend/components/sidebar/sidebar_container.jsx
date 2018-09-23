@@ -14,6 +14,7 @@ const msp = state => ({
 	notebooks: state.entities.notebooks,
 	notes: state.entities.notes,
 	currentNotebookId: state.ui.currentNotebookId,
+	modal: state.ui.modal
 });
 
 const mdp = dispatch => ({

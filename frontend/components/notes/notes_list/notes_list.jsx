@@ -36,7 +36,8 @@ class NoteList extends React.Component {
 		} else {
 			return <div className="note-list-id">
 					<div className="note-list-id-note full-list">
-						<h5>All Notes</h5>
+						<p className="note-list-notes">NOTES</p>
+						<p className="count">{this.props.notes.length} notes</p>
 					</div>
 					<div className="linebreak-note-list" />	
 					<div className='all-notes'>

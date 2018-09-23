@@ -21,8 +21,8 @@ class Sidebar extends React.Component {
 
   openModal(field) {
     return (e) => {
-      e.preventDefault();
-      this.props.openModal(field);
+			e.preventDefault();
+			this.props.openModal(field);
     };
 	}
 	

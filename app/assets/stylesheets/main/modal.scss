@@ -176,6 +176,12 @@ $tag-edit-hover: image_url("tag-edit-icon-hover");
   overflow: auto;
   height: 80vh;
 
+  .underline {
+    margin: 0 auto;
+    width: 440px;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
   .notebook-index-empty {
     margin: 300px auto 0 auto;
     text-align: center;
@@ -199,7 +205,7 @@ $tag-edit-hover: image_url("tag-edit-icon-hover");
 .modal-notebook-index {
   background-color: white;
   height: 100vh;
-  width: 468px;
+  width: 466px;
 
   .tag-index-list{
     padding: 20px;
@@ -344,7 +350,6 @@ $tag-edit-hover: image_url("tag-edit-icon-hover");
   }
 
   .each-notebook {
-    border-bottom: 1px solid #f1f1f1;
     width: 450px;
     height: 50px;
     padding: 8px;

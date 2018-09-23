@@ -23,13 +23,24 @@ $delete-note-hover: image_url("trash-icon-hover");
   }
 
   .note-list-id-note {
-    height: 30px;
+    height: 70px;
     text-align: center;
     vertical-align: middle;
     color: rgb(190, 190, 190);
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 0.8px;
     font-weight:100;
+
+    .note-list-notes {
+      font-size: 20px;
+      color: rgb(114, 114, 114);
+      margin-bottom: 20px;
+      margin-top: 10px;
+    }
+
+    .count {
+      font-size: 16px;
+    }
   }
 
   .note-list-id-title {

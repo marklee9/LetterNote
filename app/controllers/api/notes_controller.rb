@@ -2,6 +2,7 @@ class Api::NotesController < ApplicationController
   def create
     @note = Note.new(note_params)
     @note.author_id = current_user.id
+    debugger
     if @note.save
       render :show
     else
@@ -20,7 +21,9 @@ class Api::NotesController < ApplicationController
 
   def update 
     @note = current_user.notes.find(params[:id])
-    if @note.update(note_params)
+    @note.title = note_params[:title]
+    @note.body = note_params[:body]
+    if @note.save
       render :show
     else
       render json: ["Could not update your note, please try again"], status:404

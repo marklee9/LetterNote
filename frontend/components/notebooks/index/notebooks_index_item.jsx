@@ -34,16 +34,19 @@ class NotebooksIndexItem extends React.Component {
 	}
 
 	render() {
-		return <div className="each-notebook" onClick={this.setCurrentNotebookAndCloseModal}>
-				<div className="title-div">
-					<p className="index-notebook-title">
-						{this.props.notebook.title}
-					</p>
+		return <div>
+			<div className="each-notebook" onClick={this.setCurrentNotebookAndCloseModal}>
+						<div className="title-div">
+							<p className="index-notebook-title">
+								{this.props.notebook.title}
+							</p>
+						</div>
+						<div className="delete-div">
+							<button onClick={this.deleteNotebook()} className="index-notebook-delete" />
+						</div>
 				</div>
-				<div className="delete-div">
-					<button onClick={this.deleteNotebook()} className="index-notebook-delete" />
-				</div>
-			</div>;
+				<div className="underline"></div>
+		</div>;
 	}
 }
 
