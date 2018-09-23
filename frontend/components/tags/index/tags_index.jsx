@@ -5,7 +5,9 @@ class TagsIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tags: this.props.tags
+      tags: this.props.tags,
+      firstLetters: {},
+      firstLettersArray: [],
     };
   }
 
@@ -29,23 +31,35 @@ class TagsIndex extends React.Component {
     }
   }
 
+  componentWillMount() {
+    let firstLetters = {};
+    let firstLettersArray = [];
+    this.props.tags.forEach((tag) => {
+      let firstLetter = tag.name[0].toLowerCase();
+      if (!firstLetters[firstLetter]) {
+        firstLetters[firstLetter] = [tag.name];
+        firstLettersArray.push(firstLetter);
+      } else {
+        firstLetters[firstLetter].push(tag.name);
+      }
+    });
+    this.setState({firstLetters, firstLettersArray});
+  }
+
+  organizeTags(ch) {
+    let result = this.state.firstLetters[ch].map((fl) => {
+      return <TagsIndexItem tagName={fl} count={this.state.firstLetters[ch].length} updateTag={this.props.updateTag} deleteTag={this.props.deleteTag} />;
+    });
+    return result;
+  }
+
   render() {
-    let firstLetters;
-    let alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
-    this.props.tags.forEach((tag) =>
-      console.log(tag)
-      
-    );
-
-    // <TagsIndexItem props={this.props} key={tag.id} tag={tag}></ TagsIndexItem>
-
-
-    // if (index.length === 0) {
-    //   index = <div className="notebook-index-empty">
-    //     <button onClick={this.openModal("createNotebook")} />
-    //     <h1>Make your first Tag!</h1>
-    //   </div>;
-    // }
+    let organizedTags = this.state.firstLettersArray.sort().map((ch) => {
+      return <div className="first-letter-div">
+        <div className="first-letter">{ch.toUpperCase()}</div>
+          {this.organizeTags(ch)}
+				</div>;
+    });
 
     return <div className="modal-notebook-index">
 				<div className="modal-notebook-notebook">
@@ -54,8 +68,10 @@ class TagsIndex extends React.Component {
 						<button onClick={this.openModal("createTag")} className="create-notebook-img" />
 					</div>
 				</div>
-				{/* <div className="all-notebook-list">{index}</div> */}
-				{this.renderCreateTagMessage()}
+        <div className="tag-index-list">
+          {organizedTags}
+          {this.renderCreateTagMessage()}
+        </div>
 			</div>;
   }
 }

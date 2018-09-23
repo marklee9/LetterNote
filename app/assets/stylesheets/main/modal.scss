@@ -195,6 +195,58 @@ $tag: image_url("tag");
 .modal-notebook-index {
   background-color: white;
   height: 100vh;
+  width: 468px;
+
+  .tag-index-list{
+    padding: 20px;
+
+    .first-letter-div {
+      margin-bottom: 25px;
+
+      .first-letter{
+        font-size: 13px;
+        font-family: gotham, helvetica, arial, sans-serif;
+        color: #aaaaaa;
+      }
+    }
+
+    .each-tag {
+      .tag-div {
+        margin: 8px;
+        display: inline-block;
+  
+        .tag-name {
+  
+          .tag-name-div {
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            background-color: #f6f6f6;
+            font-family: 'Montserrat', sans-serif;
+            color: #363636;
+            font-size: 14px;
+            padding: 2px 10px;
+            cursor: pointer;
+
+            .tag-count {
+              margin-left: 10px;
+              color: #3dbe60;
+            }
+          }
+
+          .tag-name-div:hover {
+            border: 1px solid #3dbe60;
+            background-color: #3dbe60;
+
+            color: #f6f6f6;
+
+            .tag-count {
+              color: #f6f6f6;
+            }
+          }
+        }
+      }
+    }
+  }
 
   .modal-notebook-notebook {
     text-align: center;
