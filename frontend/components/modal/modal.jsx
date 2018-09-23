@@ -1,5 +1,5 @@
 import React from 'react';
-import { closeModal } from '../../actions/modal_actions';
+import { closeModal, openModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import CreateNotebookContainer from '../notebooks/create_notebook_container';
 import NotebookIndexContainer from '../notebooks/index/notebooks_index_container';
@@ -7,60 +7,85 @@ import TagsIndexContainer from "../tags/index/tags_index_container";
 import CreateTagContainer from '../tags/create_tag_container';
 
 class Modal extends React.Component {
-  constructor(props) {
-    super(props);
+	constructor(props) {
+		super(props);
 
-    this.closeModal = this.closeModal.bind(this);    
-  }
+    this.closeModal = this.closeModal.bind(this);
+    this.closeAndOpenModal = this.closeAndOpenModal.bind(this);
+	}
 
-  closeModal() {
-    let modal = document.getElementById('modal');
-    modal.classList.add("animated");
-    modal.classList.add("slideOutLeft");
-    setTimeout(() => { 
-      this.props.closeModal(); }, 600);
-  }
+	closeModal() {
+		let modal = document.getElementById("modal");
+		modal.classList.add("animated");
+		modal.classList.add("slideOutLeft");
+		setTimeout(() => {
+			this.props.closeModal();
+		}, 600);
+	}
 
-  render() {
-    if (!this.props.modal) {
-      return null;
+  closeAndOpenModal() {
+    this.props.closeModal();
+    if (this.props.modal === "createNotebook") {
+      this.props.openModal("notebookIndex");
+    } else {
+      this.props.openModal("tagIndex");
     }
-    
-    let component;
+  }
 
-    switch (this.props.modal) {
+	render() {
+		if (!this.props.modal) {
+			return null;
+		}
+
+		let component;
+
+		switch (this.props.modal) {
 			case "createNotebook":
 				component = <CreateNotebookContainer />;
 				break;
 			case "notebookIndex":
-        component = <NotebookIndexContainer />;
-        break;
-      case "tagIndex":
-        component = <TagsIndexContainer />;
-        break;
-      case "createTag":
-        component = <CreateTagContainer />;
-        break;
+				component = <NotebookIndexContainer />;
+				break;
+			case "tagIndex":
+				component = <TagsIndexContainer />;
+				break;
+			case "createTag":
+				component = <CreateTagContainer />;
+				break;
 			default:
 				return null;
 		}
 
-    if (this.props.modal === "createNotebook" || this.props.modal === "createTag") {
-			return <div className="fade-modal-background" onClick={this.props.closeModal}>
+		if (
+			this.props.modal === "createNotebook" ||
+			this.props.modal === "createTag"
+		) {
+			return (
+				<div className="fade-modal-background" onClick={this.closeAndOpenModal}>
 					<div className="fade-modal-child" onClick={e => e.stopPropagation()}>
 						{component}
 					</div>
-				</div>;
+				</div>
+			);
 		}
 
-    if (this.props.modal === "notebookIndex" || this.props.modal === "tagIndex") {
-			return <div className="slide-modal-background" onClick={this.closeModal}>
-					<div id="modal" className="slide-modal-child animated slideInLeft" onClick={e => e.stopPropagation()}>
+		if (
+			this.props.modal === "notebookIndex" ||
+			this.props.modal === "tagIndex"
+		) {
+			return (
+				<div className="slide-modal-background" onClick={this.closeModal}>
+					<div
+						id="modal"
+						className="slide-modal-child animated slideInLeft"
+						onClick={e => e.stopPropagation()}
+					>
 						{component}
 					</div>
-				</div>;
+				</div>
+			);
 		}
-  } 
+	}
 }
 
 const msp = state => ({
@@ -69,6 +94,7 @@ const msp = state => ({
 
 const mdp = dispatch => {
   return {
+    openModal: modal => dispatch(openModal(modal)),
     closeModal: () => dispatch(closeModal()),
   };
 };
