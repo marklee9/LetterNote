@@ -12,3 +12,11 @@ export const createTag = (tag) => (
     data: { tag }
   })
 );
+
+export const deleteTag = (tagId) => (
+  $.ajax({
+    method: "DELETE",
+    url: `api/tags/${tagId}`,
+  })
+);
+

@@ -35,7 +35,7 @@ class Api::TagsController < ApplicationController
   end
 
   def destroy
-    @tag = current_user.notes.find(params[:id])
+    @tag = current_user.tags.find(params[:id])
     if @tag
       @tag.destroy
       render :show

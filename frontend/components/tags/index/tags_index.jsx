@@ -5,9 +5,7 @@ class TagsIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tags: this.props.tags,
-      firstLetters: {},
-      firstLettersArray: [],
+      tags: this.props.tags
     };
   }
 
@@ -31,33 +29,30 @@ class TagsIndex extends React.Component {
     }
   }
 
-  componentWillMount() {
-    let firstLetters = {};
-    let firstLettersArray = [];
-    this.props.tags.forEach((tag) => {
-      let firstLetter = tag.name[0].toLowerCase();
-      if (!firstLetters[firstLetter]) {
-        firstLetters[firstLetter] = [tag];
-        firstLettersArray.push(firstLetter);
-      } else {
-        firstLetters[firstLetter].push(tag);
-      }
-    });
-    this.setState({firstLetters, firstLettersArray});
-  }
-
-  organizeTags(ch) {
-    let result = this.state.firstLetters[ch].map((fl) => {
-      return <TagsIndexItem tagId={fl.id} tagName={fl.name} count={this.state.firstLetters[ch].length} updateTag={this.props.updateTag} deleteTag={this.props.deleteTag} />;
+  organizeTags(obj, ch) {
+    let result = obj[ch].map((fl) => {
+      return <TagsIndexItem tagId={fl.id} tagName={fl.name} count={obj[ch].length} updateTag={this.props.updateTag} deleteTag={this.props.deleteTag} />;
     });
     return result;
   }
 
   render() {
-    let organizedTags = this.state.firstLettersArray.sort().map((ch) => {
+    let firstLetters = {};
+		let firstLettersArray = [];
+		this.props.tags.forEach(tag => {
+			let firstLetter = tag.name[0].toLowerCase();
+			if (!firstLetters[firstLetter]) {
+				firstLetters[firstLetter] = [tag];
+				firstLettersArray.push(firstLetter);
+			} else {
+				firstLetters[firstLetter].push(tag);
+			}
+		});
+    
+    let organizedTags = firstLettersArray.sort().map((ch) => {
       return <div className="first-letter-div">
         <div className="first-letter">{ch.toUpperCase()}</div>
-          {this.organizeTags(ch)}
+          {this.organizeTags(firstLetters ,ch)}
 				</div>;
     });
 
