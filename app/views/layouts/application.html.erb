@@ -5,21 +5,22 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-<link href="https://fonts.googleapis.com/css?family=Zilla+Slab:300" rel="stylesheet">  </head>
-<link href="https://fonts.googleapis.com/css?family=Crimson+Text:600" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:200" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:600" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Arimo:700" rel="stylesheet"> 
-<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
-<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Rokkitt:200" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">  
-<link rel="stylesheet" href="//cdn.quilljs.com/1.2.6/quill.snow.css">
+
+    <%= favicon_link_tag asset_path('favicon.png') %>
+    <link href="https://fonts.googleapis.com/css?family=Zilla+Slab:300" rel="stylesheet">  </head>
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text:600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo:700" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rokkitt:200" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">  
+    <link rel="stylesheet" href="//cdn.quilljs.com/1.2.6/quill.snow.css">
   <body>
     <%= yield %>
   </body>

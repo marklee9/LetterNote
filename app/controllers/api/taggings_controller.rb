@@ -1,38 +1,36 @@
 class Api::TaggingsController < ApplicationController
+  def index
+    @taggings = []
+    current_user.notes.each do |note|
+      note.taggings.each do |tagging|
+        @taggings.push(tagging)
+      end
+    end
+    render :index
+  end
+
+  def show
+    @tagging = Tagging.find(params[:id])
+    render :show
+  end
+
   def create
-    @tag = current_user.tags.find_by_name(tagging_params[:tag_name])
-    note = Note.find_by_id(tagging_params[:note_id])
-    unless @tag
-      @tag = Tag.create(name: tagging_params[:tag_name], user_id: current_user.id)
-    end
-
-    if @tag.user_id != note.author_id
-      render json: ["Forbidden taggings creation"], status: 403
-      return
-    end
-
-    if @tag.user_id != current_user.id
-      render json: ["Unauthorized user"], status: 401
-    end
-
-    @tagging = Tagging.new(tag_id: @tag.id,
-       note_id: tagging_params[:note_id], user_id: current_user.id)
-
+    @tagging = Tagging.new(tagging_params)
     if @tagging.save
       render :show
     else
-      render json: @tagging.errors.full_messages, status: 400
+      render json: @tagging.errors.full_messages, status: 422
     end
   end
 
   def destroy
-    @tag = current_user.tags.find_by_name(tagging_params[:tag_name])
-    @tagging = current_user.taggings.find_by(note_id: tagging_params[:note_id], tag_id: @tag.id)
-    if @tagging.destroy
+    @tagging = Tagging.find(params[:id])
+    if Tagging.destroy(@tagging.id)
       render :show
     else
-      render json: @tagging.errors.full_messages, status: 400
+      render json: @tagging.errors.full_messages, status: 422
     end
+
   end
 
   private
