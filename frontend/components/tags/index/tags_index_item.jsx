@@ -42,6 +42,7 @@ class TagsIndexItem extends React.Component {
 	}
 
 	openNotesByTagName() {
+		this.props.fetchCurrentTag(this.props.tag);
 		this.props.closeModal();
 	}
 

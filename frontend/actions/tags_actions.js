@@ -6,6 +6,7 @@ export const REMOVE_TAG = "REMOVE_TAG";
 export const RECEIVE_TAGGING = "RECEIVE_TAGGING";
 export const REMOVE_TAGGING = "REMOVE_TAGGING";
 export const RECEIVE_TAG_ERRORS = "RECEIVE_TAG_ERRORS";
+export const CURRENT_TAG = "CURRENT_TAG";
 
 export const receiveTagErrors = errors => {
   return {
@@ -14,6 +15,13 @@ export const receiveTagErrors = errors => {
   };
 };
 
+export const fetchCurrentTag = tag => {
+  return {
+    type: CURRENT_TAG,
+    currentTagId: tag.id,
+    currentTagName: tag.name
+  };
+};
 
 export const fetchTags = () => dispatch => (
   TagApiUtil.fetchTags()

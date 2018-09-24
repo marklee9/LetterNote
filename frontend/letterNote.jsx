@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
+import Favicon from "react-favicon";
 
 document.addEventListener('DOMContentLoaded', () => {
 	let store;
@@ -19,5 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	const root = document.getElementById('root');
-	ReactDOM.render(<Root store={store} />, root);
+	ReactDOM.render(
+		<div>
+			<Favicon url="https://imgur.com/MTSHs7Q" />
+			<Root store={store} />
+		</div>, root);
 });
