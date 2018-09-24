@@ -1,4 +1,5 @@
 import React from "react";
+import ReactHtmlParser from "react-html-parser";
 
 class NotesListItem extends React.Component {
 	constructor(props) {
@@ -25,7 +26,15 @@ class NotesListItem extends React.Component {
 		return (
 			<div className="each-note" onClick={this.setWorkingNote}>
 				<div className="title-div">
-					<p className="index-note-title">{this.props.note.title}</p>
+					<p className="index-note-title">
+						{this.props.note.title}
+					</p>
+					<p className="note-date">
+						{this.props.note.updated.toUpperCase() + " AGO"}
+					</p>
+					<div className="note-body">
+						{ReactHtmlParser(this.props.note.body)}
+					</div>
 				</div>
 				<div className="delete-div">
 					<button onClick={this.deleteNote()} className="index-note-delete" />

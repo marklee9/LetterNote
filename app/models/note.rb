@@ -14,6 +14,8 @@
 class Note < ApplicationRecord
   validates :title, :author_id, :notebook_id, presence:true;
 
+  include ActionView::Helpers::DateHelper
+
   belongs_to :user,
     foreign_key: :author_id,
     class_name: :User
@@ -22,4 +24,8 @@ class Note < ApplicationRecord
 
   has_many :taggings,
   dependent: :destroy
+
+  def updated
+    time_ago_in_words(self.updated_at)
+  end
 end

@@ -15,6 +15,7 @@ class CreateNotebookForm extends React.Component {
 		return (e) => {
 			e.preventDefault();
 			this.props.closeModal();
+			this.props.openModal("notebookIndex");
 		};
 	}
 
@@ -29,6 +30,7 @@ class CreateNotebookForm extends React.Component {
 			e.preventDefault();
 			this.props.createNotebook(this.state);
 			this.props.closeModal();
+			this.props.openModal("notebookIndex");
 		};
 	}
 

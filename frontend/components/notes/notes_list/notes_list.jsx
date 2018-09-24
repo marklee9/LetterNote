@@ -23,6 +23,7 @@ class NoteList extends React.Component {
 	} 
 
 	renderAllNotes() {
+		console.log(this.props.notes);
 		if (this.props.notes) {
 			return this.props.notes.map((note) =>
 				<NotesListItem props={this.props} key={note.id} note={note}></NotesListItem>
