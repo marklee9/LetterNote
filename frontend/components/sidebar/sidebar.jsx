@@ -31,6 +31,7 @@ class Sidebar extends React.Component {
 		return (e) => {
 			e.preventDefault();
 			this.props.closeNoteBar();
+			this.props.closeTagNoteBar();
 			this.props.openNoteListBar();
 		};
 	}

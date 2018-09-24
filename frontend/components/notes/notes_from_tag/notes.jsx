@@ -41,12 +41,12 @@ class Notes extends React.Component {
 
   renderTitle() {
     return <p>
-      {this.props.currentNotebookTitle}
+      {this.props.currentTagName}
     </p>;
   }
   
   render() {
-    if (!this.props.notesBar) {
+    if (!this.props.tagNoteBar) {
       return null;
     } else {
      return <div className="note-list-id">

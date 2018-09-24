@@ -9,6 +9,7 @@ import { newQuill, editQuill, resetQuill } from '../../actions/quill_actions';
 import { createNote, fetchWorkingNote } from "../../actions/note_actions";
 import { fetchTags } from "../../actions/tags_actions";
 import { fetchAllTaggings } from '../../actions/taggings_actions';
+import { closeTagNoteBar } from "../../actions/tag_notes_bar_actions";
 
 const msp = state => ({
 	currentUserId: state.session.currentUserId,
@@ -33,7 +34,8 @@ const mdp = dispatch => ({
 	resetQuill: () => dispatch(resetQuill()),
 	createNote: note => dispatch(createNote(note)),
 	fetchWorkingNote: note => dispatch(fetchWorkingNote(note)),
-	fetchAllTaggings: () => dispatch(fetchAllTaggings())
+	fetchAllTaggings: () => dispatch(fetchAllTaggings()),
+	closeTagNoteBar: () => dispatch(closeTagNoteBar())
 });
 
 export default connect(msp, mdp)(Sidebar);

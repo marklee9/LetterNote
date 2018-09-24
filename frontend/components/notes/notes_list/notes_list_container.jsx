@@ -7,6 +7,7 @@ import { fetchNote,
 	deleteNote 
 } from "../../../actions/note_actions";
 import { editQuill, resetQuill } from '../../../actions/quill_actions';
+import { closeTagNoteBar } from "../../../actions/tag_notes_bar_actions";
 
 const msp = state => ({
 	notes: Object.values(state.entities.notes),
@@ -14,6 +15,7 @@ const msp = state => ({
 });
 
 const mdp = dispatch => ({
+	closeTagNoteBar: () => dispatch(closeTagNoteBar()),
 	closeNoteBar: () => dispatch(closeNoteBar()),
 	fetchNote: id => dispatch(fetchNote(id)),
 	fetchWorkingNote: note => dispatch(fetchWorkingNote(note)),

@@ -31,7 +31,7 @@ class TagsIndex extends React.Component {
 
   organizeTags(obj, ch) {
     let result = obj[ch].map((fl) => {
-      return <TagsIndexItem tag={fl} fetchCurrentTag={this.props.fetchCurrentTag} closeModal={this.props.closeModal} tagId={fl.id} tagName={fl.name} count={obj[ch].length} updateTag={this.props.updateTag} deleteTag={this.props.deleteTag} />;
+      return <TagsIndexItem props={this.props} openNoteBar={this.props.openTagNoteBar} tag={fl} fetchCurrentTag={this.props.fetchCurrentTag} closeModal={this.props.closeModal} tagId={fl.id} tagName={fl.name} count={obj[ch].length} updateTag={this.props.updateTag} deleteTag={this.props.deleteTag} />;
     });
     return result;
   }

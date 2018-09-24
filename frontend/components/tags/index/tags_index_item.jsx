@@ -44,6 +44,9 @@ class TagsIndexItem extends React.Component {
 	openNotesByTagName() {
 		this.props.fetchCurrentTag(this.props.tag);
 		this.props.closeModal();
+		this.props.props.closeNoteListBar();
+		this.props.props.closeNoteBar();
+		this.props.openNoteBar();
 	}
 
 	render() {

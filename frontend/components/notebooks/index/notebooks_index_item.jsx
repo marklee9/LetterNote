@@ -31,6 +31,7 @@ class NotebooksIndexItem extends React.Component {
 
 		this.props.props.openNoteBar();
 		this.props.props.closeNoteListBar();
+		this.props.props.closeTagNoteBar();
 	}
 
 	render() {

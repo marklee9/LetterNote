@@ -5,6 +5,8 @@ import { openModal, closeModal } from "../../../actions/modal_actions";
 import { openNoteBar, closeNoteBar } from "../../../actions/notes_bar_actions";
 import { openNoteListBar, closeNoteListBar} from '../../../actions/notes_list_bar_actions';
 import { selectNotebooks } from '../../../reducers/selector';
+import { openTagNoteBar, closeTagNoteBar } from "../../../actions/tag_notes_bar_actions";
+
 
 const msp = (state) => ({
   notebooks: selectNotebooks(state),
@@ -22,6 +24,8 @@ const mdp = dispatch => ({
 	closeNoteBar: () => dispatch(closeNoteBar()),
 	openNoteListBar: () => dispatch(openNoteListBar()),
 	closeNoteListBar: () => dispatch(closeNoteListBar()),
+	openTagNoteBar: () => dispatch(openTagNoteBar()),
+	closeTagNoteBar: () => dispatch(closeTagNoteBar())
 });
 
 export default connect(	msp, mdp )(NotebooksIndex);

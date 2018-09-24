@@ -8,6 +8,7 @@ import WorkingNoteReducer from './ui_reducers/working_note_reducer';
 import QuillContainerReducer from './ui_reducers/quill_container_reducer';
 import currentTagIdReducer from './ui_reducers/current_tag_id_reducer';
 import currentTagNameReducer from './ui_reducers/current_tag_name_reducer';
+import tagnotebarReducer from './ui_reducers/tag_notes_bar_reducer';
 
 export default combineReducers({
   modal: modalReducer,
@@ -17,6 +18,7 @@ export default combineReducers({
   currentTagName: currentTagNameReducer,
   notesBar: NotesBarReducer,
   notesListBar: NotesListBarReducer,
+  tagNoteBar: tagnotebarReducer,
   workingNote: WorkingNoteReducer,
   quillContainer: QuillContainerReducer,
 });

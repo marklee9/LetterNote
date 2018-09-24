@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Notes from './notes';
-import { selectNotes } from '../../../reducers/selector';
+import { selectNotesByTag } from "../../../reducers/selector";
 import { 
   fetchNote, 
   fetchWorkingNote, 
@@ -8,21 +8,24 @@ import {
   deleteNote 
 } from "../../../actions/note_actions";
 import { editQuill, resetQuill } from "../../../actions/quill_actions";
+import { closeNoteBar } from "../../../actions/notes_bar_actions";
 
-const msp = (state) => ({
-  notes: selectNotes(state),
-  currentTagId: state.ui.currentTagId,
-  currentTagName: state.ui.currentTagName,
-  notesBar: state.ui.notesBar
+const msp = state => ({
+	notes: selectNotesByTag(state),
+	currentTagId: state.ui.currentTagId,
+	currentTagName: state.ui.currentTagName,
+  tagNoteBar: state.ui.tagNoteBar
 });
 
 const mdp = dispatch => ({
+  closeNoteListBar: () => dispatch(closeNoteListBar()),
 	fetchWorkingNote: note => dispatch(fetchWorkingNote(note)),
 	closeWorkingNote: () => dispatch(closeWorkingNote()),
 	deleteNote: id => dispatch(deleteNote(id)),
 	fetchNote: id => dispatch(fetchNote(id)),
 	editQuill: () => dispatch(editQuill()),
-	resetQuill: () => dispatch(resetQuill())
+  resetQuill: () => dispatch(resetQuill()),
+  
 });
 
 export default connect(msp, mdp)(Notes);
