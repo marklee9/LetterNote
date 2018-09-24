@@ -6,6 +6,9 @@ import {
   DELETE_TAGGING
 } from '../../actions/taggings_actions';
 import { REMOVE_TAG } from '../../actions/tags_actions';
+import {
+  LOGOUT_CURRENT_USER
+} from '../../actions/sessions_actions';
 
 const taggingsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
@@ -30,6 +33,10 @@ const taggingsReducer = (oldState = {}, action) => {
         }
       });
       return state;
+
+    case LOGOUT_CURRENT_USER:
+      return {};
+      
     default:
       return oldState;
   }
