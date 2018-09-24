@@ -20,6 +20,7 @@ let newState = merge({}, oldState);
     case DELETE_NOTEBOOK:
       action.payload.notes.forEach((id) => delete newState[id]);
       return newState;
+      
     case DELETE_NOTE:
       delete newState[action.noteId];
       return newState;

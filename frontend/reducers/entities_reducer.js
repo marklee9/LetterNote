@@ -8,5 +8,5 @@ export default combineReducers({
   notebooks: NotebooksReducer,
   notes: NotesReducer,
   tags: TagsReducer,
-  Taggings: TaggingsReducer
+  taggings: TaggingsReducer
 });

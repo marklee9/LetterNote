@@ -20,8 +20,6 @@ export const createTagging = (tagging) => {
     data: { tagging }
   }));
 };
-  
-// );
 
 export const deleteTagging = id => (
   $.ajax({
