@@ -20,7 +20,7 @@ class Api::TagsController < ApplicationController
   def update
     @tag = current_user.tags.find(params[:id])
     if @tag
-      if @tag.update(tag_params)
+      if @tag.update(tags_params)
         render :show
       else
         render json: @tag.errors.full_messages, status: 400

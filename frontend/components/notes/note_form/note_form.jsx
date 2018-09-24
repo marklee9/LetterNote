@@ -54,6 +54,7 @@ class NoteForm extends React.Component {
     return (e) => {
       e.preventDefault();
       if (this.props.currentNotebookId) {
+      console.log("mark");
         this.props.createNote({
           title: 'New Note',
           body: '',

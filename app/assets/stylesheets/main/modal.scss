@@ -221,9 +221,36 @@ $tag-edit-hover: image_url("tag-edit-icon-hover");
     }
 
     .each-tag {
+      height: 40px;
+
       .tag-div {
         margin: 8px;
         display: inline-block;
+
+        .edit-input {
+          border: 1px solid #dadada;
+          width: 250px;
+          height: 18px;
+          font-size: 17px;
+          color: #6b6b6b;
+          background-color: #f5f5f5;
+          outline:none;
+          border-radius: 4px;
+          display: inline-block;
+        }
+
+        .update-button {
+          margin-left: 10px;
+          font-size: 16px;
+          display: inline-block;
+          vertical-align: middle;
+          color: #6b6b6b;
+          cursor: pointer;
+        }
+
+        .update-button:hover {
+          color: #3dbe60;
+        }
     
         .tag-name-div {
           border: 1px solid #dddddd;
@@ -258,6 +285,7 @@ $tag-edit-hover: image_url("tag-edit-icon-hover");
           width: 24px;
           height: 24px;
           margin-left: 16px;
+          cursor: pointer;
 
           .edit-tag-img {
             text-align: center;
@@ -269,6 +297,8 @@ $tag-edit-hover: image_url("tag-edit-icon-hover");
             background-position: center;
             background-size: 100%;
             background-image: $tag-edit;
+            cursor: pointer;
+
           }
         }
 
@@ -283,7 +313,8 @@ $tag-edit-hover: image_url("tag-edit-icon-hover");
           width: 24px;
           height: 24px;
           margin-left: 2px;
-          
+          cursor: pointer;          
+
           .delete-tag-img {
             text-align: center;
             vertical-align: middle;
@@ -294,6 +325,8 @@ $tag-edit-hover: image_url("tag-edit-icon-hover");
             background-position: center;
             background-size: 100%;
             background-image: $tag-delete;
+            cursor: pointer;
+
           }
         }
 

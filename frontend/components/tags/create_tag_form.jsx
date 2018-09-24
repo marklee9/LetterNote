@@ -15,6 +15,7 @@ class CreateTagForm extends React.Component {
     return (e) => {
       e.preventDefault();
       this.props.closeModal();
+      this.props.openModal("tagIndex");
     };
   }
 
@@ -29,6 +30,7 @@ class CreateTagForm extends React.Component {
       e.preventDefault();
       this.props.createTag(this.state);
       this.props.closeModal();
+      this.props.openModal("tagIndex");
     };
   }
 
