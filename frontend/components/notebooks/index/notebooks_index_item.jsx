@@ -34,7 +34,6 @@ class NotebooksIndexItem extends React.Component {
 	}
 
 	render() {
-		console.log(this.props.notebook);
 		return <div>
 			<div className="each-notebook" onClick={this.setCurrentNotebookAndCloseModal}>
 						<div className="title-div">

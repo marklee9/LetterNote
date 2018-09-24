@@ -12,6 +12,7 @@ class TagsIndexItem extends React.Component {
 		this.handleUpdate = this.handleUpdate.bind(this);
 		this.enter = this.enter.bind(this);
 		this.saveChange = this.saveChange.bind(this);
+		this.openNotesByTagName = this.openNotesByTagName.bind(this);
 	}
 
 	openEditor() {
@@ -40,6 +41,10 @@ class TagsIndexItem extends React.Component {
 		this.setState({edit: false});
 	}
 
+	openNotesByTagName() {
+		this.props.closeModal();
+	}
+
 	render() {
 		if (this.state.edit) {
 			return <div className="each-tag">
@@ -55,7 +60,7 @@ class TagsIndexItem extends React.Component {
 		return <div className="each-tag">
 				<div className="tag-div">
 					<span className="tag-name">
-						<div className="tag-name-div">
+					<div className="tag-name-div" onClick={this.openNotesByTagName}>
 							<p>{this.props.tagName} <span className="tag-count">{this.props.count}</span></p>
 						</div>
 					</span>
