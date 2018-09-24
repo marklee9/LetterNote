@@ -30,11 +30,9 @@ class Api::TaggingsController < ApplicationController
     else
       render json: @tagging.errors.full_messages, status: 422
     end
-
   end
 
-  private
-
+private
   def tagging_params
     params.require(:tagging).permit(:tag_name, :note_id)
   end
