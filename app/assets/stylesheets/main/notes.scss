@@ -122,7 +122,7 @@ $delete-note-hover: image_url("trash-icon-hover");
     float: left;
     font-family: 'Slabo 27px', serif;
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 200;
     color: #5f5f5f;
     padding: 5px;
     white-space: nowrap;
@@ -142,16 +142,17 @@ $delete-note-hover: image_url("trash-icon-hover");
       font-family: 'Montserrat', sans-serif;
       position: relative;
       right: 12px;
-      margin-bottom: 6px;
+      margin-bottom: 10px;
     }
 
     .note-body {
       font-family: 'Montserrat', sans-serif;
-      font-weight: 400;
-      font-size: 16px;
+      font-weight: 300;
+      font-size: 14px;
       color: #8b8b8b;
       height: 20px;
       overflow: hidden;
+      margin-top: 6px;
     }
   }
 

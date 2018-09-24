@@ -56,9 +56,16 @@ class CreateTagForm extends React.Component {
         </div>
 
         <div className="new-notebook-buttons">
-          <button className="new-notebook-create" onClick={this.handleSubmit()}>
-            Create Tag
-						</button>
+          {this.state.name.length === 0 ? (
+            <button className="new-notebook-create-disabled"
+              onClick={(e) => e.preventDefault()}>
+              Create Tag
+							</button>
+          ) : (
+              <button className="new-notebook-create" onClick={this.handleSubmit()}>
+                Create Tag
+							</button>
+            )}
           <button className="new-notebook-cancel" onClick={this.closeModal()}>
             Cancel
 						</button>
