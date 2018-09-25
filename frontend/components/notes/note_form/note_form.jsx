@@ -54,7 +54,6 @@ class NoteForm extends React.Component {
     return (e) => {
       e.preventDefault();
       if (this.props.currentNotebookId) {
-      console.log("mark");
         this.props.createNote({
           title: 'New Note',
           body: '',
@@ -66,36 +65,30 @@ class NoteForm extends React.Component {
     };
   }
 
+  getNotebookTitle() {
+    let notebook = Object.values(this.props.notebooks).filter((notebook) => notebook.id === this.props.note.notebook_id)[0];
+    return <div className="notebook-section">
+        <div className="notebook-img"></div>
+        <div className="notebook-title">
+          <span><strong>{notebook.title}</strong></span>
+        </div>
+			</div>;
+  }
+
+  renderDelete() {
+    return <div className="notebook-section">
+				<div onClick={this.openModal("deleteNote")} className="notebook-trash"></div>
+			</div>;
+  }
+  
 	render() {
-    if (Object.keys(this.props.allNotes).length === 0) {
-      return (
-        <div className="quill-outer-container">
-          <div className="quill-select-notebook">
-            <h1>You don't have any notebooks</h1>
-            <div className='linebreak'></div>
-              <button className='create' onClick={this.openModal("createNotebook")} />
-            <h1>Click to create notebook</h1>
-          </div>
-        </div>
-      );
-    } else if (!this.props.form) {
-      return (
-        <div className="quill-outer-container">
-          <div className="quill-select-notebook">
-            <h1>Pick your notebook and Create a new note</h1>
-            <div className='linebreak'></div>
-            <button className='open' onClick={this.openModal2("notebookIndex")} />
-          </div>
-        </div>
-      );
-    }
-    else {
+    if (this.props.workingNote) {
       return (
         <div className="quill-outer-container">
           <div className="quill-container">
             <div className="tool-container">
-              <div>
-              </div>
+              {this.renderDelete()}
+              {this.getNotebookTitle()}
             </div>
             <input
               value={this.state.title}
@@ -109,6 +102,37 @@ class NoteForm extends React.Component {
               value={this.state.body}
               onChange={this.handleChangeBody}
             />
+          </div>
+        </div>
+      );
+    }
+
+    if (Object.keys(this.props.allNotes).length === 0) {
+      return (
+        <div className="quill-outer-container">
+          <div className="quill-select-notebook">
+            <h1>You don't have any notebooks</h1>
+            <div className='linebreak'></div>
+              <button className='create' onClick={this.openModal("createNotebook")} />
+            <h1>Click to create notebook</h1>
+          </div>
+        </div>
+      );
+    } else if (this.props.currentNotebookId) {
+      return <div className="quill-outer-container">
+        <div className="quill-select-notebook">
+          <h1>Create a new note by pressing the button</h1>
+          <div className='linebreak'></div>
+          <button className='open' onClick={this.openModal2("notebookIndex")} />
+        </div>
+      </div>;
+    } else if (!this.props.form && !this.props.currentNotebookId) {
+      return (
+        <div className="quill-outer-container">
+          <div className="quill-select-notebook">
+            <h1>Pick your notebook and Create a new note</h1>
+            <div className='linebreak'></div>
+            <button className='open2' onClick={this.openModal2("notebookIndex")} />
           </div>
         </div>
       );

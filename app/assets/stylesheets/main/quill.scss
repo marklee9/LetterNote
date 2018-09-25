@@ -1,7 +1,10 @@
 $notebooks: image_url("notebook-icon");
 $notebooks_hover: image_url("notebook-icon-hover");
+$notebook-icon-small: image_url("notebook-icon-small");
 $new-note-icon: image_url("new-note-icon.png");
 $new-note-hover: image_url("new-note-hover.png");
+$note-delete: image_url("note-delete");
+$note-delete-hover: image_url("note-delete-hover");
 
 .quill-outer-container {
   height: 100vh;
@@ -42,7 +45,7 @@ $new-note-hover: image_url("new-note-hover.png");
       outline: none;
     }
 
-    .create {
+    .create, .open2 {
       background-image: $notebooks;
     }
 
@@ -56,6 +59,10 @@ $new-note-hover: image_url("new-note-hover.png");
 
     .open:hover {
       background-image: $new-note-hover;
+    }
+
+    .open2:hover {
+      background-image: $notebooks_hover;
     }
 
   }
@@ -72,6 +79,50 @@ $new-note-hover: image_url("new-note-hover.png");
     .tool-container {
       width: 100%;
       height: 40px;
+      margin: 30px;
+
+      .notebook-section {
+        vertical-align: middle;
+        
+        .notebook-trash {
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100%;
+          width: 24px;
+          height: 24px;
+          background-image: $note-delete;
+        }
+        
+        .notebook-trash:hover {
+          background-image: $note-delete-hover;
+        }
+        
+        .notebook-img {
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100%;
+          background-image: $notebook-icon-small;
+          width: 16px;
+          height: 16px;
+          display: inline-block;
+          margin-right: 6px;
+        }
+
+        .notebook-title {
+          display: inline-block;
+
+          span {
+            font-family: 'Montserrat',
+            sans-serif;
+            font-weight: 300;
+            font-size: 14px;
+            color: #8b8b8b;
+            height: 20px;
+            overflow: hidden;
+            margin-bottom: 4px;
+          }
+        }
+      }
     }
 
     .note-title {

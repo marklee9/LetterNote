@@ -5,6 +5,7 @@ import CreateNotebookContainer from '../notebooks/create_notebook_container';
 import NotebookIndexContainer from '../notebooks/index/notebooks_index_container';
 import TagsIndexContainer from "../tags/index/tags_index_container";
 import CreateTagContainer from '../tags/create_tag_container';
+import DeleteNoteContainer from '../notes/delete_note_container';
 
 class Modal extends React.Component {
 	constructor(props) {
@@ -52,16 +53,20 @@ class Modal extends React.Component {
 			case "createTag":
 				component = <CreateTagContainer />;
 				break;
+			case "deleteNote":
+				component = <DeleteNoteContainer />;
+				break;
 			default:
 				return null;
 		}
 
 		if (
 			this.props.modal === "createNotebook" ||
-			this.props.modal === "createTag"
+			this.props.modal === "createTag" ||
+			this.props.modal === "deleteNote"
 		) {
 			return (
-				<div className="fade-modal-background" onClick={this.closeAndOpenModal}>
+				<div className="fade-modal-background animated fadeIn" onClick={this.closeAndOpenModal}>
 					<div className="fade-modal-child" onClick={e => e.stopPropagation()}>
 						{component}
 					</div>

@@ -9,6 +9,7 @@ $tag-delete: image_url("tag-delete-icon");
 $tag-delete-hover: image_url("tag-delete-icon-hover");
 $tag-edit: image_url("tag-edit-icon");
 $tag-edit-hover: image_url("tag-edit-icon-hover");
+$add-tag-icon: image_url("add-tag-icon");
 
 .fade-modal-background {
   position: fixed;
@@ -112,6 +113,11 @@ $tag-edit-hover: image_url("tag-edit-icon-hover");
 
   .new-notebook-input-div {
     text-align: center;
+    font-family: 'Slabo 27px', serif;
+    font-size: 26px;
+    font-weight: 200;
+    color: #363636;
+
 
     .new-notebook-input {
       width: 100%;
@@ -389,6 +395,11 @@ $tag-edit-hover: image_url("tag-edit-icon-hover");
         display: inline-block;
         background-image: $create-notebook;
       }
+
+      .create-tag-img {
+        display: inline-block;
+        background-image: $add-tag-icon;
+      }
     }
   }
 
@@ -412,6 +423,12 @@ $tag-edit-hover: image_url("tag-edit-icon-hover");
       letter-spacing: .5px;
       transform: scale(1, 0.9);
       padding-left:10px;
+
+      .note-count {
+        font-size: 16px;
+        color: #adadad;
+        margin-top: 10px;
+      }
     }
 
     .delete-div {
@@ -445,6 +462,10 @@ $tag-edit-hover: image_url("tag-edit-icon-hover");
     
     .title-div {
       color: rgb(243, 243, 243);
+
+      .note-count {
+        color: rgb(243, 243, 243);
+      }
     }
 
     .index-notebook-delete {
@@ -493,6 +514,16 @@ $tag-edit-hover: image_url("tag-edit-icon-hover");
         background-position: center;
         background-size: 100%;
         background-image: $create-notebook;
+        width: 26px;
+        height: 26px;
+      }
+
+      .modal-empty-tag-img {
+        display: inline-block;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        background-image: $add-tag-icon;
         width: 26px;
         height: 26px;
       }

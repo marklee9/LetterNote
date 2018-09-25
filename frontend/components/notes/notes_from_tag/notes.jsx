@@ -4,8 +4,6 @@ import NotesItem from './notes_item';
 class Notes extends React.Component {
   constructor(props) {
     super(props);
-    console.log("fetched notes");
-    console.log(props.notes);
   }
 
   renderNoteCounter() {

@@ -47,9 +47,8 @@ class TagsIndexItem extends React.Component {
 		let modal = document.getElementById('modal');
 		modal.classList.add("animated");
 		modal.classList.add("slideOutLeft");
-		setTimeout(() => { this.props.props.closeModal(); }, 600);
+		setTimeout(() => { this.props.closeModal(); }, 600);
 
-		this.props.closeModal();
 		this.props.props.closeNoteListBar();
 		this.props.props.closeNoteBar();
 		this.props.openNoteBar();

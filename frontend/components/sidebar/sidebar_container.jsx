@@ -10,6 +10,7 @@ import { createNote, fetchWorkingNote } from "../../actions/note_actions";
 import { fetchTags } from "../../actions/tags_actions";
 import { fetchAllTaggings } from '../../actions/taggings_actions';
 import { closeTagNoteBar } from "../../actions/tag_notes_bar_actions";
+import { fetchNotebooks } from '../../actions/notebooks_action';
 
 const msp = state => ({
 	currentUserId: state.session.currentUserId,
@@ -34,6 +35,7 @@ const mdp = dispatch => ({
 	resetQuill: () => dispatch(resetQuill()),
 	createNote: note => dispatch(createNote(note)),
 	fetchWorkingNote: note => dispatch(fetchWorkingNote(note)),
+	fetchNotebooks: () => dispatch(fetchNotebooks()),
 	fetchAllTaggings: () => dispatch(fetchAllTaggings()),
 	closeTagNoteBar: () => dispatch(closeTagNoteBar())
 });

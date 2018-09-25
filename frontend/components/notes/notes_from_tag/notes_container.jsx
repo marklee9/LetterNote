@@ -24,7 +24,6 @@ const mdp = dispatch => ({
 	fetchNote: id => dispatch(fetchNote(id)),
 	editQuill: () => dispatch(editQuill()),
   resetQuill: () => dispatch(resetQuill()),
-  
 });
 
 export default connect(msp, mdp)(Notes);

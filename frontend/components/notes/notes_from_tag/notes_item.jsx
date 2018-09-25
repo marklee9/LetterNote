@@ -5,6 +5,8 @@ class NotesListItem extends React.Component {
 	constructor(props) {
     super(props);
 		this.setWorkingNote = this.setWorkingNote.bind(this);
+
+		console.log(props);
 	}
 
 	deleteNote() {
@@ -17,7 +19,7 @@ class NotesListItem extends React.Component {
 	}
 
 	setWorkingNote() {
-		this.props.props.fetchWorkingNote(this.props.note);
+		this.props.props.fetchWorkingNote(this.props.note[0]);
 		this.props.props.resetQuill();
 		this.props.props.editQuill();
 	}
@@ -27,13 +29,13 @@ class NotesListItem extends React.Component {
 			<div className="each-note" onClick={this.setWorkingNote}>
 				<div className="title-div">
 					<p className="index-note-title">
-						{this.props.note.title}
+						{this.props.note[0].title}
 					</p>
 					<p className="note-date">
-						{this.props.note.updated.toUpperCase() + " AGO"}
+						{this.props.note[0].updated.toUpperCase() + " AGO"}
 					</p>
 					<div className="note-body">
-						{ReactHtmlParser(this.props.note.body)}
+						{ReactHtmlParser(this.props.note[0].body)}
 					</div>
 				</div>
 				<div className="delete-div">

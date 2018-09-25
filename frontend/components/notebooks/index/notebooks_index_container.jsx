@@ -9,6 +9,7 @@ import { openTagNoteBar, closeTagNoteBar } from "../../../actions/tag_notes_bar_
 
 
 const msp = (state) => ({
+	notes: state.entities.notes,
   notebooks: selectNotebooks(state),
   errors: state.errors.notebooks
 });

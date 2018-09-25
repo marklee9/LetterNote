@@ -22,7 +22,7 @@ class TagsIndex extends React.Component {
         <div className='modal-empty-tag-big-img'></div>
 
         <div className='modal-empty-notebook-content'>
-          <h4>Click <div className='modal-empty-img' /> to create a tag</h4>
+          <h4>Click <div className='modal-empty-tag-img' /> to create a tag</h4>
           <p>Tag notes to find them easily. Try tagging with a project name.</p>
         </div>
       </div>;
@@ -60,7 +60,7 @@ class TagsIndex extends React.Component {
 				<div className="modal-notebook-notebook">
 					<div className="modal-notebook-notebook-title">
 						<p>Tags</p>
-						<button onClick={this.openModal("createTag")} className="create-notebook-img" />
+						<button onClick={this.openModal("createTag")} className="create-tag-img" />
 					</div>
 				</div>
         <div className="tag-index-list">

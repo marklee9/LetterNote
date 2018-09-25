@@ -7,6 +7,7 @@ class Sidebar extends React.Component {
 	}
 	
 	componentDidMount() {
+		this.props.fetchNotebooks();
 		this.props.fetchNotes();
 		this.props.fetchTags();
 		this.props.fetchAllTaggings();

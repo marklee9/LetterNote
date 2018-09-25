@@ -15,14 +15,17 @@ class NotebooksIndexItem extends React.Component {
 			e.preventDefault();
 			e.stopPropagation();
 			this.props.props.closeNoteBar();
-			this.props.props.deleteNotebook(this.props.notebook.id);
+			this.props.props.deleteNotebook(this.props.notebookId);
 			this.props.props.closeNoteListBar();
 			this.props.props.openNoteListBar();
 		};
 	}
 
 	setCurrentNotebookAndCloseModal() {
-		this.props.props.fetchCurrentNotebook(this.props.notebook);
+		this.props.props.fetchCurrentNotebook({
+			id: this.props.notebookId,
+			title: this.props.notebookTitle
+		});
 
 		let modal = document.getElementById('modal');
 		modal.classList.add("animated");
@@ -39,9 +42,9 @@ class NotebooksIndexItem extends React.Component {
 			<div className="each-notebook" onClick={this.setCurrentNotebookAndCloseModal}>
 						<div className="title-div">
 							<p className="index-notebook-title">
-								{this.props.notebook.title}
+								{this.props.notebookTitle}
 							</p>
-							<p></p>
+							<div className="note-count">{this.props.count} <span>notes</span></div>
 						</div>
 						<div className="delete-div">
 							<button onClick={this.deleteNotebook()} className="index-notebook-delete" />

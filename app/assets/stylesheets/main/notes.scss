@@ -139,13 +139,13 @@ $delete-note-hover: image_url("trash-icon-hover");
 }
 
 .each-note {
-  border-bottom: 1px solid #f1f1f1;
   width: 334px;
   height: 100px;
   padding: 8px;
   transition: 0.25s;
   text-align: center;
   overflow: hidden;
+  border-bottom: 1px solid rgb(241, 241, 241);
 
   .title-div {
     text-align: left;

@@ -6,6 +6,8 @@ import {
   updateNote, 
   deleteNote 
 } from "../../../actions/note_actions";
+import { addTagToNote } from "../../../actions/tags_actions";
+import { createTagging, deleteTagging } from "../../../actions/taggings_actions";
 import { fetchNotebooks } from '../../../actions/notebooks_action';
 import { openModal } from '../../../actions/modal_actions';
 
@@ -19,6 +21,9 @@ const msp = state => ({
 });
 
 const mdp = dispatch => ({
+  addTagToNote: (noteId, tagName) => dispatch(addTagToNote(noteId, tagName)),
+  createTagging: (tagging) => dispatch(createTagging(tagging)),
+  deleteTagging: (id) => dispatch(deleteTagging(id)),
   fetchNotebooks: () => dispatch(fetchNotebooks()),
   fetchNote: (id) => dispatch(fetchNote(id)),
 	createNote: (note) => dispatch(createNote(note)),

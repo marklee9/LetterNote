@@ -31,9 +31,14 @@ class NotebooksIndex extends React.Component {
   }
 
   render() {
-    let index = this.props.notebooks.map((notebook) =>
-      <NotebooksIndexItem props={this.props} key={notebook.id} notebook={notebook}></NotebooksIndexItem>
-  );
+    let index = this.props.notebooks.map((notebook) => {     
+      let noteCount = Object.values(this.props.notes).filter((note) => 
+        notebook.id === note.notebook_id
+      );
+      return <NotebooksIndexItem count={noteCount.length} props={this.props} key={notebook.id} notebookId={notebook.id} notebookTitle={notebook.title} />;
+      }
+    );
+
     if (index.length === 0) {
       index = <div className="notebook-index-empty">
         <button onClick={this.openModal("createNotebook")} />
@@ -41,6 +46,7 @@ class NotebooksIndex extends React.Component {
       </div>;
     }
 
+    console.log(this.props.notes);
     return (
     <div className='modal-notebook-index'>
       <div className='modal-notebook-notebook'>

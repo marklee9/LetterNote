@@ -4,7 +4,6 @@ import NotesListItem from './notes_list_item';
 class NoteList extends React.Component {
   constructor(props) {
 		super(props);
-		console.log(props);
 	}
 	renderLittleNotes() {
 		if (!this.props.notes || this.props.notes.length < 2) {
@@ -24,7 +23,6 @@ class NoteList extends React.Component {
 	} 
 
 	renderAllNotes() {
-		console.log(this.props.notes);
 		if (this.props.notes) {
 			return this.props.notes.map((note) =>
 				<NotesListItem props={this.props} key={note.id} note={note}></NotesListItem>

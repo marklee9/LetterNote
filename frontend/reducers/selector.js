@@ -21,7 +21,6 @@ export const selectNotesByTag = (state) => {
     result.forEach((noteId) => {
       notes.push(Object.values(state.entities.notes).filter((note) => note.id === noteId));
     });
-    console.log(notes);
     return notes;
   }
 };
