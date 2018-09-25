@@ -55,7 +55,9 @@ class Notes extends React.Component {
           <h5>{this.renderNoteCounter()} Notes</h5>
         </div>
         <div className='linebreak-note-list'></div>
-        {this.renderAllNotes()}
+        <div className="all-notes">
+          {this.renderAllNotes()}
+        </div>
         {this.renderLittleNotes()}
       </div>;
     }

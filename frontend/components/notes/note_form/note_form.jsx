@@ -58,6 +58,9 @@ class NoteForm extends React.Component {
           title: 'New Note',
           body: '',
           notebook_id: this.props.currentNotebookId
+        }).then(() => {
+          let noteId = Math.max(...Object.keys(this.props.allNotes));
+          this.props.fetchWorkingNote(this.props.allNotes[noteId]);
         });
       } else { 
         this.props.openModal(field);

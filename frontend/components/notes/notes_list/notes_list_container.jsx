@@ -8,6 +8,8 @@ import { fetchNote,
 } from "../../../actions/note_actions";
 import { editQuill, resetQuill } from '../../../actions/quill_actions';
 import { closeTagNoteBar } from "../../../actions/tag_notes_bar_actions";
+import { openModal } from "../../../actions/modal_actions";
+
 
 const msp = state => ({
 	notes: Object.values(state.entities.notes),
@@ -22,7 +24,9 @@ const mdp = dispatch => ({
 	closeWorkingNote: () => dispatch(closeWorkingNote()),
 	deleteNote: id => dispatch(deleteNote(id)),
 	editQuill: () => dispatch(editQuill()),
-	resetQuill: () => dispatch(resetQuill())
+	resetQuill: () => dispatch(resetQuill()),
+	openModal: (field) => dispatch(openModal(field)),
+
 });
 
 export default connect(

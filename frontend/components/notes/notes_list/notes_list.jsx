@@ -40,7 +40,7 @@ class NoteList extends React.Component {
 						<p className="count">{this.props.notes.length} notes</p>
 					</div>
 					<div className="linebreak-note-list" />	
-					<div className='all-notes'>
+					<div className='all-notes2'>
 						{this.renderAllNotes()}
 					</div>
 				{this.renderLittleNotes()}

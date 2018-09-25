@@ -80,6 +80,7 @@ $note-delete-hover: image_url("note-delete-hover");
       width: 100%;
       height: 40px;
       margin: 30px;
+      margin-bottom: 20px;
 
       .notebook-section {
         vertical-align: middle;
@@ -91,6 +92,8 @@ $note-delete-hover: image_url("note-delete-hover");
           width: 24px;
           height: 24px;
           background-image: $note-delete;
+          cursor: pointer;
+
         }
         
         .notebook-trash:hover {
@@ -110,6 +113,7 @@ $note-delete-hover: image_url("note-delete-hover");
 
         .notebook-title {
           display: inline-block;
+          margin-top: 50px;
 
           span {
             font-family: 'Montserrat',

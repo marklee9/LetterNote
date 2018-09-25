@@ -12,8 +12,14 @@ $delete-note-hover: image_url("trash-icon-hover");
   display: flex;
   flex-direction: column;
 
+  .all-notes2 {
+    overflow: auto;
+    height: 90vh;
+  }
+
   .all-notes {
     overflow: auto;
+    height: 70vh;
   }
 
   .linebreak-note-list {
@@ -94,6 +100,8 @@ $delete-note-hover: image_url("trash-icon-hover");
 .modal-empty-note {
   width: 350px;
   text-align: center;
+  position: relative;
+  bottom: 120px;
 
   .modal-empty-note-big-img {
     background-repeat: no-repeat;
@@ -101,7 +109,7 @@ $delete-note-hover: image_url("trash-icon-hover");
     background-size: 100%;
     width: 80px;
     height: 75px;
-    margin: 170px auto 20px;
+    margin: 0 auto 20px;
     background-image: $big-note
   }
   .modal-empty-note-content {
@@ -146,6 +154,7 @@ $delete-note-hover: image_url("trash-icon-hover");
   text-align: center;
   overflow: hidden;
   border-bottom: 1px solid rgb(241, 241, 241);
+  cursor: pointer;
 
   .title-div {
     text-align: left;
@@ -192,6 +201,7 @@ $delete-note-hover: image_url("trash-icon-hover");
     display: inline-block;
     width: 25px;
     margin-top: 9px;
+    cursor: pointer;
 
     button {
       border: none;

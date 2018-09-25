@@ -9,6 +9,7 @@ import {
 } from "../../../actions/note_actions";
 import { editQuill, resetQuill } from "../../../actions/quill_actions";
 import { closeNoteBar } from "../../../actions/notes_bar_actions";
+import { openModal } from "../../../actions/modal_actions";
 
 const msp = state => ({
 	notes: selectNotesByTag(state),
@@ -23,7 +24,9 @@ const mdp = dispatch => ({
 	deleteNote: id => dispatch(deleteNote(id)),
 	fetchNote: id => dispatch(fetchNote(id)),
 	editQuill: () => dispatch(editQuill()),
-  resetQuill: () => dispatch(resetQuill()),
+	resetQuill: () => dispatch(resetQuill()),
+	openModal: (field) => dispatch(openModal(field)),
+	
 });
 
 export default connect(msp, mdp)(Notes);
