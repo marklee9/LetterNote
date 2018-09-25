@@ -18,7 +18,6 @@ const msp = state => ({
 });
 
 const mdp = dispatch => ({
-  closeNoteListBar: () => dispatch(closeNoteListBar()),
 	fetchWorkingNote: note => dispatch(fetchWorkingNote(note)),
 	closeWorkingNote: () => dispatch(closeWorkingNote()),
 	deleteNote: id => dispatch(deleteNote(id)),

@@ -4,6 +4,7 @@ import NotesListItem from './notes_list_item';
 class NoteList extends React.Component {
   constructor(props) {
 		super(props);
+		console.log(props);
 	}
 	renderLittleNotes() {
 		if (!this.props.notes || this.props.notes.length < 2) {

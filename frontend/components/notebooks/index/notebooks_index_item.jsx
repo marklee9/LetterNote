@@ -29,9 +29,9 @@ class NotebooksIndexItem extends React.Component {
 		modal.classList.add("slideOutLeft");
 		setTimeout(() => {this.props.props.closeModal();}, 600);
 
-		this.props.props.openNoteBar();
 		this.props.props.closeNoteListBar();
 		this.props.props.closeTagNoteBar();
+		this.props.props.openNoteBar();
 	}
 
 	render() {

@@ -43,6 +43,12 @@ class TagsIndexItem extends React.Component {
 
 	openNotesByTagName() {
 		this.props.fetchCurrentTag(this.props.tag);
+
+		let modal = document.getElementById('modal');
+		modal.classList.add("animated");
+		modal.classList.add("slideOutLeft");
+		setTimeout(() => { this.props.props.closeModal(); }, 600);
+
 		this.props.closeModal();
 		this.props.props.closeNoteListBar();
 		this.props.props.closeNoteBar();
@@ -53,7 +59,7 @@ class TagsIndexItem extends React.Component {
 		if (this.state.edit) {
 			return <div className="each-tag">
 					<div className="tag-div">
-						<input className="edit-input" onKeyPress={this.enter} value={this.state.name} type="text" onChange={this.handleUpdate} />
+						<input maxlength="30" className="edit-input" onKeyPress={this.enter} value={this.state.name} type="text" onChange={this.handleUpdate} />
 						<div className="update-button">
 							<i onClick={this.saveChange} class="fas fa-check-circle" />
 						</div>
