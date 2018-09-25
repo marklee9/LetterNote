@@ -66,13 +66,3 @@ export const deleteTag = tagId => dispatch => (
     errors => dispatch(receiveTagErrors(errors))
   )
 );
-
-export const addTagToNote = (noteId, tagName) => dispatch => {
-  TagApiUtil.addTagToNote(noteId, tagName).then(
-    tagging => dispatch({
-      type: RECEIVE_TAGGING,
-      tagging
-    }),
-    errors => dispatch(receiveTagErrors(errors))
-  );
-};

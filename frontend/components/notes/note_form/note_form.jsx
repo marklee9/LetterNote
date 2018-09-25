@@ -4,7 +4,9 @@ import { debounce } from 'lodash';
 
 class NoteForm extends React.Component {
 	constructor(props) {
-		super(props);
+    super(props);
+    this.state = { name: "" };
+
 		if (this.props.form === 'new') {
       this.state = { title: "", body: "" };
     } 
@@ -16,7 +18,9 @@ class NoteForm extends React.Component {
    
 		this.handleChangeBody = this.handleChangeBody.bind(this);
 		this.handleChangeTitle = this.handleChangeTitle.bind(this);
-		this.actionNote = this.actionNote.bind(this);
+    this.actionNote = this.actionNote.bind(this);
+    this.handleTagSubmit = this.handleTagSubmit.bind(this);
+    this.handleTagNameChange = this.handleTagNameChange.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -78,6 +82,75 @@ class NoteForm extends React.Component {
 			</div>;
   }
 
+  renderTags() {
+    let notesTagging = Object.values(this.props.taggings).filter((tagging) => tagging.note_id === this.props.note.id);
+    let allTags = [];
+    notesTagging.forEach((tagging) => {
+      allTags.push(this.props.tags[tagging.tag_id]);
+    });
+    let tags = allTags.map((tag) => {
+      if (tag) {
+        return <div className="tags">
+            <span className="current-tag">
+              {tag.name}
+            </span>
+          </div>
+        }
+      }
+    );
+
+    return <div className="notebook-section">
+      <div className="tag-img"></div>
+      <div className="notebook-title">
+        {tags}
+        <div>
+          {this.addTags()}
+        </div>
+      </div>
+    </div>;
+  }
+
+  addTags() {
+    return <form className="tag-form" onSubmit={this.handleTagSubmit}>
+      <input onChange={this.handleTagNameChange} value={this.state.name} className="tag-form-input" type="text" maxlength="30" placeholder="+" />
+    </form>;
+  }
+
+  handleTagSubmit(e) {
+    e.preventDefault();
+    let tagsArray = Object.values(this.props.tags);
+    let tagId;
+
+    if (tagsArray.some((tag) => tag.name === this.state.name)) {
+      tagsArray.forEach((tag) => {
+        if (tag.name === this.state.name) { tagId = tag.id; }
+      }); 
+      this.props.createTagging({
+          tag_id: tagId,
+          user_id: this.props.currentUserId,
+          note_id: this.props.workingNote
+        });
+      } else {
+      this.props.createTag({
+        name: this.state.name,
+        user_id: this.props.currentUserId
+      }).then(() => {
+        tagId = Math.max(...Object.keys(this.props.tags));
+        this.props.createTagging({
+          tag_id: tagId,
+          user_id: this.props.currentUserId,
+          note_id: this.props.workingNote
+        });
+      });
+    }
+
+    this.setState({name: ""});
+  }
+
+  handleTagNameChange(e) {
+    this.setState({name: e.target.value });
+  }
+
   renderDelete() {
     return <div className="notebook-section">
 				<div onClick={this.openModal("deleteNote")} className="notebook-trash"></div>
@@ -91,7 +164,10 @@ class NoteForm extends React.Component {
           <div className="quill-container">
             <div className="tool-container">
               {this.renderDelete()}
-              {this.getNotebookTitle()}
+              <div>
+                {this.getNotebookTitle()}
+                {this.renderTags()}
+              </div>
             </div>
             <input
               value={this.state.title}

@@ -10,6 +10,7 @@ import { LOGOUT_CURRENT_USER } from '../../actions/sessions_actions';
 const tagsReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState;
+  console.log(action);
 
   switch (action.type) {
     case RECEIVE_TAGS:
@@ -24,9 +25,7 @@ const tagsReducer = (state = {}, action) => {
       return newState;
     case RECEIVE_TAGGING:
       newState = merge({}, state);
-      if (!newState[action.tagging.tag.id]) {
-        newState[action.tagging.tag.id] = action.tagging.tag;
-      }
+      newState[action.tagging.id] = action.tagging;
       return newState;
     case LOGOUT_CURRENT_USER:
       return {};
