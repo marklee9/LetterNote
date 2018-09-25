@@ -23,14 +23,7 @@ class DeleteNoteForm extends React.Component {
 
   render() {
     return <div className="create-notebook-form">
-      <div className="create-notebook-error">
-        {this.props.errors.map((error, i) => (
-          <p className="error-message" key={i}>
-            {error}
-          </p>
-        ))}
-      </div>
-      <form className="actual-form" onSubmit={this.props.deleteNote()}>
+      <form className="actual-form" onSubmit={this.deleteNote}>
         <div className="actual-form-title">
           <div className="new-notebook-img" />
           <h1>Delete Note</h1>
@@ -43,7 +36,7 @@ class DeleteNoteForm extends React.Component {
         </div>
 
         <div className="new-notebook-buttons">
-          <button className="new-notebook-create" onClick={this.deleteNote()}>
+          <button className="new-notebook-create" onClick={this.deleteNote}>
             Delete Note
           </button>
           <button className="new-notebook-cancel" onClick={this.closeModal()}>

@@ -23,6 +23,7 @@ export default (oldState = {}, action) => {
       let newState = merge({}, oldState);
       delete newState[action.payload.notebook.id];
       return newState;
+      
     case LOGOUT_CURRENT_USER:
       return {};
     default:

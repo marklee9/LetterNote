@@ -77,10 +77,6 @@ export const deleteNotebook = (id) => dispatch => (
     (payload) => dispatch({
       type: DELETE_NOTEBOOK,
       payload
-    }),
-    (error) => dispatch({
-      type: RECEIVE_NOTEBOOK_ERRORS,
-      errors: error.responseJSON
     })
   )
 );

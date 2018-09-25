@@ -6,7 +6,6 @@ import { closeWorkingNote } from '../../actions/note_actions';
 
 const msp = state => ({
   currentUserId: state.session.currentUserId,
-  errors: state.errors.notebooks,
   noteId: state.ui.workingNote,
   note: state.entities.notes[state.ui.workingNote]
 });

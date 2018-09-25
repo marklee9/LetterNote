@@ -118,6 +118,11 @@ $add-tag-icon: image_url("add-tag-icon");
     font-weight: 200;
     color: #363636;
 
+    .warning {
+      font-size: 20px;
+      color: #df6c6c;
+    }
+
 
     .new-notebook-input {
       width: 100%;
