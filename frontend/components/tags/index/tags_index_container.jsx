@@ -8,7 +8,7 @@ import { closeNoteBar } from "../../../actions/notes_bar_actions";
 import { closeNoteListBar } from '../../../actions/notes_list_bar_actions';
 
 const msp = (state) => ({
-  tags: selectTags(state),
+	tags: selectTags(state),
   errors: state.errors.tags
 });
 

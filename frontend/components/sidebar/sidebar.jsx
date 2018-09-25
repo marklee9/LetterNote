@@ -53,7 +53,17 @@ class Sidebar extends React.Component {
 				this.props.resetQuill();
 				this.props.editQuill();
 			} else {
-				this.props.openModal("notebookIndex");
+								this.props.createNote({
+					title: 'New Note',
+					body: '',
+					notebook_id: this.props.currentNotebookId
+				}).then(() => {
+				let noteId = Math.max(...Object.keys(this.props.notes));
+				this.props.fetchWorkingNote(this.props.notes[noteId]);
+				});
+
+				this.props.resetQuill();
+				this.props.editQuill();
 			}
 		};
 	}

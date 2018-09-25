@@ -31,7 +31,7 @@ class TagsIndex extends React.Component {
 
   organizeTags(obj, ch) {
     let result = obj[ch].map((fl) => {
-      return <TagsIndexItem props={this.props} openNoteBar={this.props.openTagNoteBar} tag={fl} fetchCurrentTag={this.props.fetchCurrentTag} closeModal={this.props.closeModal} tagId={fl.id} tagName={fl.name} count={obj[ch].length} updateTag={this.props.updateTag} deleteTag={this.props.deleteTag} />;
+      return <TagsIndexItem props={this.props} openNoteBar={this.props.openTagNoteBar} tag={fl} fetchCurrentTag={this.props.fetchCurrentTag} closeModal={this.props.closeModal} tagId={fl.id} tagName={fl.name} count={fl.noteIds.length} updateTag={this.props.updateTag} deleteTag={this.props.deleteTag} />;
     });
     return result;
   }
@@ -47,12 +47,12 @@ class TagsIndex extends React.Component {
 			} else {
 				firstLetters[firstLetter].push(tag);
 			}
-		});
+    });
     
     let organizedTags = firstLettersArray.sort().map((ch) => {
       return <div className="first-letter-div">
         <div className="first-letter">{ch.toUpperCase()}</div>
-          {this.organizeTags(firstLetters ,ch)}
+          {this.organizeTags(firstLetters, ch)}
 				</div>;
     });
 
