@@ -10,7 +10,6 @@ import { LOGOUT_CURRENT_USER } from '../../actions/sessions_actions';
 const tagsReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState;
-  console.log(action);
 
   switch (action.type) {
     case RECEIVE_TAGS:

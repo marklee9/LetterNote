@@ -5,8 +5,6 @@ class NotesListItem extends React.Component {
 	constructor(props) {
     super(props);
 		this.setWorkingNote = this.setWorkingNote.bind(this);
-
-		console.log(props);
 	}
 
 	deleteNote() {

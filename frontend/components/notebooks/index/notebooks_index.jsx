@@ -46,7 +46,6 @@ class NotebooksIndex extends React.Component {
       </div>;
     }
 
-    console.log(this.props.notes);
     return (
     <div className='modal-notebook-index'>
       <div className='modal-notebook-notebook'>
