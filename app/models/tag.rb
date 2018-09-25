@@ -10,7 +10,7 @@
 #
 
 class Tag < ApplicationRecord
-  validates :name, :user_id, presence:true
+  validates :name, presence:true
 
   belongs_to :user
 
