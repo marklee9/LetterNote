@@ -37,8 +37,10 @@ class TagsIndex extends React.Component {
   }
 
   render() {
+    // organizing tags by first letter
     let firstLetters = {};
-		let firstLettersArray = [];
+    let firstLettersArray = [];
+    
 		this.props.tags.forEach(tag => {
 			let firstLetter = tag.name[0].toLowerCase();
 			if (!firstLetters[firstLetter]) {

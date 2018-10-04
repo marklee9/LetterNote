@@ -1,6 +1,7 @@
 import ReactQuill from "react-quill";
 import React from 'react';
 import { debounce } from 'lodash';
+import NoteTag from './note_tag';
 
 class NoteForm extends React.Component {
 	constructor(props) {
@@ -73,7 +74,7 @@ class NoteForm extends React.Component {
   }
 
   getNotebookTitle() {
-    let notebook = Object.values(this.props.notebooks).filter((notebook) => notebook.id === this.props.note.notebook_id)[0];
+    let notebook = Object.values(this.props.notebooks).filter((nb) => nb.id === this.props.note.notebook_id)[0];
     return <div className="notebook-section">
         <div className="notebook-img"></div>
         <div className="notebook-title">
@@ -93,12 +94,9 @@ class NoteForm extends React.Component {
 
     let tags = allTags.map((tag) => {
       if (tag) {
-        return <div className="tags">
-            <span className="current-tag">
-              {tag.name}
-              <span className="tags-delete-button">X</span>
-            </span>
-          </div>;
+        // finding tagging.id
+        let taggingId = notesTagging.filter((tagging) => tagging.tag_id === tag.id)[0].id;
+        return <NoteTag taggingId={taggingId} deleteTagging={this.props.deleteTagging} tagName={tag.name}></NoteTag>;
         }
       }
     );
@@ -134,17 +132,14 @@ class NoteForm extends React.Component {
           tag_id: tagId,
           note_id: this.props.workingNote
         });
+
     // if tag name doesn't exist, create tag and tagging.
     } else {
       this.props.createTag({
         name: this.state.name,
-        user_id: this.props.currentUserId
-      }).then(() => {
-        this.props.tags.forEach((tag) => {
-          if (tag.name === this.state.name) {tagId = tag.id;}
-        });
+      }).then((action) => {
         this.props.createTagging({
-          tag_id: tagId,
+          tag_id: action.tag.id,
           note_id: this.props.workingNote
         });
       });

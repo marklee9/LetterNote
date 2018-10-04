@@ -44,8 +44,8 @@ export const createTagging = (taggingAPI) => dispatch => (
 
 export const deleteTagging = id => dispatch => (
   TaggingAPIUtil.deleteTagging(id)
-    .then(tag => dispatch({
+    .then(tagging => dispatch({
       type: DELETE_TAGGING,
-      tag
+      taggingId: tagging.id
     }))
 );

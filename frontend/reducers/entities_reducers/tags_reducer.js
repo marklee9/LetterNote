@@ -22,10 +22,6 @@ const tagsReducer = (state = {}, action) => {
       newState = merge({}, state);
       delete newState[action.tag.id];
       return newState;
-    case RECEIVE_TAGGING:
-      newState = merge({}, state);
-      newState[action.tagging.id] = action.tagging;
-      return newState;
     case LOGOUT_CURRENT_USER:
       return {};
     default:
