@@ -16,6 +16,8 @@ class Api::TaggingsController < ApplicationController
 
   def create
     @tagging = Tagging.new(tagging_params)
+    @tagging.user_id = current_user.id
+    debugger
     if @tagging.save
       render :show
     else
@@ -34,6 +36,6 @@ class Api::TaggingsController < ApplicationController
 
 private
   def tagging_params
-    params.require(:tagging).permit(:tag_id, :note_id, :user_id)
+    params.require(:tagging).permit(:tag_id, :note_id)
   end
 end

@@ -127,7 +127,6 @@ class NoteForm extends React.Component {
       }); 
       this.props.createTagging({
           tag_id: tagId,
-          user_id: this.props.currentUserId,
           note_id: this.props.workingNote
         });
       } else {
@@ -138,7 +137,6 @@ class NoteForm extends React.Component {
         tagId = Math.max(...Object.keys(this.props.tags));
         this.props.createTagging({
           tag_id: tagId,
-          user_id: this.props.currentUserId,
           note_id: this.props.workingNote
         });
       });
