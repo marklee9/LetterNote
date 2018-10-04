@@ -17,7 +17,6 @@ class Api::TaggingsController < ApplicationController
   def create
     @tagging = Tagging.new(tagging_params)
     @tagging.user_id = current_user.id
-    debugger
     if @tagging.save
       render :show
     else

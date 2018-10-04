@@ -121,6 +121,7 @@ class NoteForm extends React.Component {
     let tagsArray = Object.values(this.props.tags);
     let tagId;
 
+    // if tag name already exist, only create tagging.
     if (tagsArray.some((tag) => tag.name === this.state.name)) {
       tagsArray.forEach((tag) => {
         if (tag.name === this.state.name) { tagId = tag.id; }
@@ -129,12 +130,15 @@ class NoteForm extends React.Component {
           tag_id: tagId,
           note_id: this.props.workingNote
         });
-      } else {
+    // if tag name doesn't exist, create tag and tagging.
+    } else {
       this.props.createTag({
         name: this.state.name,
         user_id: this.props.currentUserId
       }).then(() => {
-        tagId = Math.max(...Object.keys(this.props.tags));
+        this.props.tags.forEach((tag) => {
+          if (tag.name === this.state.name) {tagId = tag.id;}
+        });
         this.props.createTagging({
           tag_id: tagId,
           note_id: this.props.workingNote
@@ -146,7 +150,7 @@ class NoteForm extends React.Component {
   }
 
   handleTagNameChange(e) {
-    this.setState({name: e.target.value });
+    this.setState({ name: e.target.value });
   }
 
   renderDelete() {
