@@ -85,16 +85,20 @@ class NoteForm extends React.Component {
   renderTags() {
     let notesTagging = Object.values(this.props.taggings).filter((tagging) => tagging.note_id === this.props.note.id);
     let allTags = [];
+
+    // Getting all the taggings associated with current note.
     notesTagging.forEach((tagging) => {
       allTags.push(this.props.tags[tagging.tag_id]);
     });
+
     let tags = allTags.map((tag) => {
       if (tag) {
         return <div className="tags">
             <span className="current-tag">
               {tag.name}
+              <span className="tags-delete-button">X</span>
             </span>
-          </div>
+          </div>;
         }
       }
     );
@@ -112,7 +116,7 @@ class NoteForm extends React.Component {
 
   addTags() {
     return <form className="tag-form" onSubmit={this.handleTagSubmit}>
-      <input onChange={this.handleTagNameChange} value={this.state.name} className="tag-form-input" type="text" maxlength="30" placeholder="+" />
+      <input onChange={this.handleTagNameChange} value={this.state.name} className="tag-form-input" type="text" maxlength="30" placeholder=" +" />
     </form>;
   }
 
@@ -184,7 +188,7 @@ class NoteForm extends React.Component {
               onChange={this.handleChangeBody}
             />
           </div>
-        </div>
+        </div>   
       );
     }
 

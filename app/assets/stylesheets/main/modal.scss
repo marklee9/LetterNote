@@ -11,6 +11,8 @@ $tag-edit: image_url("tag-edit-icon");
 $tag-edit-hover: image_url("tag-edit-icon-hover");
 $add-tag-icon: image_url("add-tag-icon");
 
+$green: #3dbe60;
+
 .fade-modal-background {
   position: fixed;
   top: 0;
@@ -82,7 +84,7 @@ $add-tag-icon: image_url("add-tag-icon");
 
     .new-notebook-create {
       color: white;
-      background-color: #3dbe60;
+      background-color: $green;
       border: none;
       float: right;
     }
@@ -90,7 +92,7 @@ $add-tag-icon: image_url("add-tag-icon");
     .new-notebook-create-disabled {
       opacity: 0.6;
       color: white;
-      background-color: #3dbe60;
+      background-color: $green;
       border: none;
       float: right;
     }
@@ -103,7 +105,7 @@ $add-tag-icon: image_url("add-tag-icon");
     }
 
     .new-notebook-create:hover {
-      background-color: #2d8f47;
+      background-color: $green;
     }
 
     .new-notebook-cancel:hover {
@@ -270,7 +272,7 @@ $add-tag-icon: image_url("add-tag-icon");
         }
 
         .update-button:hover {
-          color: #3dbe60;
+          color: $green;
         }
     
         .tag-name-div {
@@ -286,13 +288,13 @@ $add-tag-icon: image_url("add-tag-icon");
 
           .tag-count {
             margin-left: 10px;
-            color: #3dbe60;
+            color: $green;
           }
         }
 
         .tag-name-div:hover {
-          border: 1px solid #3dbe60;
-          background-color: #3dbe60;
+          border: 1px solid $green;
+          background-color: $green;
 
           color: #f6f6f6;
 
@@ -464,7 +466,7 @@ $add-tag-icon: image_url("add-tag-icon");
   }
 
   .each-notebook:hover {
-    background-color: #3dbe60;
+    background-color: $green;
     
     .title-div {
       color: rgb(243, 243, 243);
@@ -475,7 +477,7 @@ $add-tag-icon: image_url("add-tag-icon");
     }
 
     .index-notebook-delete {
-      background-color: #3dbe60;
+      background-color: $green;
     }
   }
 }
