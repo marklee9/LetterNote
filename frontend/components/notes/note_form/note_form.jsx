@@ -179,6 +179,7 @@ class NoteForm extends React.Component {
               autofocus
             />
             <ReactQuill
+              modules={modules}
               value={this.state.body}
               onChange={this.handleChangeBody}
             />
@@ -219,5 +220,22 @@ class NoteForm extends React.Component {
     }
 	}
 }
+
+const toolBarOpts = [
+	[{ font: [] }],
+	[{ size: ["small", false, "large", "huge"] }],
+	["bold", "italic", "underline", "strike"], 
+	[{ color: [] }, { background: [] }], 
+	["blockquote", "code-block"],
+	[{ align: [] }],
+	[{ list: "ordered" }, { list: "bullet" }],
+	[{ script: "sub" }, { script: "super" }],
+	["clean"],
+	["link", "image", "video", "formula"]
+];
+
+const modules = {
+	toolbar: toolBarOpts
+};
 
 export default NoteForm;
