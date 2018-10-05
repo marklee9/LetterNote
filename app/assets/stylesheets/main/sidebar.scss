@@ -51,6 +51,7 @@ $tags_hover: image_url("tag-icon-hover");
 
       .new-note-img {
         background-image: $new-note-icon;
+        cursor: pointer;
       }
 
       .new-note-img:hover {
@@ -78,6 +79,7 @@ $tags_hover: image_url("tag-icon-hover");
       .notes-img {
         background-image: $notes;
         background-color: #f3f3f3;
+        cursor: pointer;
         border: none;
       }
 
@@ -89,6 +91,7 @@ $tags_hover: image_url("tag-icon-hover");
         background-image: $notebooks;
         background-color: #f3f3f3;
         border: none;
+        cursor: pointer;
       }
 
       .notebooks-img:hover {
@@ -99,6 +102,7 @@ $tags_hover: image_url("tag-icon-hover");
         background-image: $tags;
         background-color: #f3f3f3;
         border: none;
+        cursor: pointer;
       }
 
       .tags-img:hover {
@@ -148,4 +152,5 @@ $tags_hover: image_url("tag-icon-hover");
   margin: 0 auto;
   border: none;
   background-color: #f3f3f3;
+  cursor: pointer;
 }

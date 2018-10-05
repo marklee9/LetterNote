@@ -344,6 +344,8 @@ $green: #3dbe60;
         color: white;
         font-size: 18px;
         font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
 
         .done {
           display:inline-block;
@@ -352,11 +354,17 @@ $green: #3dbe60;
         }
       }
 
+      .expand-p:hover {
+        background-color: green;
+      }
+
       .expand-button {
         border: 1px solid $green;
         border-radius: 4px;
         width: 30px;
         height: 30px;
+        transition: 0.3s;
+        cursor: pointer;
 
         .expand-button-button {
           background-repeat: no-repeat;
