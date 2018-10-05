@@ -84,32 +84,48 @@ $green: #3dbe60;
       height: 40px;
       margin: 20px;
 
+      .expand-p {
+        border-radius: 4px;
+        height: 30px;
+        width: 60px;
+        background-color: $green;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        color: white;
+        font-size: 18px;
+        font-weight: 600;
+
+        .done {
+          display:inline-block;
+          vertical-align: middle;
+          padding-top: 3px;
+        }
+      }
+
       .expand-button {
         border: 1px solid $green;
         border-radius: 4px;
         width: 30px;
         height: 30px;
-        align-content: center;
-        vertical-align: middle;
-
-        .expand-button-p {
-          color: $green;
-        }
 
         .expand-button-button {
           background-repeat: no-repeat;
           background-position: center;
           background-size: 100%;
-          margin-top: 2px;
-          margin-left: 2px;
-          width: 26px;
-          height: 26px;
+          margin-top: 5px;
+          margin-left: 5px;
+          width: 20px;
+          height: 20px;
           background-image: $expand;
         }
       }
 
       .expand-button:hover {
-        
+        background-color: $green;
+
+        .expand-button-button {
+          background-image: $expand-hover;
+        }
       }
 
       .tool-container-top {

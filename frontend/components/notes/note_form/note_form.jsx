@@ -23,6 +23,7 @@ class NoteForm extends React.Component {
     this.handleTagSubmit = this.handleTagSubmit.bind(this);
     this.handleTagNameChange = this.handleTagNameChange.bind(this);
     this.expandButton = this.expandButton.bind(this);
+    this.expandNote = this.expandNote.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -159,15 +160,19 @@ class NoteForm extends React.Component {
 			</div>;
   }
 
+  expandNote() {
+    this.setState({expanded: !this.state.expanded});
+  }
+
   expandButton() {
     if (this.state.expanded) {
-      return <div className="expand-button">
-        <p className="expanded-button-p">Done</p>
+      return <div className="expand-p">
+        <div className="done">Done</div>
       </div>;
     } else {
-    return <div className="expand-button">
-        <div className="expand-button-button"></div>
-			</div>;
+      return  <div className="expand-button" onClick={this.expandNote}>
+              <div className="expand-button-button" />			      
+            </div>;
     }
   }
   
