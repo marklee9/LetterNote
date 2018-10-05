@@ -114,6 +114,17 @@ $tags_hover: image_url("tag-icon-hover");
   }
 }
 
+.move-left {
+  transform: translateX(-440px);
+  transition: all 0.5s linear;
+  width: 0;
+}
+
+.move-right {
+  transform: translateX(0px);
+  transition: all 0.5s linear;
+}
+
 #sidebar-account {
   position: sticky;
   top: 100%;

@@ -162,11 +162,32 @@ class NoteForm extends React.Component {
 
   expandNote() {
     this.setState({expanded: !this.state.expanded});
+    let noteList = document.querySelector(".note-list-id");
+    let sideBar = document.querySelector(".sidebar-div");
+    let quill = document.querySelector(".quill-outer-container");
+    let inputtingDiv = document.querySelector(".inputting-div");
+
+    // Giving sliding effects
+    if (this.state.expanded) {
+      noteList.classList.remove("move-left");
+      sideBar.classList.remove("move-left");
+      noteList.classList.add("move-right");
+      sideBar.classList.add("move-right");
+      quill.classList.remove("expand");
+      inputtingDiv.classList.remove("expand");
+    } else {
+      quill.classList.add("expand");
+      inputtingDiv.classList.add("expand");
+      noteList.classList.remove("move-right");
+      sideBar.classList.remove("move-right");
+      noteList.classList.add("move-left");
+      sideBar.classList.add("move-left");
+    }
   }
 
   expandButton() {
     if (this.state.expanded) {
-      return <div className="expand-p">
+      return <div className="expand-p" onClick={this.expandNote}>
         <div className="done">Done</div>
       </div>;
     } else {
@@ -186,24 +207,16 @@ class NoteForm extends React.Component {
                 {this.renderDelete()}
                 {this.expandButton()}
               </div>
+            </div>
+            <div className ="inputting-div">
               <div className="title-and-tag-container">
                 {this.getNotebookTitle()}
                 {this.renderTags()}
               </div>
+              <input value={this.state.title} onChange={this.handleChangeTitle} className="note-title" 
+                type="text" placeholder="Title your note" autofocus />
+              <ReactQuill modules={modules} value={this.state.body} onChange={this.handleChangeBody} />
             </div>
-            <input
-              value={this.state.title}
-              onChange={this.handleChangeTitle}
-              className="note-title"
-              type="text"
-              placeholder="Title your note"
-              autofocus
-            />
-            <ReactQuill
-              modules={modules}
-              value={this.state.body}
-              onChange={this.handleChangeBody}
-            />
           </div>
         </div>   
       );

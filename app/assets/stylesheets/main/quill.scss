@@ -14,8 +14,8 @@ $green: #3dbe60;
   height: 100vh;
   align-content:center;
   display: flex;
+  flex-direction: column;
   vertical-align: middle;
-  width: calc(100% - 427px);
 
   .quill-select-notebook {
     text-align: center;
@@ -80,9 +80,259 @@ $green: #3dbe60;
   .quill-container {
     width: 100%;
 
+    .inputting-div {
+      width: 100%;
+    }
+
+    .expand {
+      margin: 0 auto;
+      width: 76%;
+    }
+
+    .title-and-tag-container {
+      margin-left: 24px;
+      height: 28px;
+
+      .notebook-section {
+        display: inline-block;
+        margin-right: 30px;
+        margin-left: 5px;
+
+        .notebook-trash {
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100%;
+          width: 24px;
+          height: 24px;
+          background-image: $note-delete;
+          cursor: pointer;
+        }
+
+        .notebook-trash:hover {
+          background-image: $note-delete-hover;
+        }
+
+        .tag-img {
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100%;
+          background-image: $tag-icon-small;
+          width: 16px;
+          height: 16px;
+          display: inline-block;
+          margin-right: 6px;
+          position: relative;
+          top: 4px;
+        }
+
+        .notebook-img {
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100%;
+          background-image: $notebook-icon-small;
+          width: 16px;
+          height: 16px;
+          display: inline-block;
+          margin-right: 6px;
+          position: relative;
+          top: 4px;
+        }
+
+        .notebook-title {
+          display: inline-block;
+          margin-top: 30px;
+
+          span {
+            font-family: 'Montserrat', sans-serif;
+            color: #505050;
+            font-size: 14px;
+            height: 20px;
+            overflow: hidden;
+            margin-bottom: 4px;
+
+          }
+
+          div {
+            display: inline-block;
+            margin-right: 10px;
+          }
+
+          .tags {
+            background-color: #f5f5f5;
+            border: 1px solid #e4e3e3;
+            border-radius: 3px;
+            height: 20px;
+            vertical-align: middle;
+            margin-left: 3px;
+            padding-right: 6px;
+            padding-left: 10px;
+            vertical-align: middle;
+            text-align: center;
+
+            .current-tag {
+              position: relative;
+              bottom: 2.5px;
+
+              .tags-delete-button {
+                background-color: #f5f5f5;
+                height: 10px;
+                width: 10px;
+                font-size: 10px;
+                float: right;
+                margin-left: 6px;
+                margin-top: 2px;
+              }
+            }
+          }
+
+          .tags:hover {
+            background-color: $green;
+
+            .current-tag {
+              color: white;
+
+              .tags-delete-button {
+                background-color: $green;
+                color: white;
+                cursor: pointer;
+              }
+            }
+          }
+
+          .tag-form-input {
+            width: 50px;
+            background-color: #f5f5f5;
+            border: 1px solid #e4e3e3;
+            color: #505050;
+            border-radius: 3px;
+            height: 20px;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+
+    .notebook-section {
+      display: inline-block;
+      margin-right: 30px;
+      margin-left: 5px;
+
+      .notebook-trash {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        width: 24px;
+        height: 24px;
+        background-image: $note-delete;
+        cursor: pointer;
+      }
+
+      .notebook-trash:hover {
+        background-image: $note-delete-hover;
+      }
+
+      .tag-img {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        background-image: $tag-icon-small;
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        margin-right: 6px;
+        position: relative;
+        top: 4px;
+      }
+
+      .notebook-img {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        background-image: $notebook-icon-small;
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        margin-right: 6px;
+        position: relative;
+        top: 4px;
+      }
+
+      .notebook-title {
+        display: inline-block;
+        margin-top: 30px;
+
+        span {
+          font-family: 'Montserrat', sans-serif;
+          color: #505050;
+          font-size: 14px;
+          height: 20px;
+          overflow: hidden;
+          margin-bottom: 4px;
+
+        }
+
+        div {
+          display: inline-block;
+          margin-right: 10px;
+        }
+
+        .tags {
+          background-color: #f5f5f5;
+          border: 1px solid #e4e3e3;
+          border-radius: 3px;
+          height: 20px;
+          vertical-align: middle;
+          margin-left: 3px;
+          padding-right: 6px;
+          padding-left: 10px;
+          vertical-align: middle;
+          text-align: center;
+
+          .current-tag {
+            position: relative;
+            bottom: 2.5px;
+
+            .tags-delete-button {
+              background-color: #f5f5f5;
+              height: 10px;
+              width: 10px;
+              font-size: 10px;
+              float: right;
+              margin-left: 6px;
+              margin-top: 2px;
+            }
+          }
+        }
+
+        .tags:hover {
+          background-color: $green;
+
+          .current-tag {
+            color: white;
+
+            .tags-delete-button {
+              background-color: $green;
+              color: white;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .tag-form-input {
+          width: 50px;
+          background-color: #f5f5f5;
+          border: 1px solid #e4e3e3;
+          color: #505050;
+          border-radius: 3px;
+          height: 20px;
+          font-size: 15px;
+        }
+      }
+    }
+
     .tool-container {
       height: 40px;
-      margin: 20px;
+      margin: 20px 20px 0 20px; 
 
       .expand-p {
         border-radius: 4px;
@@ -131,124 +381,7 @@ $green: #3dbe60;
       .tool-container-top {
         display: flex;
         justify-content: space-between;
-      }
-
-      .notebook-section {
-        display:inline-block;
-        margin-right: 30px;
-        margin-left: 5px;
-
-        .notebook-trash {
-          background-repeat: no-repeat;
-          background-position: center;
-          background-size: 100%;
-          width: 24px;
-          height: 24px;
-          background-image: $note-delete;
-          cursor: pointer;
-        }
-        
-        .notebook-trash:hover {
-          background-image: $note-delete-hover;
-        }
-
-        .tag-img {
-          background-repeat: no-repeat;
-          background-position: center;
-          background-size: 100%;
-          background-image: $tag-icon-small;
-          width: 16px;
-          height: 16px;
-          display: inline-block;
-          margin-right: 6px;
-          position: relative;
-          top:4px;
-        }
-        
-        .notebook-img {
-          background-repeat: no-repeat;
-          background-position: center;
-          background-size: 100%;
-          background-image: $notebook-icon-small;
-          width: 16px;
-          height: 16px;
-          display: inline-block;
-          margin-right: 6px;
-          position: relative;
-          top:4px;
-        }
-
-        .notebook-title {
-          display: inline-block;
-          margin-top: 30px;
-
-          span {
-            font-family: 'Montserrat', sans-serif;
-            color: #505050;
-            font-size: 14px;
-            height: 20px;
-            overflow: hidden;
-            margin-bottom: 4px;
-            
-          }
-
-          div {
-            display: inline-block;
-            margin-right: 10px;
-          }
-
-          .tags {
-            background-color: #f5f5f5;
-            border: 1px solid #e4e3e3;
-            border-radius: 3px;
-            height: 20px;
-            vertical-align: middle;
-            margin-left: 3px;
-            padding-right: 6px;
-            padding-left: 10px;
-            vertical-align: middle;
-            text-align: center;
-
-            .current-tag {
-              position: relative;
-              bottom: 2.5px;
-                
-              .tags-delete-button {
-                background-color: #f5f5f5;
-                height: 10px;
-                width: 10px;
-                font-size: 10px;
-                float: right;
-                margin-left: 6px;
-                margin-top: 2px;
-              }
-            }
-          }
-
-          .tags:hover {
-            background-color: $green;
-
-            .current-tag {
-              color: white;
-
-              .tags-delete-button {
-                background-color: $green;
-                color: white;
-                cursor: pointer;
-              }
-            }
-          }
-
-          .tag-form-input {
-            width: 50px;
-            background-color: #f5f5f5;
-            border: 1px solid #e4e3e3;
-            color: #505050;
-            border-radius: 3px;
-            height: 20px;
-            font-size: 15px;
-          }
-        }
+        height: 32px;
       }
     }
 
@@ -259,7 +392,7 @@ $green: #3dbe60;
       top: 65px;
       left: 13px;
       margin: 10px;
-      width: 90%;
+      width: 95%;
       height: 50px;
       font-size: 30px;
       padding: 5px;
