@@ -6,7 +6,7 @@ import NoteTag from './note_tag';
 class NoteForm extends React.Component {
 	constructor(props) {
     super(props);
-    this.state = { name: "" };
+    this.state = { name: "", expanded:false };
 
 		if (this.props.form === 'new') {
       this.state = { title: "", body: "" };
@@ -22,6 +22,7 @@ class NoteForm extends React.Component {
     this.actionNote = this.actionNote.bind(this);
     this.handleTagSubmit = this.handleTagSubmit.bind(this);
     this.handleTagNameChange = this.handleTagNameChange.bind(this);
+    this.expandButton = this.expandButton.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -153,9 +154,21 @@ class NoteForm extends React.Component {
   }
 
   renderDelete() {
-    return <div className="notebook-section">
+    return <div className="notebook-section top-div">
 				<div onClick={this.openModal("deleteNote")} className="notebook-trash"></div>
 			</div>;
+  }
+
+  expandButton() {
+    if (this.state.expanded) {
+      return <div className="expand-button">
+        <p className="expanded-button-p">Done</p>
+      </div>;
+    } else {
+    return <div className="expand-button">
+        <div className="expand-button-button"></div>
+			</div>;
+    }
   }
   
 	render() {
@@ -164,8 +177,11 @@ class NoteForm extends React.Component {
         <div className="quill-outer-container">
           <div className="quill-container">
             <div className="tool-container">
-              {this.renderDelete()}
-              <div>
+              <div className="tool-container-top">
+                {this.renderDelete()}
+                {this.expandButton()}
+              </div>
+              <div className="title-and-tag-container">
                 {this.getNotebookTitle()}
                 {this.renderTags()}
               </div>

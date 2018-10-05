@@ -6,6 +6,8 @@ $new-note-hover: image_url("new-note-hover.png");
 $note-delete: image_url("note-delete");
 $note-delete-hover: image_url("note-delete-hover");
 $tag-icon-small: image_url("tag-icon-small");
+$expand: image_url("expand");
+$expand-hover: image_url("expand-hover");
 $green: #3dbe60;
 
 .quill-outer-container {
@@ -13,6 +15,7 @@ $green: #3dbe60;
   align-content:center;
   display: flex;
   vertical-align: middle;
+  width: calc(100% - 427px);
 
   .quill-select-notebook {
     text-align: center;
@@ -75,15 +78,44 @@ $green: #3dbe60;
   }
 
   .quill-container {
-    float: left;
     width: 100%;
-    min-width: 1325px;
 
     .tool-container {
-      width: 100%;
       height: 40px;
       margin: 20px;
-      margin-bottom: 20px;
+
+      .expand-button {
+        border: 1px solid $green;
+        border-radius: 4px;
+        width: 30px;
+        height: 30px;
+        align-content: center;
+        vertical-align: middle;
+
+        .expand-button-p {
+          color: $green;
+        }
+
+        .expand-button-button {
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100%;
+          margin-top: 2px;
+          margin-left: 2px;
+          width: 26px;
+          height: 26px;
+          background-image: $expand;
+        }
+      }
+
+      .expand-button:hover {
+        
+      }
+
+      .tool-container-top {
+        display: flex;
+        justify-content: space-between;
+      }
 
       .notebook-section {
         display:inline-block;
