@@ -165,7 +165,6 @@ class NoteForm extends React.Component {
     let noteList = document.querySelector(".note-list-id");
     let sideBar = document.querySelector(".sidebar-div");
     let quill = document.querySelector(".quill-outer-container");
-    let inputtingDiv = document.querySelector(".inputting-div");
 
     // Giving sliding effects
     if (this.state.expanded) {
@@ -174,10 +173,8 @@ class NoteForm extends React.Component {
       noteList.classList.add("move-right");
       sideBar.classList.add("move-right");
       quill.classList.remove("expand");
-      inputtingDiv.classList.remove("expand");
     } else {
       quill.classList.add("expand");
-      inputtingDiv.classList.add("expand");
       noteList.classList.remove("move-right");
       sideBar.classList.remove("move-right");
       noteList.classList.add("move-left");
