@@ -8,6 +8,7 @@ class NoteTag extends React.Component {
 
   deleteTagging() {
     this.props.deleteTagging(this.props.taggingId);
+    this.props.update();
   }
 
 	render() {

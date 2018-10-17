@@ -7,6 +7,7 @@ import { openTagNoteBar } from "../../../actions/tag_notes_bar_actions";
 import { closeNoteBar } from "../../../actions/notes_bar_actions";
 import { closeNoteListBar } from '../../../actions/notes_list_bar_actions';
 
+
 const msp = (state) => ({
 	tags: selectTags(state),
   errors: state.errors.tags
@@ -21,7 +22,7 @@ const mdp = dispatch => ({
 	fetchCurrentTag: tag => dispatch(fetchCurrentTag(tag)),
 	openTagNoteBar: () => dispatch(openTagNoteBar()),
 	closeNoteBar: () => dispatch(closeNoteBar()),
-	closeNoteListBar: () => dispatch(closeNoteListBar())
+	closeNoteListBar: () => dispatch(closeNoteListBar()),
 });
 
 export default connect(msp, mdp)(TagsIndex);

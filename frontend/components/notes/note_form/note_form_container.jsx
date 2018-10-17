@@ -6,11 +6,12 @@ import {
   updateNote, 
   deleteNote 
 } from "../../../actions/note_actions";
-import { createTag } from "../../../actions/tags_actions";
-import { createTagging, deleteTagging } from "../../../actions/taggings_actions";
+import { createTag, fetchTags } from "../../../actions/tags_actions";
+import { createTagging, deleteTagging, fetchAllTaggings } from "../../../actions/taggings_actions";
 import { fetchNotebooks } from '../../../actions/notebooks_action';
 import { openModal } from '../../../actions/modal_actions';
 import { fetchWorkingNote } from '../../../actions/note_actions';
+
 
 const msp = state => ({	
   workingNote: state.ui.workingNote,
@@ -34,7 +35,9 @@ const mdp = dispatch => ({
 	deleteNote: id => dispatch(deleteNote(id)),
 	openModal: modal => dispatch(openModal(modal)),
 	fetchWorkingNote: note => dispatch(fetchWorkingNote(note)),
-  createTag: (tag) => dispatch(createTag(tag))
+  createTag: (tag) => dispatch(createTag(tag)),
+  fetchTags: () => dispatch(fetchTags()),
+  fetchAllTaggings: () => dispatch(fetchAllTaggings())
 });
 
 export default connect(

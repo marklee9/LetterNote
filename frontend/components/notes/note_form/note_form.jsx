@@ -98,7 +98,7 @@ class NoteForm extends React.Component {
       if (tag) {
         // finding tagging.id
         let taggingId = notesTagging.filter((tagging) => tagging.tag_id === tag.id)[0].id;
-        return <NoteTag taggingId={taggingId} deleteTagging={this.props.deleteTagging} tagName={tag.name}></NoteTag>;
+        return <NoteTag taggingId={taggingId} update={this.props.fetchAllTaggings} deleteTagging={this.props.deleteTagging} tagName={tag.name}></NoteTag>;
         }
       }
     );
@@ -133,6 +133,9 @@ class NoteForm extends React.Component {
       this.props.createTagging({
           tag_id: tagId,
           note_id: this.props.workingNote
+        }).then(() => {
+          this.props.fetchTags();
+          this.props.fetchAllTaggings();
         });
 
     // if tag name doesn't exist, create tag and tagging.
@@ -144,9 +147,11 @@ class NoteForm extends React.Component {
           tag_id: action.tag.id,
           note_id: this.props.workingNote
         });
+      }).then(() => {
+        this.props.fetchTags();
+        this.props.fetchAllTaggings();
       });
     }
-
     this.setState({name: ""});
   }
 

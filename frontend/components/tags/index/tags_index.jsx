@@ -50,7 +50,7 @@ class TagsIndex extends React.Component {
 				firstLetters[firstLetter].push(tag);
 			}
     });
-    
+
     let organizedTags = firstLettersArray.sort().map((ch) => {
       return <div className="first-letter-div">
         <div className="first-letter">{ch.toUpperCase()}</div>
