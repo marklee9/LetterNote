@@ -14,6 +14,14 @@ class Notes extends React.Component {
     }
   }
 
+  giveBorderAnimation() {
+    let allNotes = Array.from(document.querySelectorAll(".each-note"));
+    allNotes.forEach(note => note.addEventListener("click", function () {
+      allNotes.forEach(note1 => note1.classList.remove("clicked"));
+      this.classList.add("clicked");
+    }));
+  }
+
   renderAllNotes() {
     if (this.props.notes) {
       return this.props.notes.map((note) => 
@@ -46,6 +54,7 @@ class Notes extends React.Component {
         <div className='linebreak-note-list'></div>
        <div className="all-notes">
          {this.renderAllNotes()}
+         {this.giveBorderAnimation()}
        </div>
       </div>;
     }

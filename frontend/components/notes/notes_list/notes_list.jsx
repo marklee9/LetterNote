@@ -30,6 +30,14 @@ class NoteList extends React.Component {
 		}
 	}
 
+	giveBorderAnimation() {
+		let allNotes = Array.from(document.querySelectorAll(".each-note"));
+		allNotes.forEach(note => note.addEventListener("click", function () {
+			allNotes.forEach(note1 => note1.classList.remove("clicked"));
+			this.classList.add("clicked");
+		}));
+	}
+
   render() {
     if (!this.props.notesListBar) {
 			return null;
@@ -44,6 +52,7 @@ class NoteList extends React.Component {
 						{this.renderAllNotes()}
 					</div>
 				{this.renderLittleNotes()}
+				{this.giveBorderAnimation()}
 				</div>;
 		}
   }
