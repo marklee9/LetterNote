@@ -154,13 +154,22 @@ $focus-image: image_url("homepage-focus.png");
     .signup-link {
       margin: 30px;
       text-decoration: none;
-          
-      span {
+      
+      a {
         font-family: 'Montserrat', sans-serif;
         font-size: 14px;
         margin-bottom: 5px;
+        color: #3dbe60;
+        transition: 0.3s linear;
+      }
+
+      a:visited {
         text-decoration: none;
-        }
+      }
+
+      a:hover {
+        color: #363636;
+      }
       }
     }
   }
