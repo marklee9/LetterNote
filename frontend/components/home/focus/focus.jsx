@@ -7,8 +7,8 @@ class Focus extends React.Component {
 					<div className="focus-image" />
 				</div>
 
-				<div>
-					<h1>Focus on what matters most</h1>
+				<div className="big-word">
+					<p>Focus on what matters most</p>
 				</div>
 				<div className="focus-text">
 					<span>
