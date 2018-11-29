@@ -14,7 +14,9 @@ class Tagging < ApplicationRecord
   validates :tag_id, :note_id, :user_id, presence:true
 
   belongs_to :note
+
   belongs_to :tag
+  
   belongs_to :user
 end
 
