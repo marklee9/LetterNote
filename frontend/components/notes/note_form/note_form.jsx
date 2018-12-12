@@ -2,6 +2,7 @@ import ReactQuill from "react-quill";
 import React from 'react';
 import { debounce } from 'lodash';
 import NoteTag from './note_tag';
+import Promise from 'promise';
 
 class NoteForm extends React.Component {
 	constructor(props) {
@@ -24,6 +25,11 @@ class NoteForm extends React.Component {
     this.handleTagNameChange = this.handleTagNameChange.bind(this);
     this.expandButton = this.expandButton.bind(this);
     this.expandNote = this.expandNote.bind(this);
+  }
+
+  componendDidMount() {
+    this.props.fetchTags();
+    this.props.fetchAllTaggings();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -98,7 +104,9 @@ class NoteForm extends React.Component {
       if (tag) {
         // finding tagging.id
         let taggingId = notesTagging.filter((tagging) => tagging.tag_id === tag.id)[0].id;
-        return <NoteTag taggingId={taggingId} update={this.props.fetchAllTaggings} deleteTagging={this.props.deleteTagging} tagName={tag.name}></NoteTag>;
+        let { fetchTags, fetchAllTaggings, deleteTagging} = this.props;
+
+        return <NoteTag taggingId={taggingId} fetchTags={fetchTags} update={fetchAllTaggings} deleteTagging={deleteTagging} tagName={tag.name}></NoteTag>;
         }
       }
     );
@@ -123,23 +131,24 @@ class NoteForm extends React.Component {
   handleTagSubmit(e) {
     e.preventDefault();
     let tagsArray = Object.values(this.props.tags);
-    let tagId;
+    let tag_id;
 
     // if tag name already exist, only create tagging.
-    if (tagsArray.some((tag) => tag.name === this.state.name)) {
-      tagsArray.forEach((tag) => {
-        if (tag.name === this.state.name) { tagId = tag.id; }
-      }); 
-      this.props.createTagging({
-          tag_id: tagId,
-          note_id: this.props.workingNote
-        }).then(() => {
-          this.props.fetchTags();
-          this.props.fetchAllTaggings();
-        });
-
+    console.log(tagsArray);
+    for (let i = 0; i < tagsArray.length; i++) {
+      let tag = tagsArray[i];
+        if (tag.name === this.state.name) {
+          tag_id = tag.id;
+          this.props.createTagging({
+            tag_id,
+            note_id: this.props.workingNote
+          }).then(() => this.props.fetchTags());
+          this.setState({name: ""});
+          return;
+      }
+    }
+    
     // if tag name doesn't exist, create tag and tagging.
-    } else {
       this.props.createTag({
         name: this.state.name,
       }).then((action) => {
@@ -147,12 +156,11 @@ class NoteForm extends React.Component {
           tag_id: action.tag.id,
           note_id: this.props.workingNote
         });
-      }).then(() => {
-        this.props.fetchTags();
-        this.props.fetchAllTaggings();
-      });
-    }
-    this.setState({name: ""});
+      }).then(() => this.props.fetchTags());
+
+      this.setState({name: ""});
+
+    
   }
 
   handleTagNameChange(e) {
